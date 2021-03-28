@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>BuyTech | Electronics</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+						<img src="images/logo.png" class="branding-logo">
+					</div>
+					<nav>
+						<ul id="menu-items">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">Products</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Login</a></li>
+						</ul>
+					</nav>
+					<img src="images/cart.png" width="30px" height="30px">
+					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+				</div>
+				<div>
+					<nav class="categories">
+						<h1>Cart<h1>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<?php
+			include "cart.php";
+			while ($data =mysqli_fetch_array($records))
+			{
+				$sqlp = "SELECT name, img, price, quantity, id FROM tbl_products WHERE id=$row['id']";
+				$presult = $conn->query($sqlp);
+		?>
+			<div>
+				<h1><?php echo $presult['name']; ?></h1>
+				<img src="<?php echo $presult['img']; ?>">
+				<h2>Quantity: <?php echo $presult['quantity']; ?></h2>
+				<h2>Price: $<?php echo $presult['price']; ?></h2>
+			</div>
+		<?php>
+			}
+		?>
+		<?php mysqli_close($conn,$conncart);
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>BuyTech | Electronics</title>
+		<link rel="stylesheet" href="productview.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="productview.js"></script> 
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+						<img src="images/logo.png" class="branding-logo">
+					</div>
+					<nav>
+						<ul id="menu-items">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">Products</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Login</a></li>
+						</ul>
+					</nav>
+					<img src="images/cart.png" width="30px" height="30px">
+					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+				</div>
+				<div>
+					<nav class="categories">
+						<ul class="categorieslist">
+							<li><a href="#">Audio</a></li>
+							<li><div class="divider"></div></li>
+							<li><a href="#">Headphones</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="product-container">
+			<div class="product">
+				<div class="product-media">
+					<div class ="product-image">
+						<img class="active" src="images/product-2-1.jpg" alt="..." id="active">
+					</div>
+					<div class="product-thumbnails">
+						<div class="thumb">
+							<img src="images/product-2-4.jpg" alt="..." id="thumbimg" onclick="changeImage('images/product-2-4.jpg')">
+						</div>
+						<div class="thumb">
+							<img src="images/product-2-2.jpg" alt="..." id="thumbimg" onclick="changeImage('images/product-2-2.jpg')">
+						</div>
+						<div class="thumb">
+							<img src="images/product-2-3.jpg" alt="..." id="thumbimg" onclick="changeImage('images/product-2-3.jpg')">
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="product-description">
+					<div class="desc-head">
+						<h1> AirPods Pro </h1>
+						<h2> $249.00 </h2>
+					</div>	
+					<div class="desc-content"> 
+						<h2>Introducing the new AirPods Pro — magic like you've never heard.</h2>
+						<p>AirPods Pro are the only in-ear headphones with active noise cancellation that continually adapts to your ear 
+						and the fit of the ear tips. An outward-facing microphone detects external sound, the AirPods Pro then 
+						counter it with equal anti-noise, cancelling. Noise cancellation is continuously adjusted at 200 times per second for truly immersive sound.</p>
+						<h2>Charge Wirelessly</h2>
+						<p>The wireless charging case delivers 24+ hours of battery life to keep you and your AirPods Pro on the go. Multiple additional charges in the case, 
+						up to 4.5 hours of listening time on one charge and around 1 hour of listening time on only 5 minutes of charging.</p>
+						<p>Limited to 5 per customer!</p>
+					</div>
+					<div class="purchase">
+						<div class="quantity">
+							<label for="quantity">Quantity:</label>
+							<select id="quantity" name="quantity">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
