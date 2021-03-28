@@ -87,7 +87,7 @@ p {
 }
 
 .btn:hover {
-	background: #563434;
+	background: #8c00ff;
 }
 
 .categories {
@@ -133,7 +133,7 @@ p {
 
 .title::after {
 	content: '';
-	background: #FF9900;
+	background: #8c00ff;
 	width: 80px;
 	height: 5px;
 	border-radius: 5px;
@@ -161,7 +161,7 @@ h4 {
 }
 
 .offer {
-	background: radial-gradient(#FF9900, #fff);
+	background: radial-gradient(#FF9900, #8c00ff);
 	margin-top: 80px;
 	padding: 30px 0;
 }
@@ -198,7 +198,7 @@ small {
 
 .fa-quote-left {
 	font-size: 34px;
-	color: #FF9900;
+	color: #8c00ff;
 }
 
 .col-3 p {
@@ -243,7 +243,7 @@ small {
 }
 
 .footer h3 {
-	color: #fff;
+	color: #FF9900;
 	margin-bottom: 20px;
 }
 
@@ -286,7 +286,7 @@ ul {
 
 .footer hr {
 	border: none;
-	background: #b5b5b5;
+	background: #ffffff;
 	height: 1px;
 	margin: 20px 0;
 }
