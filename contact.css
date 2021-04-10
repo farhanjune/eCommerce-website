@@ -1,0 +1,87 @@
+body{
+    background: radial-gradient(#FF9900, #fff);
+    margin-bottom: 20px;
+}
+
+.header{
+    background: none;
+}
+
+.container{
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.contact.col-1{
+    flex-basis: 100%;
+    min-width: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.contact.col-1 h1{
+    font-size: 100px;
+}
+
+.contact.col-1 h2{
+    font-size: 40px;
+}
+
+form{
+    margin: auto;
+    text-align: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0 0 10px #8c00ff;
+    width: 55%;
+    background-image: linear-gradient(to right,#8c00ff,purple 100%);
+}
+
+form h3{
+    color: whitesmoke;
+    padding-left: 250px;
+    padding-bottom: 20px;
+}
+
+label {
+    color: whitesmoke;
+    text-align: right;
+    float: left;
+    padding-left: 200px;
+    padding-bottom: 20px;
+}
+
+#comment_label{
+    float: left;
+    padding-left: 180px;
+}
+
+input, textarea{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 250px;
+    height: 50px;
+    margin-left: 18px;
+}
+
+span {
+    color: #ea4335;
+    padding-left: 10px;
+}
+
+#submit, #clear {
+    width: 100px;
+    height: 20px;
+    margin-left: 277px;
+}
+
+#clear{
+    margin-left: 5px;
+}
+
+#submit:hover, #clear:hover{
+    background: lightgray;
+}
