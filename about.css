@@ -6,11 +6,18 @@
     max-width: 87%;
 }
 
+.about.image{
+    width: auto;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
 .col-1.top{
     flex-basis: 100%;
     min-width: 300px;
     text-align: center;
-    border-bottom: solid;
+    border-bottom: solid 10px;
     border-image: linear-gradient(to right,#8c00ff,purple 90%) 1;
     margin-top: 4em;
     padding-bottom: 2em;
@@ -20,8 +27,8 @@
     flex-basis: 100%;
     min-width: 300px;
     text-align: center;
-    border-top: solid;
-    border-bottom: solid;
+    border-top: solid 10px;
+    border-bottom: solid 10px;
     border-image: linear-gradient(to right,#8c00ff,purple 90%) 1;
     padding-top: 3em;
     padding-bottom: 2em;
@@ -46,19 +53,38 @@
     width: 400px;
 }
 
+.row.personal .col-2 h2:hover, .row.personal .col-2 h3:hover, .row.personal .col-2 p:hover{
+    color: black;
+    text-decoration: solid;
+}
+
 .row.personal{
     margin-bottom: 2em;
     margin-top: 2em;
 }
 
+.row.personal:hover{
+    background: radial-gradient(#FF9900, #fff);
+}
+
 .col-2 img{
-    padding: 0;
+    padding: 20px 100px 20px 0;
+    border-right: solid 5px;
+    border-image: linear-gradient(to bottom,#8c00ff,purple 90%) 1;
+    width: 400px;
 }
 
 .col-2.portrait{
     transition: transform 0.5s;
     padding-left: 50px;
+    margin-right: -100px;
+    width: 450px;
 }
+
+.col-2.portrait:hover{
+    transform: translate(0, 3px);
+}
+
 
 .col-3{
     margin: 0;
@@ -106,6 +132,7 @@ p.timeline {
     position: relative;
     color: #555;
 }
+
 .timeline::before {
       content: counter(section);
       position: absolute;
@@ -118,11 +145,13 @@ p.timeline {
       line-height: 1.25em;
       color: whitesmoke;
       font-size: 1em;
-  }
+}
+
 .timeline:nth-child(odd) {
     border-right: 3px solid;
     padding-left: 0;
 }
+
 .timeline:nth-child(odd)::before {
     left: 100%;
     background-color: purple;
@@ -135,15 +164,15 @@ p.timeline {
 }
 
 .timeline:nth-child(even)::before {
-        right: 100%;
-        margin-right: -20px;
+    right: 100%;
+    margin-right: -20px;
 }
 
 .timeline:first-child {
-      border-top: 0;
-      border-top-right-radius:0;
-      border-top-left-radius:0;
-  }
+    border-top: 0;
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+}
 
 .timeline:last-child {
     border-bottom-right-radius:0;
