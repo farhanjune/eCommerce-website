@@ -124,7 +124,7 @@ p {
 	margin-top: 40px;
 	width: 500px;
 }
-.product-image img &.active {
+.product-image img .active {
 	display: block;
 	margin-bottom: 20px;
 }

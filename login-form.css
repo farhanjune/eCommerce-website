@@ -1,37 +1,86 @@
-.form{width:500px;border-radius:20px;height:95vh;}
-.login-heading{font-size:40px;font-weight: 700;text-transform: capitalize;font-family: 'Poppins', sans-serif;}
-.username{text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;}
-input{width:100%;border:1px solid transparent;box-shadow:none}
-.facebook-icon,.twitter-icon,.google-icon{border:1px solid transparent;padding:2% 4%;margin-left:2%;border-radius:50px;
-    background-color:#3b5998;color:white;font-size:25px;}
-.twitter-icon{padding:2% 3%;background-color: #1da1f2;}
-.google-icon{padding:2% 3.5%;background-color: #ea4335;}
-.facebook-icon:hover,.twitter-icon:hover,.google-icon:hover{background-color:rgb(80, 75, 75);transition:0.5s linear;}
-.hr-1,.hr-2{border:1px solid rgb(194, 187, 187);transition:0.2s linear;}
-.input-1,.input-2{font-size:18px;font-weight: 500;font-family: Arial, Helvetica, sans-serif;}
-#user{font-size:20px;color:rgb(194, 187, 187)}
-#lock{font-size:20px;color:rgb(194, 187, 187)}
-.login-button,.signup-button{border-radius:30px;text-transform: uppercase;font-weight: 600;padding:3% 3%;background-size:300% 100%;
-    background-image: linear-gradient(to right,#FF9900,#8c00ff,#FF9900);font-family: Arial, Helvetica, sans-serif;transition:all 0.5s linear;}
-    .login-button:hover,.signup-button:hover{background-position: 100% 0%;transition: all 0.5s linear;}
-a{color:rgb(148, 141, 141)}
-a:hover{text-decoration: none;}
-.forget-password{font-size:15px;font-weight:600;color:rgb(148, 141, 141)}
-.forget-password:hover,.sign-up:hover{color: #FF9900;}
-.sign-up{text-transform: uppercase;font-family: 'Poppins', sans-serif;font-size:13px;}
-.show-me{display:none}
-*:focus {
-    outline: none;
+body {
+  margin: 0;
+  padding: 0;
+  background: url(images/login-background.jpeg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
 }
-@media screen and (max-width:550px){
-    .form{width:450px}
+
+.login-box {
+  width: 320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
 }
-@media screen and (max-width:425px){
-    .form{width:380px}
+
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
 }
-@media screen and (max-width:375px){
-    .form{width:330px}
+
+.login-box h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
 }
-@media screen and (max-width:320px){
-    .form{margin-left:-5%;width:318px}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #b80f22;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.login-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.login-box a:hover {
+  color: #fff;
 }
