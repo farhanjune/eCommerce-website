@@ -10,16 +10,16 @@
     <div class="login-box">
       <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
       <h1>Login Here</h1>
-      <form>
+      <form action="validate-login.php" method="post">
         <!-- USERNAME INPUT -->
         <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username">
+        <input id="username" name="username" type="text" placeholder="Enter Username">
         <!-- PASSWORD INPUT -->
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password">
+        <input id="password" name="password" type="password" placeholder="Enter Password">
         <input type="submit" value="Log In">
-        <a href="#">Lost your Password?</a><br>
-        <a href="#">Don't have An account?</a>
+        <a href="reset-password.php">Lost your Password?</a><br>
+        <a href="signup.php">Don't have An account?</a>
       </form>
       
     </div>
