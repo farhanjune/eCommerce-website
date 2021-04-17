@@ -113,10 +113,10 @@
 					<h4>Lenovo YOGO</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star-o fa-fw"></i>
+                        <i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$300.00</p>
 					<form action="cart.html" method="post" action="database.php" ); >
@@ -152,12 +152,12 @@
 					<h4>Samsung QLED Monitor</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star-half-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$669.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -166,16 +166,16 @@
 					</form>
 				</div>
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/ps4.png">
+					<h4>DualShock 4 Controller</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$59.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -184,16 +184,16 @@
 					</form>
 				</div>
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/firestick.jpeg">
+					<h4>Fire TV Stick 4k</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star-half-o fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$49.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -202,8 +202,8 @@
 					</form>
 				</div>
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/echodot.jpeg">
+					<h4>Amazon Echo Dot (4th Gen)</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star fa-fw"></i>
@@ -211,7 +211,7 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$49.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -222,8 +222,8 @@
 			</div>
 			<div class="row">
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/gopro.jpeg">
+					<h4>GoPro - HERO9</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star fa-fw"></i>
@@ -231,19 +231,7 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
-				</div>
-				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$300.00</p>
+					<p>$399.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -252,16 +240,16 @@
 					</form>
 				</div>
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/ringbell.jpeg">
+					<h4>Ring Video Doorbell</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$99.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -270,8 +258,8 @@
 					</form>
 				</div>
 				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
+					<img src="images/macbook.jpeg">
+					<h4>Macbook Air 13.3" - M1 chip</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star fa-fw"></i>
@@ -279,7 +267,25 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$949.99</p>
+					<form action="cart.html" method="post" action="database.php" ); >
+						<form action="cart.html">
+						<input type="Submit" value="Add to Cart"/>
+						</form>
+						<input type="hidden" name="id" id="6" value="6">
+					</form>
+				</div>
+				<div class="col-4">
+					<img src="images/ipad.jpeg">
+					<h4>iPad Pro 11" (256GB)</h4>
+					<div class="rating">
+						<i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star fa-fw"></i>
+                        <i class="fa fa-star-half-o fa-fw"></i>
+						<i class="fa fa-star-o fa-fw"></i>
+					</div>
+					<p>$899.00</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -296,9 +302,13 @@
 						<img src="images/exclusive.png" class="offer-img">
 					</div>
 					<div class="col-2">
-						<p>Exclusively Available on BuyTech</p>
-						<h1>Smart Watch</h1>
-						<small>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Architecto veniam, quas. Animi deleniti ad accusantium eveniet consequuntur dolor eum aspernatur dolores expedita a nesciunt, aliquam facilis. Repudiandae odio, suscipit. Fugit.</small>
+						<h2>Exclusively Available on BuyTech</h2>
+						<h1>Apple Watch Hermès Series 6</h1>
+						<small>Apple Watch Hermès is the ultimate union of heritage and innovation.</small>
+						<br>
+						<medium>A bright new standard.</medium>
+						<br>
+						<small>Apple Watch Hermès debuts vibrant colors that transform the watch into a centerpiece, or a beautiful complement to any outfit.</small>
 						<br>
 						<a href="#" class="btn">Buy Now &#8594;</a>
 					</div>
