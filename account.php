@@ -1,35 +1,32 @@
 <?php
 session_start();
 if (!isset($_SESSION['flag'])){
-    header('Location: login-form.html');
+    header('Location: login-form.php');
 }
 else{
     require('database.php');
     $username = $_SESSION['username'];
     $queryUser = 'SELECT *
-                FROM users
-                WHERE username = :username';
-    $statement1 = $db->prepare($queryUser);
-    $statement1->bindValue(':username', $username);
-    $statement1->execute();
-    $user = $statement1->fetch();
-    $password = $user['password'];
-    $name = $user['name'];
+                    FROM users
+                    WHERE userName = :username';
+    $statement = $db -> prepare($queryUser);
+    $statement -> bindValue(':username', $username);
+    $statement -> execute();
+    $user = $statement -> fetch();
+    $name = $user['fullName'];
     $email = $user['email'];
     $phone = $user['phone'];
-    $card_type = $user['card_type'];
-    $card_number = $user['card_number'];
-    $card_security = $user['card_security'];
+    $card_type = $user['cardType'];
     $street = $user['street'];
     $city = $user['city'];
-    $state = $user['state'];
+    $state = $user['userState'];
     $zip = $user['zip'];
-    $statement1->closeCursor();
+    $statement -> closeCursor();
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Account</title>
@@ -50,7 +47,7 @@ else{
                             <li><a href="contact.php">Contact</a></li>
                             <?php
                             if (!isset($_SESSION['flag'])) {
-                                echo '<li><a href="login-form.html">Login</a></li>';
+                                echo '<li><a href="login-form.php">Login</a></li>';
                             }
                             else{
                                 echo '<li><a href="account.php">Account</a></li>';
@@ -113,25 +110,61 @@ else{
                 }
                 ?>
                 <label for="card_type">Card type</label>
-                <select id="card_type" name="card_type" >
+                <select id="card_type" name="card_type">
                     <option value="visa" <?php if($card_type == 'visa'){echo 'selected';} ?>>Visa</option>
                     <option value="mastercard" <?php if($card_type == 'mastercard'){echo 'selected';} ?>>MasterCard</option>
                     <option value="discover"<?php if($card_type == 'discover'){echo 'selected';} ?>>Discover</option>
                 </select>
                 <label for="card_number">Card number</label>
-                <input id="card_number" name="card_number" type="text">
+                <input id="card_number" name="card_number" autocomplete="new-password" type="password" placeholder="New or leave blank">
+                <?php
+                if(isset($_SESSION['error']['card_number_error'])){
+                    $error = $_SESSION['error']['card_number_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <label for="card_security">Security code</label>
-                <input id="card_security" name="card_security" type="text">
+                <input id="card_security" name="card_security" type="password" autocomplete="off" placeholder="New or leave blank">
+                <?php
+                if(isset($_SESSION['error']['card_security_error'])){
+                    $error = $_SESSION['error']['card_security_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <label for="street">Street address</label>
                 <input id="street" name="street" type="text" value="<?php if (isset($street)){ echo $street;} ?>">
+                <?php
+                if(isset($_SESSION['error']['street_error'])){
+                    $error = $_SESSION['error']['street_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <label for="city">City</label>
                 <input id="city" name="city" type="text" value="<?php if (isset($city)){ echo $city;} ?>">
+                <?php
+                if(isset($_SESSION['error']['city_error'])){
+                    $error = $_SESSION['error']['city_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <label for="state">State</label>
                 <input id="state" name="state" type="text" value="<?php if (isset($state)){ echo $state;} ?>">
+                <?php
+                if(isset($_SESSION['error']['state_error'])){
+                    $error = $_SESSION['error']['state_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <label for="zip">Zip/postal code</label>
                 <input id="zip" name="zip" type="number" value="<?php if (isset($zip)){ echo $zip;} ?>">
+                <?php
+                if(isset($_SESSION['error']['zip_error'])){
+                    $error = $_SESSION['error']['zip_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
                 <input type="submit" value="Save">
-                <a href="">Change password</a><br>
+                <a href="change-password.php">Change password</a><br>
             </form>
         </div>
         <div class="footer">
@@ -167,5 +200,5 @@ else{
 </html>
 
 <?php
-unset($_SESSION['error'])
+unset($_SESSION['error']);
 ?>

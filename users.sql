@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS eCommerce_website;
+
+USE eCommerce_website;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+	userName VARCHAR(255) UNIQUE NOT NULL,
+    userPassword VARCHAR(255) NOT NULL,
+    fullName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone INT NOT NULL,
+    cardType VARCHAR(255) DEFAULT 'none',
+    cardNumber INT DEFAULT NULL,
+    cardSecurity INT DEFAULT NULL,
+    cardExp DATETIME
+    street VARCHAR(255) DEFAULT NULL,
+    city VARCHAR(255) DEFAULT NULL,
+    userState VARCHAR(255) DEFAULT NULL,
+    zip INT DEFAULT NULL,
+    PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

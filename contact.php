@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,7 @@
                         <li><a href="contact.php">Contact</a></li>
                         <?php
                         if (!isset($_SESSION['flag'])) {
-                            echo '<li><a href="login-form.html">Login</a></li>';
+                            echo '<li><a href="login-form.php">Login</a></li>';
                         }
                         else{
                             echo '<li><a href="account.php">Account</a></li>';
@@ -46,14 +50,14 @@
         </div>
     </div>
     <div class="container">
-        <form>
+        <form action="validate-contact.php">
             <h3>Please fill out this form</h3><br>
             <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Sachin Meena"><span id="em1">*</span><br>
+            <input type="text" id="name" placeholder="Enter your name"><span id="em1">*</span><br>
             <label for="email">Email:</label>
-            <input type="text" id="email" placeholder="example@email.com"><span id="em2">*</span><br>
+            <input type="text" id="email" placeholder="Enter your email"><span id="em2">*</span><br>
             <label for="phone">Phone:</label>
-            <input type="text" id="phone" placeholder="77744448888"><span id="em3">*</span><br>
+            <input type="text" id="phone" placeholder="Enter your phone"><span id="em3">*</span><br>
             <label id="comment_label" for="comment">Comment:</label>
             <textarea id="comment" placeholder="Anything you want to tell us"></textarea><br>
             <input type="button" id="submit" value="Submit">
@@ -89,5 +93,18 @@
             <p class="copyright">Copyright 2021 - BuyTech</p>
         </div>
     </div>
+    <script>
+        var menu_items = document.getElementById('menu-items');
+
+        menu_items.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if(menu_items.style.maxHeight == "0px"){
+                menu_items.style.maxHeight = "200px";
+            }else{
+                menu_items.style.maxHeight = "0px";
+            }
+        }
+    </script>
 </body>
 </html>

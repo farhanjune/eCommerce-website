@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +26,7 @@
                             <li><a href="contact.php">Contact</a></li>
                             <?php
                             if (!isset($_SESSION['flag'])) {
-                                echo '<li><a href="login-form.html">Login</a></li>';
+                                echo '<li><a href="login-form.php">Login</a></li>';
                             }
                             else{
                                 echo '<li><a href="account.php">Account</a></li>';
@@ -201,5 +205,18 @@
                 <p class="copyright">Copyright 2021 - BuyTech</p>
             </div>
         </div>
+        <script>
+            var menu_items = document.getElementById('menu-items');
+
+            menu_items.style.maxHeight = "0px";
+
+            function menutoggle() {
+                if(menu_items.style.maxHeight == "0px"){
+                    menu_items.style.maxHeight = "200px";
+                }else{
+                    menu_items.style.maxHeight = "0px";
+                }
+            }
+        </script>
     </body>
 </html>
