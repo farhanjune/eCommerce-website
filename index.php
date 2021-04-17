@@ -71,6 +71,7 @@
 			<h2 class="title">Featured Products</h2>
 			<div class="row">
 				<div class="col-4">
+				<a href="apple-watch.html">
 					<img src="images/product-1.jpeg">
 					<h4>Apple Watch Series 5</h4>
 					<div class="rating">
@@ -80,7 +81,7 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$279.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -100,7 +101,7 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-half-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$249.00</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -110,7 +111,7 @@
 				</div>
 				<div class="col-4">
 					<img src="images/product-3.jpeg">
-					<h4>Lenovo YOGO</h4>
+					<h4>Lenovo YOGA</h4>
 					<div class="rating">
 						<i class="fa fa-star fa-fw"></i>
                         <i class="fa fa-star fa-fw"></i>
@@ -118,7 +119,7 @@
                         <i class="fa fa-star-o fa-fw"></i>
                         <i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$899.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>
@@ -136,7 +137,7 @@
 						<i class="fa fa-star fa-fw"></i>
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
-					<p>$300.00</p>
+					<p>$79.99</p>
 					<form action="cart.html" method="post" action="database.php" ); >
 						<form action="cart.html">
 						<input type="Submit" value="Add to Cart"/>

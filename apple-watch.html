@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>BuyTech | Electronics</title>
+		<link rel="stylesheet" href="productview.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="productview.js"></script> 
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+						<img src="images/logo.png" class="branding-logo">
+					</div>
+					<nav>
+						<ul id="menu-items">
+							<li><a href="index.php">Home</a></li>
+							<li><a href="#">Products</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="login-form.html">Login</a></li>
+						</ul>
+					</nav>
+					<img src="images/cart.png" width="30px" height="30px">
+					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+				</div>
+				<div>
+					<nav class="categories">
+						<ul class="categorieslist">
+							<li><a href="#">Wearable Technology</a></li>
+							<li><div class="divider"></div></li>
+							<li><a href="#">Smartwatch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="product-container">
+			<div class="product">
+				<div class="product-media">
+					<div class ="product-image">
+						<img class="active" src="images/product-1.jpeg" alt="..." id="active">
+					</div>
+					<div class="product-thumbnails">
+						<div class="thumb">
+							<img src="images/watch2.jpeg" alt="..." id="thumbimg" onclick="changeImage('images/watch2.jpeg')">
+						</div>
+						<div class="thumb">
+							<img src="images/watch1.jpeg" alt="..." id="thumbimg" onclick="changeImage('images/watch1.jpeg')">
+						</div>
+						<div class="thumb">
+							<img src="images/watch3.jpeg" alt="..." id="thumbimg" onclick="changeImage('images/watch3.jpeg')">
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="product-description">
+					<div class="desc-head">
+						<h1> Apple Watch Series 5 </h1>
+						<h2> $279.00 </h2>
+					</div>	
+					<div class="desc-content"> 
+						<h1>Featuring an Always-On Retina Display</h1>
+                        <br>
+						<h2>Built-In Compass and International Emergency Calling</h2>
+						<p>Apple Watch Series 5 features an innovative new display that allows the time and important information to remain visible at all times. Each watch face has been carefully optimized for the new display and to preserve battery life, the screen intelligently dims when a user’s wrist is down and returns to full brightness with a raise or a tap. Several advanced technologies work together to deliver this new feature, including the industry’s only low-temperature polysilicon and oxide display (LTPO), ultra-low power display driver, efficient power management integrated circuit and new ambient light sensor. This combination of hardware innovation and incredible software design allows Apple Watch Series 5 to offer all-day 18-hour battery life.</p>
+					</div>
+					<div class="purchase">
+						<div class="quantity">
+							<label for="quantity">Quantity:</label>
+							<select id="quantity" name="quantity">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
