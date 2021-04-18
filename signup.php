@@ -13,7 +13,7 @@ if (isset($_SESSION['flag'])){
         <link rel="stylesheet" href="signup.css">
     </head>
     <body>
-        <div>
+        <div class="signup-box">
             <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
             <h1>Sign Up!</h1>
             <form action="validate-signup.php" method="post">
