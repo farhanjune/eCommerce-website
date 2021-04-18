@@ -21,10 +21,10 @@ $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $phone = filter_input(INPUT_POST, 'phone', FILTER_VALIDATE_INT);
 $card_type = $_POST['card_type'];
-$card_number = int_or_null(filter_input(INPUT_POST, 'card_number',
-    FILTER_VALIDATE_REGEXP, '^(\s{0}|\d{16})$'));
-$card_security = int_or_null(filter_input(INPUT_POST, 'card_security',
-    FILTER_VALIDATE_REGEXP, '^(\s{0}|\d{3,4})$'));
+$card_number = int_or_null(filter_input(INPUT_POST, 'card_number', FILTER_VALIDATE_INT));
+$card_security = int_or_null(filter_input(INPUT_POST, 'card_security', FILTER_VALIDATE_INT));
+$exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
+$today = new DateTime('now');
 $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
 $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
 $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
@@ -35,20 +35,20 @@ $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $statement1 = $db -> prepare($queryUserByUsername);
 $statement1 -> bindValue(':username', $username);
 $statement1 -> execute();
-$userWithUsername = $statement1 -> fetch();
-$same_username = ($userWithUsername['userName'] == $_SESSION['username']);
-$same_username_email = $userWithUsername['email'];
+$userByUsername = $statement1 -> fetch();
+$same_username = ($userByUsername['userName'] == $_SESSION['username']);
+$same_username_and_email = $userByUsername['email'];
 $statement1 -> closeCursor();
 
 $queryUserByEmail = 'SELECT * FROM users WHERE email = :email';
 $statement2 = $db -> prepare($queryUserByEmail);
 $statement2 -> bindValue(':email', $email);
 $statement2 -> execute();
-$userWithEmail = $statement2 -> fetch();
-$same_email = ($userWithEmail['email'] == $same_username_email);
+$userByEmail = $statement2 -> fetch();
+$same_email = ($userByEmail['email'] == $same_username_and_email);
 $statement2 -> closeCursor();
 
-if (is_null($username)){
+if (empty($_POST['username'])){
     $_SESSION['error']['username_error'] = 'Please enter a username';
 }
 elseif (!$username){
@@ -58,7 +58,7 @@ elseif (!$same_username){
     $_SESSION['error']['username_error'] = 'That username is taken';
 }
 
-if(is_null($name)){
+if(empty($_POST['name'])){
     $_SESSION['error']['name_error'] = 'Please enter a name';
 }
 elseif (!$name){
@@ -68,56 +68,60 @@ elseif (!$name){
 if (is_null($email)){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
-elseif (!$email){
+elseif (empty($_POST['email'])){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
 elseif (!$same_email){
     $_SESSION['error']['email_error'] = 'That email is taken';
 }
 
-if (is_null($phone)){
+if (empty($_POST['phone'])){
     $_SESSION['error']['phone_error'] = 'Please enter a phone number';
 }
 elseif (!$phone){
     $_SESSION['error']['phone_error'] = 'Invalid entry format';
 }
 
-if (!$card_number){
+if (empty($_POST['card_number'])){
     $_SESSION['error']['card_number_error'] = 'Invalid entry format';
 }
 elseif ($card_number == 'null'){
     $card_number = null;
 }
 
-if (!$card_security){
+if (empty($_POST['card_security'])){
     $_SESSION['error']['card_security_error'] = 'Invalid entry format';
 }
 elseif ($card_security == 'null'){
     $card_security = null;
 }
 
-if (is_null($street)){
+if($exp_date < date('Y-m-d')){
+    $_SESSION['error']['exp_date_error'] = 'Invalid expiration date';
+}
+
+if (empty($_POST['street'])){
     $_SESSION['error']['street_error'] = 'Please enter a street address';
 }
 elseif (!$street){
     $_SESSION['error']['street_error'] = 'Invalid entry format';
 }
 
-if (is_null($city)){
+if (empty($_POST['city'])){
     $_SESSION['error']['city_error'] = 'Please enter a city';
 }
 elseif (!$city){
     $_SESSION['error']['city_error'] = 'Invalid entry format';
 }
 
-if (is_null($state)){
+if (empty($_POST['state'])){
     $_SESSION['error']['state_error'] = 'Please enter a state';
 }
 elseif (!$state){
     $_SESSION['error']['state_error'] = 'Invalid entry format';
 }
 
-if (is_null($zip)){
+if (empty($_POST['zip'])){
     $_SESSION['error']['zip_error'] = 'Please enter a valid zip/postal code';
 }
 elseif (!$zip){
@@ -131,6 +135,7 @@ if (empty($_SESSION['error'])) {
                             email = :email,
                             phone = :phone,
                             cardType = :card_type,
+                            cardExp = :exp_date,
                             street = :street,
                             city = :city,
                             userState = :state,
@@ -143,6 +148,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':email', $email);
     $statement3 -> bindValue(':phone', $phone);
     $statement3 -> bindValue(':card_type', $card_type);
+    $statement3 -> bindValue(':exp_date', $exp_date->format('Y-m-d'));
     $statement3 -> bindValue(':street', $street);
     $statement3 -> bindValue(':city', $city);
     $statement3 -> bindValue(':state', $state);

@@ -17,7 +17,8 @@ $user = $statement -> fetch();
 $existing_username = $user['userName'];
 $password_match = password_verify($password, $user['userPassword']);
 
-if (is_null($username)){
+/* USERNAME */
+if (empty($_POST['username'])){
     $_SESSION['error']['username_error'] = 'Please enter a username';
 }
 elseif (!$username){
@@ -27,6 +28,7 @@ elseif (is_null($existing_username)){
     $_SESSION['error']['username_error'] = 'Incorrect username';
 }
 
+/* PASSWORD */
 if (is_null($password) || $password == false){
     $_SESSION['error']['password_error'] = 'Please enter a password';
 }

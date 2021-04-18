@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('database.php');
-include_once 'send_email.php';
+include_once 'send-email.php';
 $_SESSION['error'] = array();
 $_SESSION['success'] = array();
 
