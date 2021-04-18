@@ -28,7 +28,7 @@ session_start();
 							<li><a href="contact.php">Contact</a></li>
                             <?php
                                 if (!isset($_SESSION['flag'])) {
-                                    echo '<li><a href="login-form.html">Login</a></li>';
+                                    echo '<li><a href="login-form.php">Login</a></li>';
                                 }
                                 else{
                                     echo '<li><a href="account.php">Account</a></li>';
