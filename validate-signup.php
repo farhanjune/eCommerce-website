@@ -1,35 +1,24 @@
 <?php
 session_start();
 require('database.php');
+include_once 'number_validation.php';
 $_SESSION['error'] = array();
 $_SESSION['success'] = array();
-
-function int_or_null($var){
-    if (is_integer($var)){
-        return $var;
-    }
-    elseif (empty($var)){
-        return 'null';
-    }
-    else{
-        return false;
-    }
-}
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$phone = filter_input(INPUT_POST, 'phone', FILTER_VALIDATE_INT);
-$card_type = filter_input(INPUT_POST, 'card_type');
-$card_number = int_or_null(filter_input(INPUT_POST, 'card_number', FILTER_VALIDATE_INT));
-$card_security = int_or_null(filter_input(INPUT_POST, 'card_security', FILTER_VALIDATE_INT));
+$phone = phone_validate($_POST['phone']);
+$card_type = $_POST['card_type'];
+$card_number = card_number_validate($_POST['card_number']);
+$card_security = card_security_validate($_POST['card_security']);
 $exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
 $today = new DateTime('now');
 $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
-$city = filter_input(INPUT_POST, 'city',FILTER_SANITIZE_STRING);
-$state = filter_input(INPUT_POST, 'state',FILTER_SANITIZE_STRING);
+$city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
+$state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
 $zip = filter_input(INPUT_POST, 'zip', FILTER_VALIDATE_INT);
 
 $queryUserByUsername = 'SELECT * FROM users WHERE userName = :username';
@@ -105,19 +94,19 @@ elseif (!$phone){
 }
 
 /* CARD NUMBER */
-if (empty($_POST['card_number'])){
-    $_SESSION['error']['card_number_error'] = 'Invalid entry format';
+if ($card_number == 'null'){
+    $_SESSION['error']['card_number_error'] = 'Please enter a card number';
 }
-elseif ($card_number == 'null'){
-    $card_number = null;
+elseif (!$card_number){
+    $_SESSION['error']['card_number_error'] = 'Invalid entry format';
 }
 
 /* CARD SECURITY */
-if (empty($_POST['card_security'])){
-    $_SESSION['error']['card_security_error'] = 'Invalid entry format';
+if ($card_security == 'null'){
+    $_SESSION['error']['card_security_error'] = 'Please enter a security code';
 }
-elseif ($card_security == 'null'){
-    $card_security = null;
+elseif (!$card_security){
+    $_SESSION['error']['card_security_error'] = 'Invalid entry format';
 }
 
 /* EXP DATE */
@@ -160,10 +149,10 @@ elseif (!$zip){
 if (empty($_SESSION['error'])) {
     $queryNewUser = 'INSERT INTO users
                         (userName, userPassword, fullName, email, phone, 
-                        cardType, cardNumber, cardSecurity, cardExp, street,
+                        cardType, cardNumber, cardSecurity, lastFour, cardExp, street,
                         city, userState, zip)
                         VALUES (:username, :password, :name, :email, :phone, 
-                        :card_type, :card_number, :card_security, :exp_date, :street,
+                        :card_type, :card_number, :card_security, :last_four, :exp_date, :street,
                         :city, :state, :zip)';
     $statement3 = $db->prepare($queryNewUser);
     $statement3 -> bindValue(':username', $username);
@@ -174,6 +163,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':card_type', $card_type);
     $statement3 -> bindValue(':card_number', password_hash($card_number, PASSWORD_DEFAULT));
     $statement3 -> bindValue(':card_security', password_hash($card_security, PASSWORD_DEFAULT));
+    $statement3 -> bindValue(':last_four', substr($_POST['card_number'], strlen($_POST['card_number'])-4));
     $statement3 -> bindValue(':exp_date', $exp_date -> format('Y-m-d H:i:s'));
     $statement3 -> bindValue(':street', $street);
     $statement3 -> bindValue(':city', $city);
@@ -181,7 +171,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':zip', $zip);
     $statement3 -> execute();
     $statement3 -> closeCursor();
-    $_SESSION['success']['message'] = 'Your account has been set up!' . password_hash($password, PASSWORD_DEFAULT);
+    $_SESSION['success']['message'] = 'Your account has been set up!';
     $_SESSION['success']['link'] = 'login';
     header("location: success.php");
 }

@@ -2,44 +2,46 @@
 session_start();
 require('database.php');
 $_SESSION['error'] = array();
-$_SESSION['success'];
+$_SESSION['success'] = array();
 
-$old_password = filter_input(INPUT_POST, 'old_password', FILTER_SANITIZE_STRING);
+$current_password = filter_input(INPUT_POST, 'current_password', FILTER_SANITIZE_STRING);
 $new_password = filter_input(INPUT_POST, 'new_password', FILTER_SANITIZE_STRING);
 $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
 
-$queryUserPassword = 'SELECT userPassword
-                FROM users
-                WHERE userName = ' . $_SESSION['username'];
+$queryUserPassword = 'SELECT *
+                        FROM users
+                        WHERE userName = :username';
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $statement1 = $db -> prepare($queryUserPassword);
+$statement1 -> bindValue(':username', $_SESSION['username']);
 $statement1 -> execute();
-$existing_password = $statement1 -> fetch();
-$password_match =
+$user = $statement1 -> fetch();
+$existing_password = $user['userPassword'];
+$password_match = password_verify($current_password, $existing_password);
 $statement1 -> closeCursor();
 
-if (is_null($old_password)){
-    $_SESSION['error']['old_password_error'] = 'Please enter your current password';
+if (empty($_POST['current_password'])){
+    $_SESSION['error']['$current_password_error'] = 'Please enter your current password';
 }
-elseif (!$old_password){
-    $_SESSION['error']['old_password_error'] = 'Invalid entry format';
+elseif (!$current_password){
+    $_SESSION['error']['$current_password_error'] = 'Invalid entry format';
 }
-elseif (!password_verify($old_password, $existing_password)){
-    $_SESSION['error']['old_password_error'] = 'Incorrect password';
+elseif (!$password_match){
+    $_SESSION['error']['$current_password_error'] = 'Incorrect password';
 }
 
-if (is_null($new_password)){
+if (empty($_POST['new_password'])){
     $_SESSION['error']['new_password_error'] = 'Please enter a new password';
 }
 elseif (!$new_password){
     $_SESSION['error']['new_password_error'] = 'Invalid entry format';
 }
 
-if (is_null($confirm_password)){
+if (empty($_POST['confirm_password'])){
     $_SESSION['error']['confirm_password_error'] = 'Please re-enter your new password';
 }
 elseif (!$confirm_password){
-    $_SESSION['error']['new_password_error'] = 'Invalid entry format';
+    $_SESSION['error']['confirm_password_error'] = 'Invalid entry format';
 }
 
 if ($new_password !== $confirm_password){

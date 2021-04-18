@@ -160,5 +160,5 @@ if (isset($_SESSION['flag'])){
 </html>
 
 <?php
-unset($_SESSION['error'])
+unset($_SESSION['error']);
 ?>

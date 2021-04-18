@@ -19,7 +19,7 @@ $existing_code = $user['userPassword'];
 $username = $user['userName'];
 $statement1 -> closeCursor();
 
-if (is_null($code)){
+if (empty($_POST['code'])){
     $_SESSION['error']['code_error'] = 'Please enter your code';
 }
 elseif (!$code){
@@ -29,14 +29,14 @@ elseif (is_null($existing_code)){
     $_SESSION['error']['code_error'] = 'Incorrect code';
 }
 
-if (is_null($new_password)){
+if (empty($_POST['new_password'])){
     $_SESSION['error']['new_password_error'] = 'Please enter a new password';
 }
 elseif (!$new_password){
     $_SESSION['error']['new_password_error'] = 'Invalid entry format';
 }
 
-if (is_null($confirm_password)){
+if (empty($_POST['confirm_password'])){
     $_SESSION['error']['confirm_password_error'] = 'Please re-enter your new password';
 }
 elseif (!$confirm_password){

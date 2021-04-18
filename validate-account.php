@@ -1,28 +1,18 @@
 <?php
 session_start();
 require('database.php');
+include_once 'number_validation.php';
 $_SESSION['error'] = array();
 $_SESSION['success'] = array();
 
-function int_or_null($var){
-    if (is_integer($var)){
-        return $var;
-    }
-    elseif (empty($var)){
-        return 'null';
-    }
-    else{
-        return false;
-    }
-}
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$phone = filter_input(INPUT_POST, 'phone', FILTER_VALIDATE_INT);
+$phone = phone_validate($_POST['phone']);
 $card_type = $_POST['card_type'];
-$card_number = int_or_null(filter_input(INPUT_POST, 'card_number', FILTER_VALIDATE_INT));
-$card_security = int_or_null(filter_input(INPUT_POST, 'card_security', FILTER_VALIDATE_INT));
+$card_number = card_number_validate($_POST['card_number']);
+$card_security = card_security_validate($_POST['card_security']);
 $exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
 $today = new DateTime('now');
 $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
@@ -48,6 +38,7 @@ $userByEmail = $statement2 -> fetch();
 $same_email = ($userByEmail['email'] == $same_username_and_email);
 $statement2 -> closeCursor();
 
+/* USERNAME */
 if (empty($_POST['username'])){
     $_SESSION['error']['username_error'] = 'Please enter a username';
 }
@@ -58,6 +49,7 @@ elseif (!$same_username){
     $_SESSION['error']['username_error'] = 'That username is taken';
 }
 
+/* PASSWORD */
 if(empty($_POST['name'])){
     $_SESSION['error']['name_error'] = 'Please enter a name';
 }
@@ -65,6 +57,7 @@ elseif (!$name){
     $_SESSION['error']['name_error'] = 'Invalid entry format';
 }
 
+/* EMAIL */
 if (is_null($email)){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
@@ -75,6 +68,7 @@ elseif (!$same_email){
     $_SESSION['error']['email_error'] = 'That email is taken';
 }
 
+/* PHONE */
 if (empty($_POST['phone'])){
     $_SESSION['error']['phone_error'] = 'Please enter a phone number';
 }
@@ -82,24 +76,28 @@ elseif (!$phone){
     $_SESSION['error']['phone_error'] = 'Invalid entry format';
 }
 
-if (empty($_POST['card_number'])){
+/* CARD NUMBER */
+if (!$card_number){
     $_SESSION['error']['card_number_error'] = 'Invalid entry format';
 }
 elseif ($card_number == 'null'){
     $card_number = null;
 }
 
-if (empty($_POST['card_security'])){
+/* CARD SECURITY */
+if (!$card_security){
     $_SESSION['error']['card_security_error'] = 'Invalid entry format';
 }
 elseif ($card_security == 'null'){
     $card_security = null;
 }
 
-if($exp_date < date('Y-m-d')){
+/* EXP DATE */
+if($exp_date < $today){
     $_SESSION['error']['exp_date_error'] = 'Invalid expiration date';
 }
 
+/* STREET */
 if (empty($_POST['street'])){
     $_SESSION['error']['street_error'] = 'Please enter a street address';
 }
@@ -107,6 +105,7 @@ elseif (!$street){
     $_SESSION['error']['street_error'] = 'Invalid entry format';
 }
 
+/* CITY */
 if (empty($_POST['city'])){
     $_SESSION['error']['city_error'] = 'Please enter a city';
 }
@@ -114,6 +113,7 @@ elseif (!$city){
     $_SESSION['error']['city_error'] = 'Invalid entry format';
 }
 
+/* STATE */
 if (empty($_POST['state'])){
     $_SESSION['error']['state_error'] = 'Please enter a state';
 }
@@ -121,6 +121,7 @@ elseif (!$state){
     $_SESSION['error']['state_error'] = 'Invalid entry format';
 }
 
+/* ZIP */
 if (empty($_POST['zip'])){
     $_SESSION['error']['zip_error'] = 'Please enter a valid zip/postal code';
 }
@@ -148,7 +149,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':email', $email);
     $statement3 -> bindValue(':phone', $phone);
     $statement3 -> bindValue(':card_type', $card_type);
-    $statement3 -> bindValue(':exp_date', $exp_date->format('Y-m-d'));
+    $statement3 -> bindValue(':exp_date', $exp_date -> format('Y-m-d H:i:s'));
     $statement3 -> bindValue(':street', $street);
     $statement3 -> bindValue(':city', $city);
     $statement3 -> bindValue(':state', $state);
@@ -162,9 +163,12 @@ if (empty($_SESSION['error'])) {
     if (isset($card_number)){
         $queryUpdateCardNumber = 'UPDATE users 
                                     SET cardNumber = :card_number
+                                    SET lastFour = :last_four
                                     WHERE userName = ' . $_SESSION['username'];
         $statement4 = $db -> prepare($queryUpdateCardNumber);
-        $statement4 -> bindValue(':card_number', $card_number);
+        $statement4 -> bindValue(':card_number', password_hash($card_number, PASSWORD_DEFAULT));
+        $statement4 -> bindValue(':last_four', substr($_POST['card_number'],
+            strlen($_POST['card_number'])-4));
         $statement4 -> execute();
         $statement4 -> closeCursor();
     }
@@ -178,7 +182,6 @@ if (empty($_SESSION['error'])) {
         $statement5 -> execute();
         $statement5 -> closeCursor();
     }
-
     header("location: success.php");
 }
 else{

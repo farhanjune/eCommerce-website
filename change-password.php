@@ -6,7 +6,7 @@ if (!isset($_SESSION['flag'])){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Change Password</title>
@@ -16,11 +16,11 @@ if (!isset($_SESSION['flag'])){
         <div class="login-box">
             <h1>Change your password</h1>
             <form action="validate-change-password.php" method="post">
-                <label for="old_password">Current password</label>
-                <input id="old_password" name="old_password" type="password">
+                <label for="current_password">Current password</label>
+                <input id="current_password" autocomplete="new-password" name="current_password" type="password">
                 <?php
-                if(isset($_SESSION['error']['old_password_error'])){
-                    $error = $_SESSION['error']['old_password_error'];
+                if(isset($_SESSION['error']['current_password_error'])){
+                    $error = $_SESSION['error']['current_password_error'];
                     echo "<span>$error</span>";
                 }
                 ?>
@@ -43,7 +43,6 @@ if (!isset($_SESSION['flag'])){
                 <input type="submit" name="submit_button" value="Submit">
                 <a href="forgot-password.php">Forgot your password?</a><br>
             </form>
-
         </div>
     </body>
 </html>
