@@ -10,7 +10,7 @@ if (isset($_SESSION['flag'])){
     <head>
         <meta charset="utf-8">
         <title>Sign Up</title>
-        <link rel="stylesheet" href="login-form.css">
+        <link rel="stylesheet" href="signup.css">
     </head>
     <body>
         <div>
