@@ -71,7 +71,7 @@ if (isset($_SESSION['flag'])){
                     <option value="mastercard">MasterCard</option>
                     <option value="discover">Discover</option>
                 </select><br>
-                <label for="card_number">Card number</label>
+                <label for="card_number" id="card_typelabel">Card number</label>
                 <input id="card_number" name="card_number" type="text"><br>
                 <?php
                 if(isset($_SESSION['error']['card_number_error'])){
@@ -87,7 +87,7 @@ if (isset($_SESSION['flag'])){
                     echo "<span>$error</span><br>";
                 }
                 ?>
-                <label for="month">Expiration month</label>
+                <label for="month" id="monthlabel">Expiration month</label>
                 <select id="month" name="month">
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -102,7 +102,7 @@ if (isset($_SESSION['flag'])){
                     <option value="11">11</option>
                     <option value="12" >12</option>
                 </select>
-                <label for="year">Expiration year</label>
+                <label for="year" id="yearlabel">Expiration year</label>
                 <select id="year" name="year">
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
