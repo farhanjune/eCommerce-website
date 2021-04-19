@@ -10,6 +10,7 @@ CREATE TABLE `products` (
   `productName` varchar(255) NULL DEFAULT NULL,
   `listPrice` decimal(10,2) NULL DEFAULT NULL,
   `productImage` varchar(200) NULL DEFAULT NULL
+  primary key (productID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `products` (`productID`, `categoryID`, `productCode`, `productName`, `listPrice`, `productImage`) VALUES ('4', '10', 'airpods', 'airpods', '249.49', 'airpods.jpg');
