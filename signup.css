@@ -9,7 +9,7 @@ body {
 
 .signup-box {
   width: 320px;
-  height: 1100px;
+  height: 1130px;
   background: #fffefe;
   color: #FF9900;
   top: 50%;
@@ -83,4 +83,12 @@ body {
 
 .signup-box a:hover {
   color: #FF9900;
+}
+#card_typelabel, #monthlabel, #yearlabel{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#card_type, #month, #year{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
