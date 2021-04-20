@@ -11,22 +11,13 @@
 		$error_message = $e->getMessage();
 	}
 
- if(!isset($_SESSION)) 
+	if(!isset($_SESSION['cart'])) 
     { 
 		$lifetime = 60 * 60 * 24 * 14;
 		session_set_cookie_params($lifetime, '/');
         session_start(); 
     } 
 
-$sql="SELECT * FROM cart"; 
-$tt = "INSERT INTO cart (productID, quantity) VALUES ('5', '10')"; 
-echo "<table>
-<tr><th>id</th><th>qty</th></tr>";
-
-foreach ($dbo->query($sql) as $row) {
-	echo "<tr ><td>$row[productID]</td><td>$row[quantity]</td></tr>";
-}
-echo "</table>";
 
 require_once('cart.php');
 $action = filter_input(INPUT_POST, 'action');
@@ -42,16 +33,25 @@ switch($action) {
     case 'add':
         $product_key = filter_input(INPUT_POST, 'productkey');
 		$item_qty = filter_input(INPUT_POST, 'itemqty');
-		add_item($product_key, $item_qty);
+		add_item($product_key, $item_qty, $dbo);
 		include('cart_view.php');
 		break;
 		
 	case 'update':
         $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         foreach($new_qty_list as $key => $qty) {
-            if ($_SESSION['cart'][$key]['qty'] != $qty) {
-                update_item($key, $qty);
-            }
+            if ($_SESSION['cart'][$key]['quantity'] < $qty) {
+                update_item($key, $qty, $dbo);
+            } else if ($_SESSION['cart'][$key]['quantity'] > $qty) {
+				unset($_SESSION['cart'][$key]);
+				$delsql = "DELETE FROM cart WHERE productID = ('$key')";
+				if ($dbo->query($delsql) === TRUE) {
+				  echo "Record deleted successfully";
+				} else {
+				  echo "Error deleting record: " . $dbo->error;
+				}
+				add_item($key, $qty, $dbo);
+			}
         }
         include('cart_view.php');
         break;
@@ -59,11 +59,18 @@ switch($action) {
     case 'show_cart':
         include('cart_view.php');
         break;
-	case 'empty cart':
+	case 'empty_cart':
+		$emptysql = "DELETE FROM cart";
+		if ($dbo->query($emptysql) === TRUE) {
+				  echo "Cleared";
+				} else {
+				  echo "Error clearing: " . $dbo->error;
+				}
 		unset($_SESSION['cart']);
-		include('cart_view.php');
 		break;
 }
+echo $_SESSION['username'];
+$username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,7 +93,7 @@ switch($action) {
 					</div>
 					<nav>
 						<ul id="menu-items">
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="#">Products</a></li>
 							<li><a href="#">About</a></li>
 							<li><a href="#">Contact</a></li>
@@ -126,30 +133,35 @@ switch($action) {
                     <th class="right">Quantity</th>
                     <th class="right">Item Total</th>
                 </tr>
-			<?php 
-				$sql = 'SELECT *, quantity FROM products, cart WHERE products.productID = cart.productID';
-				foreach($dbo->query($sql) as $key => $item ) :
-					$cost  = number_format($item['listPrice'], 2);					
-					$total = $cost * $item['quantity'];
-					
-            ?>
+				<?php 
+					$totalcart = 0;
+					$sql = "SELECT p.*, COUNT(c.productID) AS quantity 
+							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
+							WHERE c.productID = p.productID
+							GROUP BY productID";
+					foreach($dbo->query($sql) as $key => $item ) :
+						$cost  = number_format($item['listPrice'], 2);					
+						$total = $cost * $item['quantity'];
+						$totalcart += $total;
+						
+				?>
 					<tr>
 						<td><?php echo $item['productName']; ?> </td>
 
 						<td class="right">
 							$<?php echo $cost; ?> </td>
 						<td class="right">
-							<?php echo $item['quantity']; ?>
+							<input type="text" name="newqty[<?php echo $key; ?>]" value="<?php echo $item['quantity']; ?>">
 						</td>
 
 						<td class="right">
 							$<?php echo $total; ?></td>
 					</tr>
 					
-			<?php endforeach; ?>
+				<?php endforeach; ?>
 				<tr id="cart_footer">
                     <td colspan="3"><b>Subtotal</b></td>
-                    <td>$<?php echo get_subtotal(); ?></td>
+                    <td>$<?php echo $totalcart; ?></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="right">
@@ -160,12 +172,17 @@ switch($action) {
             <p>Click "Update Cart" to update quantities in
                your cart. Enter a quantity of 0 to remove
                an item.</p>
+			   <p><a href=".?action=show_add_item">Add Item</a></p>
+			</form>
+			<form action="." method="post">
+				<input type="hidden" name="action"
+                    value="empty_cart">
+					<input type="submit" name="action"
+                               value="empty_cart"></td>
             </form>
         <?php endif; ?>
 
-        <p><a href=".?action=show_add_item">Add Item</a></p>
-
-        <p><a href=".?action=empty_cart">Empty Cart</a></p>
+        
 
 	</body>
 </html>

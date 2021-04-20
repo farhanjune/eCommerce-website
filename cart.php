@@ -1,10 +1,18 @@
 <?php
+	$dsn = 'mysql:host=localhost;dbname=database';
+	$username = 'root';
+	$password = '';
+	if (empty($_SESSION['cart'])) {
+		$lifetime = 60 * 60 * 24 * 14;
+		session_set_cookie_params($lifetime, '/');
+		session_start();
+	}
+	$dbo = new PDO($dsn, $username, $password);
+	
 
-	$sql="SELECT productID, productName, listPrice, categoryID FROM products"; 
-
-function add_item($key, $quantity) {
-
-    global $products;
+function add_item($key, $quantity, $dbo) {
+	
+   
 
     if ($quantity < 1) return;
 
@@ -12,59 +20,29 @@ function add_item($key, $quantity) {
 
     // If item already exists in cart, update quantity
 
-    if (isset($_SESSION['cart'][$key])) {
+   for ($i = 1; $i <= $quantity; $i++) {
+	   update_item($key, $dbo);
+   }
+	
+	
+}
+function update_item($key, $dbo) {
+	$username = $_SESSION['username'];
+    $insert = "INSERT INTO cart (productID, userId) VALUES ('$key', '$username')";
+	if ($dbo->query($insert) == TRUE) {
+		  echo "New record created successfully";
 
-        $quantity += $_SESSION['cart'][$key]['quantity'];
-
-        update_item($key, $quantity);
-
-        return;
-
-    }
-	$cost = "SELECT listPrice FROM products WHERE 'productID' = $key";
-
-    $total = (double)$cost * (int)$quantity;
-
+	} else {
+		echo "Error: " . $insert . "<br>" . $dbo->error;
+	}
     $item = array(
-
-        'name' => $products[$key]['name'],
-
-        'cost' => $cost,
-
-        'qty'  => $quantity,
-
-        'total' => $total
-
+        'productID' => $key,
+        'userID' => $username,
     );
 
-    $_SESSION['cart'][$key] = $item;
-
+    $_SESSION['cart'][] = $item;
 }
-function update_item($key, $quantity) {
-
-    $quantity = (int) $quantity;
-
-    if (isset($_SESSION['cart'][$key])) {
-
-        if ($quantity <= 0) {
-
-            unset($_SESSION['cart'][$key]);
-
-        } else {
-
-            $_SESSION['cart'][$key]['qty'] = $quantity;
-
-            $total = (double)$_SESSION['cart'][$key]['cost'] *
-                     $_SESSION['cart'][$key]['qty'];
-
-            $_SESSION['cart'][$key]['total'] = $total;
-
-        }
-
-    }
-
-}
-function get_subtotal() {
+function get_subtotal($dbo) {
 
     $subtotal = 0;
 
