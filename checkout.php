@@ -17,8 +17,7 @@
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John">
-			<input type="text" id="lname" name="firstname" placeholder="Doe">
+            <input type="text" id="fname" name="fullname" placeholder="John Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="john@example.com">
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>

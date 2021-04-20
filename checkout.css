@@ -1,7 +1,14 @@
 body {
-    font-family: Arial;
+    /*font-family: Arial;
     font-size: 17px;
-    padding: 8px;
+    padding: 8px;*/
+	
+	margin: 0;
+	padding: 0;
+	background: url(images/login-background.jpeg) no-repeat center top;
+	background-size: cover;
+	font-family: sans-serif;
+	height: 130vh;
 }
 
 * {
