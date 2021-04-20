@@ -10,6 +10,7 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
+    <script src="contact.js"></script>
 </head>
 <body>
     <div class="header">
@@ -49,40 +50,17 @@ session_start();
         </div>
     </div>
     <div class="container">
-        <form action="validate-contact.php" method="post">
+        <form action="validate-contact.php" onsubmit="return submitContact()" method="post">
             <h3>Please fill out this form</h3><br>
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name">
-            <?php
-            if(isset($_SESSION['error']['name_error'])){
-                $error = $_SESSION['error']['name_error'];
-                echo "<span>$error</span><br>";
-            }
-            ?>
+            <input type="text" name="name" id="name" placeholder="Enter your name"><span id="em1">*</span><br>
             <label for="email">Email:</label>
-            <input type="text" name="email" id="email" placeholder="Enter your email"><br>
-            <?php
-            if(isset($_SESSION['error']['email_error'])){
-                $error = $_SESSION['error']['email_error'];
-                echo "<span>$error</span><br>";
-            }
-            ?>
+            <input type="text" name="email" id="email" placeholder="Enter your email"><span id="em2">*</span><br>
             <label for="phone">Phone number:</label>
-            <input type="text" name="phone" id="phone" placeholder="Enter your phone">
-            <?php
-            if(isset($_SESSION['error']['phone_error'])){
-                $error = $_SESSION['error']['phone_error'];
-                echo "<span>$error</span><br>";
-            }
-            ?>
+            <input type="text" name="phone" id="phone" placeholder="Enter your phone"><span id="em3">*</span><br>
             <label id="comment_label" for="comment">Comment:</label>
-            <textarea name="comment" id="comment" placeholder="Anything you want to tell us"></textarea><br>
-            <?php
-            if(isset($_SESSION['error']['comment_error'])){
-                $error = $_SESSION['error']['comment_error'];
-                echo "<span>$error</span><br>";
-            }
-            ?>
+            <textarea name="comment" id="comment" placeholder="Anything you want to tell us"></textarea>
+            <span id="em4">*</span><br>
             <input type="submit" id="submit" value="Submit">
             <input type="reset" id="clear" value="Clear">
         </form>
@@ -91,11 +69,11 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="footer-col-1">
-                    <h3>Useful Links</h3>
+                    <h3>Links</h3>
                     <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
+                        <li>Discounts</li>
+                        <li>Blog</li>
+                        <li>Policy</li>
                     </ul>
                 </div>
                 <div class="footer-col-2">
@@ -106,9 +84,8 @@ session_start();
                     <h3>Follow Us</h3>
                     <ul>
                         <li>Facebook</li>
-                        <li>Instagram</li>
                         <li>Twitter</li>
-                        <li>YouTube</li>
+                        <li>Pinterest</li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(images/login-background.jpeg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+  }
+
+h1{
+    text-align: center;
+    color: #FF9900;
+}
+h2 {
+    text-align: center;
+    color: #fff;
+}

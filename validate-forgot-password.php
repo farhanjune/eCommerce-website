@@ -28,7 +28,7 @@ elseif (is_null($user)){
 }
 
 if (empty($_SESSION['error'])) {
-    $code = rand(1000, 9999);
+    $code = rand(10000000, 99999999);
     $message =
         '<p>Hello ' . $name . ',</p>
         <br><p>To reset your password, 

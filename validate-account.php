@@ -5,7 +5,6 @@ include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
 $_SESSION['success'] = array();
 
-
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -20,23 +19,13 @@ $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
 $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
 $zip = filter_input(INPUT_POST, 'zip', FILTER_VALIDATE_INT);
 
-$queryUserByUsername = 'SELECT * FROM users WHERE userName = :username';
+$queryUser = 'SELECT * FROM users WHERE userName = :username';
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$statement1 = $db -> prepare($queryUserByUsername);
-$statement1 -> bindValue(':username', $username);
+$statement1 = $db -> prepare($queryUser);
+$statement1 -> bindValue(':username', $_SESSION['username']);
 $statement1 -> execute();
-$userByUsername = $statement1 -> fetch();
-$same_username = ($userByUsername['userName'] == $_SESSION['username']);
-$same_username_and_email = $userByUsername['email'];
+$user = $statement1 -> fetch();
 $statement1 -> closeCursor();
-
-$queryUserByEmail = 'SELECT * FROM users WHERE email = :email';
-$statement2 = $db -> prepare($queryUserByEmail);
-$statement2 -> bindValue(':email', $email);
-$statement2 -> execute();
-$userByEmail = $statement2 -> fetch();
-$same_email = ($userByEmail['email'] == $same_username_and_email);
-$statement2 -> closeCursor();
 
 /* USERNAME */
 if (empty($_POST['username'])){
@@ -45,8 +34,15 @@ if (empty($_POST['username'])){
 elseif (!$username){
     $_SESSION['error']['username_error'] = 'Invalid entry format';
 }
-elseif (!$same_username){
-    $_SESSION['error']['username_error'] = 'That username is taken';
+elseif ($username !== $user['userName']){
+    $query = 'SELECT * FROM users WHERE userName = :username';
+    $statement = $db -> prepare($query);
+    $statement -> bindValue(':username', $username);
+    $statement -> execute();
+    $user_by_username = $statement -> fetch();
+    if ($user_by_username){
+        $_SESSION['error']['username_error'] = 'That username is taken';
+    }
 }
 
 /* PASSWORD */
@@ -58,14 +54,21 @@ elseif (!$name){
 }
 
 /* EMAIL */
-if (is_null($email)){
+if (empty($_POST['email'])){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
-elseif (empty($_POST['email'])){
+elseif (!$email){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
-elseif (!$same_email){
-    $_SESSION['error']['email_error'] = 'That email is taken';
+elseif ($email !== $user['email']){
+    $query = 'SELECT * FROM users WHERE email = :email';
+    $statement = $db -> prepare($query);
+    $statement -> bindValue(':email', $email);
+    $statement ->execute();
+    $user_by_email = $statement -> fetch();
+    if ($user_by_email){
+        $_SESSION['error']['email_error'] = 'That email is taken';
+    }
 }
 
 /* PHONE */

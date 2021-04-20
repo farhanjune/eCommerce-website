@@ -3,7 +3,7 @@ session_start();
 require('database.php');
 include_once 'numbers-validate.php';
 include_once 'send-email.php';
-$_SESSION['error'] = array();
+$_SESSION['error'] = false;
 $_SESSION['success'] = array();
 
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
@@ -12,34 +12,34 @@ $phone = phone_validate($_POST['phone']);
 $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
 
 if (empty($_POST['name'])){
-    $_SESSION['error']['name_error'] = 'Please enter a name';
+    $_SESSION['error'] = true;
 }
 elseif (!$name){
-    $_SESSION['error']['name_error'] = 'Invalid entry format';
+    $_SESSION['error'] = true;
 }
 
 if (empty($_POST['email'])){
-    $_SESSION['error']['email_error'] = 'Please enter an email address';
+    $_SESSION['error'] = true;
 }
 elseif (!$email){
-    $_SESSION['error']['email_error'] = 'Invalid entry format';
+    $_SESSION['error'] = true;
 }
 
 if ($phone == 'null'){
-    $_SESSION['error']['phone_error'] = 'Please enter a phone number';
+    $_SESSION['error'] = true;
 }
 elseif (!$phone){
-    $_SESSION['error']['phone_error'] = 'Invalid entry format';
+    $_SESSION['error'] = true;
 }
 
 if (empty($_POST['comment'])){
-    $_SESSION['error']['comment_error'] = 'Please enter a comment';
+    $_SESSION['error'] = true;
 }
 elseif (!$comment){
-    $_SESSION['error']['comment_error'] = 'Invalid entry format';
+    $_SESSION['error'] = true;
 }
 
-if (empty($_SESSION['error'])){
+if (!$_SESSION['error']){
     $message =
         '<p>AUTOMATED MESSAGE</p>
         <p>Hello ' . $name . ',</p>

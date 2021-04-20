@@ -37,7 +37,7 @@ session_start();
                             ?>
 						</ul>
 					</nav>
-					<a href="cart.html">
+					<a href="cart_view.php">
 					<img src="images/cart.png" width="30px" height="30px">
 					</a>
 					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -325,7 +325,7 @@ session_start();
 				<div class="row">
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>I've made several orders with BuyTech and have never been more satisfied. I hope BuyTech keeps up the great work!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -334,12 +334,12 @@ session_start();
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Frank González</h3>
+						<img src="images/will.jpeg">
+						<h3>Will Smith</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>I have been very happy using BuyTech this past year. Their customer support and overall experience has been great even due to the pandemic. I will continue shopping on BuyTech and rate them 5 stars!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -348,12 +348,12 @@ session_start();
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Sol P</h3>
+						<img src="images/kimk.jpeg">
+						<h3>Kim Kardashian</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>Could not have found a better place to shop for tech products. The pricing and ease in shopping for what I want is awesome!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -362,22 +362,8 @@ session_start();
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Nahiyaan Sheikh</h3>
-					</div>
-					<div class="col-3">
-						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
-						
-						<div class="rating">
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-						</div>
-						<img src="images/nopic.png">
-						<h3>Farhan Juneja</h3>
+						<img src="images/brad.jpeg">
+						<h3>Brad Pitt</h3>
 					</div>
 				</div>
 			</div>
@@ -405,29 +391,28 @@ session_start();
 		</div>
 		<div class="footer">
 			<div class="container">
-				<div class="row">
-					<div class="footer-col-1">
-						<h3>Useful Links</h3>
-						<ul>
-							<li>Coupons</li>
-							<li>Blog Post</li>
-							<li>Return Policy</li>
-						</ul>
-					</div>
-					<div class="footer-col-2">
-						<img src="images/logo.png">
-						<p>Our mission is to make electronics accessible to everyone.</p>
-					</div>
-					<div class="footer-col-3">
-						<h3>Follow Us</h3>
-						<ul>
-							<li>Facebook</li>
-							<li>Instagram</li>
-							<li>Twitter</li>
-							<li>YouTube</li>
-						</ul>
-					</div>
-				</div>
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>Discounts</li>
+                        <li>Blog</li>
+                        <li>Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our mission is to make electronics accessible to everyone.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Pinterest</li>
+                    </ul>
+                </div>
+            </div>
 				<hr>
 				<p class="copyright">Copyright 2021 - BuyTech</p>
 			</div>

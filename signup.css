@@ -4,12 +4,12 @@ body {
   background: url(images/login-background.jpeg) no-repeat center top;
   background-size: cover;
   font-family: sans-serif;
-  height: 130vh;
+  height: 160vh;
 }
 
 .signup-box {
   width: 320px;
-  height: 1130px;
+  height: 1340px;
   background: #fffefe;
   color: #FF9900;
   top: 50%;

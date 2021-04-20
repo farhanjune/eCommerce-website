@@ -26,14 +26,14 @@ $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $statement1 = $db -> prepare($queryUserByUsername);
 $statement1 -> bindValue(':username', $username);
 $statement1 -> execute();
-$userByUsername = $statement1 -> fetch();
+$user_by_username = $statement1 -> fetch();
 $statement1 -> closeCursor();
 
 $queryUserByEmail = 'SELECT * FROM users WHERE email = :email';
 $statement2 = $db -> prepare($queryUserByEmail);
 $statement2 -> bindValue(':email', $email);
 $statement2 -> execute();
-$userByEmail = $statement2 -> fetch();
+$user_by_email = $statement2 -> fetch();
 $statement2 -> closeCursor();
 
 /* USERNAME */
@@ -43,7 +43,7 @@ if (empty($_POST['username'])){
 elseif (!$username){
     $_SESSION['error']['username_error'] = 'Invalid entry format';
 }
-elseif ($userByUsername){
+elseif ($user_by_username){
     $_SESSION['error']['username_error'] = 'That username is taken';
 }
 
@@ -81,7 +81,7 @@ if (is_null($email)){
 elseif (empty($_POST['email'])){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
-elseif ($userByEmail){
+elseif ($user_by_email){
     $_SESSION['error']['email_error'] = 'That email is taken';
 }
 

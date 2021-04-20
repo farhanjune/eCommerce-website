@@ -24,12 +24,12 @@ if (empty($_POST['username'])){
 elseif (!$username){
     $_SESSION['error']['username_error'] = 'Invalid entry format';
 }
-elseif (is_null($existing_username)){
+elseif (!$user){
     $_SESSION['error']['username_error'] = 'Incorrect username';
 }
 
 /* PASSWORD */
-if (is_null($password) || $password == false){
+if (empty($_POST['password'])){
     $_SESSION['error']['password_error'] = 'Please enter a password';
 }
 elseif (!$password){

@@ -97,13 +97,13 @@
 #img1{
     box-shadow: 0 0 10px #8c00ff;
     margin-top: 230px;
-    margin-bottom: 280px;
+    margin-bottom: 320px;
     margin-left: 20px;
 }
 
 #img2{
     box-shadow: 0 0 10px purple;
-    margin-bottom: 120px;
+    margin-bottom: 200px;
     margin-left: 30px;
 }
 
@@ -114,8 +114,8 @@
 
 #img4{
     box-shadow: 0 0 10px purple;
-    margin-top: 150px;
-    margin-bottom: 230px;
+    margin-top: 210px;
+    margin-bottom: 320px;
     margin-left: 20px;
 }
 
@@ -136,7 +136,7 @@ p.timeline {
 .timeline::before {
       content: counter(section);
       position: absolute;
-      border-radius: 50%;
+      border-radius: 25%;
       padding: 10px;
       height: 1.25em;
       width: 1.25em;

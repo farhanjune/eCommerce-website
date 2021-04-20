@@ -20,6 +20,7 @@ $existing_password = $user['userPassword'];
 $password_match = password_verify($current_password, $existing_password);
 $statement1 -> closeCursor();
 
+/* CURRENT PASSWORD */
 if (empty($_POST['current_password'])){
     $_SESSION['error']['$current_password_error'] = 'Please enter your current password';
 }
@@ -30,6 +31,7 @@ elseif (!$password_match){
     $_SESSION['error']['$current_password_error'] = 'Incorrect password';
 }
 
+/* NEW PASSWORD */
 if (empty($_POST['new_password'])){
     $_SESSION['error']['new_password_error'] = 'Please enter a new password';
 }
@@ -37,14 +39,14 @@ elseif (!$new_password){
     $_SESSION['error']['new_password_error'] = 'Invalid entry format';
 }
 
+/* CONFIRM PASSWORD */
 if (empty($_POST['confirm_password'])){
     $_SESSION['error']['confirm_password_error'] = 'Please re-enter your new password';
 }
 elseif (!$confirm_password){
     $_SESSION['error']['confirm_password_error'] = 'Invalid entry format';
 }
-
-if ($new_password !== $confirm_password){
+elseif ($new_password !== $confirm_password){
     $_SESSION['error']['confirm_password_error'] = 'New passwords do not match';
 }
 

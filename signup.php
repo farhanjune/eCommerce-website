@@ -14,7 +14,8 @@ if (isset($_SESSION['flag'])){
     </head>
     <body>
         <div class="signup-box">
-            <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
+            <br>
+            <br>
             <h1>Sign Up!</h1>
             <form action="validate-signup.php" method="post">
                 <label for="name">Name</label>
@@ -153,6 +154,7 @@ if (isset($_SESSION['flag'])){
                     echo "<span>$error</span><br>";
                 }
                 ?>
+                <br>
                 <input type="submit" value="Sign Up">
             </form>
         </div>

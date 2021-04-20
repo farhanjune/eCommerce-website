@@ -11,12 +11,12 @@ unset($_SESSION['success']);
     <head>
         <meta charset="utf-8">
         <title>Logout</title>
-        <link rel="stylesheet" href="login-form.css">
+        <link rel="stylesheet" href="logout-form.css">
     </head>
     <body>
         <div>
             <h1>You've been logged out!</h1>
-            <a href="login-form.php">Log back in</a>
+            <h2><a href="login-form.php">Log back in</a></h2>
         </div>
     </body>
 </html>
