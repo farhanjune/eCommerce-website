@@ -13,6 +13,7 @@ session_start();
 <div class="login-box">
     <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
     <h1>Reset Password</h1>
+    <?php $wtf = $_SESSION['wtf']; echo $wtf ?>
     <form action="validate-reset-password.php" method="post">
         <label for="code">Code</label>
         <input id="code" name="code" type="code" placeholder="Enter code">
@@ -47,5 +48,5 @@ session_start();
 
 <?php
 unset($_SESSION['error']);
-unset($_SESSION['success']);
+unset($_SESSION['email']);
 ?>

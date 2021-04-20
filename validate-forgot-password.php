@@ -3,7 +3,6 @@ session_start();
 require('database.php');
 include_once 'send-email.php';
 $_SESSION['error'] = array();
-$_SESSION['success'] = array();
 
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $queryUser = 'SELECT *
@@ -29,15 +28,16 @@ elseif (is_null($user)){
 
 if (empty($_SESSION['error'])) {
     $code = rand(10000000, 99999999);
+    $logo = file_get_contents('logo.txt');
     $message =
-        '<p>Hello ' . $name . ',</p>
+        '<p>Hello '.$name.',</p>
         <br><p>To reset your password, 
-        please provide the following code in the prompt at the link below.</p><br> 
-        <p>Code: ' . $code . '</p>
-        <p>Link: <a href="http://localhost/eCommerce-website/reset-password.php">Click here</a><p><br>
-        <p>- BuyTech Team</p>';
+        please provide the following code when prompted.</p><br> 
+        <p>Code: ' . $code .
+        '<p>- BuyTech Team</p><br>
+        <img src="'.$logo.'">';
     send_email($email, $name, 'Reset Password', $message);
-
+    $_SESSION['email'] = $email;
     $queryCode = 'UPDATE users
                     SET userPassword = :code
                     WHERE email = :email';
@@ -46,9 +46,7 @@ if (empty($_SESSION['error'])) {
     $statement -> bindValue(':email', $email);
     $statement -> execute();
     $statement -> closeCursor();
-    $_SESSION['success']['message'] = 'Instructions to reset your password have been sent to your email.';
-    $_SESSION['success']['link'] = 'index';
-    header("location: success.php");
+    header("location: reset-password.php");
 }
 else{
     header("location: forgot-password.php");

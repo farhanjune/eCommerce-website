@@ -26,27 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Added info to about.php and fixed css properties, amended links to cart_view on major pages">
-      <change afterPath="$PROJECT_DIR$/contact.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/login-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-change-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate-forgot-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-forgot-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-login.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-reset-password.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +50,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -95,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618768466479</updated>
       <workItem from="1618768467774" duration="21298000" />
-      <workItem from="1618839075105" duration="11443000" />
+      <workItem from="1618839075105" duration="14294000" />
     </task>
     <task id="LOCAL-00001" summary="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit">
       <created>1618769334147</created>
@@ -236,10 +219,10 @@
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="100" y="123" width="1240" height="627" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1618785320108" />
-    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618930396550">
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618946692193">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.837@0.23.1440.837" timestamp="1618930396550" />
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.837@0.23.1440.837" timestamp="1618946692193" />
     <state x="521" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.839@0.23.1440.839" timestamp="1618788894175" />
   </component>
 </project>

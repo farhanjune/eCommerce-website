@@ -7,18 +7,20 @@ $_SESSION['success'] = array();
 $code = filter_input(INPUT_POST, 'code', FILTER_VALIDATE_INT);
 $new_password = filter_input(INPUT_POST, 'new_password', FILTER_SANITIZE_STRING);
 $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
+$email = $_SESSION['email'];
 
 $queryUser = 'SELECT *
                 FROM users
-                WHERE userPassword = :code';
+                WHERE email = :email';
 $statement1 = $db -> prepare($queryUser);
-$statement1 -> bindValue(':code', $code);
+$statement1 -> bindValue(':email', $email);
 $statement1 -> execute();
 $user = $statement1 -> fetch();
 $existing_code = $user['userPassword'];
 $username = $user['userName'];
 $statement1 -> closeCursor();
 
+/* CODE */
 if (empty($_POST['code'])){
     $_SESSION['error']['code_error'] = 'Please enter your code';
 }
@@ -29,6 +31,7 @@ elseif (is_null($existing_code)){
     $_SESSION['error']['code_error'] = 'Incorrect code';
 }
 
+/* NEW PASSWORD */
 if (empty($_POST['new_password'])){
     $_SESSION['error']['new_password_error'] = 'Please enter a new password';
 }
@@ -36,6 +39,7 @@ elseif (!$new_password){
     $_SESSION['error']['new_password_error'] = 'Invalid entry format';
 }
 
+/* CONFIRM PASSWORD */
 if (empty($_POST['confirm_password'])){
     $_SESSION['error']['confirm_password_error'] = 'Please re-enter your new password';
 }
@@ -61,5 +65,7 @@ if (empty($_SESSION['error'])){
     header("location: success.php");
 }
 else{
+    $_SESSION['wtf'] = 'Existing code: '.$existing_code.
+        '<br>Email: '.$email;
     header("location: reset-password.php");
 }

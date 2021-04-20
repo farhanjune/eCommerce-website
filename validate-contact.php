@@ -40,6 +40,7 @@ elseif (!$comment){
 }
 
 if (!$_SESSION['error']){
+    $logo = file_get_contents('logo.txt');
     $message =
         '<p>AUTOMATED MESSAGE</p>
         <p>Hello ' . $name . ',</p>
@@ -49,7 +50,8 @@ if (!$_SESSION['error']){
         <p>Email: '.$email.'</p>
         <p>Phone: '.$phone.'</p>
         <p>Comment: '.$comment.'</p><br>
-        <p>- BuyTech Team</p>';
+        <p>- BuyTech Team</p><br>
+        <img src="'.$logo.'">';
     send_email($email, $name, 'Contact', $message);
 
     $queryContact = 'INSERT INTO contacts
@@ -63,7 +65,7 @@ if (!$_SESSION['error']){
     $statement -> execute();
     $statement->closeCursor();
     $_SESSION['success']['message'] = 'Thank you for letting us know how you feel!
-                                        Please check your email for messages from us.';
+                                        <h1>Please check your email for messages from us.</h1>';
     $_SESSION['success']['link'] = 'index';
     header("location: success.php");
 }
