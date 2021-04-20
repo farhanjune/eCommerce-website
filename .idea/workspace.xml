@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Added info to about.php and fixed css properties, amended links to cart_view on major pages">
+      <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rLw1yAPvJ1P4LyYkjtcYjHP1t8" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../old_eCommerce-website/success.php" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="" />
+      <created>1618768466479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618768466479</updated>
+      <workItem from="1618768467774" duration="21298000" />
+      <workItem from="1618839075105" duration="8631000" />
+    </task>
+    <task id="LOCAL-00001" summary="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit">
+      <created>1618769334147</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618769334147</updated>
+    </task>
+    <task id="LOCAL-00002" summary="April 18 6:35PM">
+      <created>1618785345365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618785345365</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated validate-account.php, validate-signup.php, and validate-contact.php to include correct numbers-validate.php file">
+      <created>1618785716837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618785716837</updated>
+    </task>
+    <task id="LOCAL-00004" summary="April 18 7:32PM">
+      <created>1618788747295</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618788747295</updated>
+    </task>
+    <task id="LOCAL-00005" summary="April 18 8:09PM">
+      <created>1618790974256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618790974256</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed issue with signup not letting you create an account">
+      <created>1618840018885</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618840018886</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added info to about.php and fixed css properties, amended links to cart_view on major pages">
+      <created>1618844243484</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618844243484</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit" />
+    <MESSAGE value="April 18 6:35PM" />
+    <MESSAGE value="Updated validate-account.php, validate-signup.php, and validate-contact.php to include correct numbers-validate.php file" />
+    <MESSAGE value="April 18 7:32PM" />
+    <MESSAGE value="April 18 8:09PM" />
+    <MESSAGE value="Fixed issue with signup not letting you create an account" />
+    <MESSAGE value="Added info to about.php and fixed css properties, amended links to cart_view on major pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added info to about.php and fixed css properties, amended links to cart_view on major pages" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618839486782">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="320" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.837@0.23.1440.837" timestamp="1618839486782" />
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618780964415">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.839@0.23.1440.839" timestamp="1618780964415" />
+    <state x="100" y="123" width="1240" height="626" key="DiffContextDialog" timestamp="1618932296429">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="100" y="123" width="1240" height="626" key="DiffContextDialog/0.23.1440.837@0.23.1440.837" timestamp="1618932296429" />
+    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.839@0.23.1440.839" timestamp="1618790707953" />
+    <state x="541" y="367" key="NewPhpFileDialog" timestamp="1618785111391">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="541" y="367" key="NewPhpFileDialog/0.23.1440.839@0.23.1440.839" timestamp="1618785111391" />
+    <state x="594" y="164" key="RollbackChangesDialog" timestamp="1618784093987">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="594" y="164" key="RollbackChangesDialog/0.23.1440.839@0.23.1440.839" timestamp="1618784093987" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1618785069418">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.839@0.23.1440.839" timestamp="1618785069418" />
+    <state x="372" y="133" key="VCS.ChangeListViewerDialog" timestamp="1618784149289">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="372" y="133" key="VCS.ChangeListViewerDialog/0.23.1440.839@0.23.1440.839" timestamp="1618784149289" />
+    <state x="320" y="176" key="Vcs.Push.Dialog.v2" timestamp="1618884083508">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1618884083507" />
+    <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.839@0.23.1440.839" timestamp="1618791075159" />
+    <state x="100" y="123" width="1240" height="627" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1618785320108">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="100" y="123" width="1240" height="627" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1618785320108" />
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618930396550">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.837@0.23.1440.837" timestamp="1618930396550" />
+    <state x="521" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.839@0.23.1440.839" timestamp="1618788894175" />
+  </component>
+</project>
