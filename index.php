@@ -1,15 +1,19 @@
 <?php
 session_start();
-if (isset($_SESSION['cart'])) {
+require('database.php');
+if (isset($_SESSION['flag'])) {
+	if ($_SESSION['flag']==true) {
 		if (isset($_SESSION['username'])) {
 			$userID = $_SESSION['username'];
 		}
-		$_SESSION['username'] = 'guest';
 	} else {
 		$cart = array();
 		$_SESSION['username'] = 'guest';
 	}
-require_once('cart.php');
+} else {
+	$cart = array();
+		$_SESSION['username'] = 'guest';
+}
 require_once('cart.php');
 	$action = filter_input(INPUT_POST, 'action');
 	if ($action === NULL) {
@@ -20,9 +24,10 @@ require_once('cart.php');
 	}
 switch($action) {
     case 'add':
+		require('database.php');
         $product_key = filter_input(INPUT_POST, 'productkey');
 		$item_qty = filter_input(INPUT_POST, 'itemqty');
-		add_item($product_key, $item_qty, $dbo);
+		add_item($product_key, $item_qty, $db);
 		break;
 	
 }
@@ -31,6 +36,7 @@ switch($action) {
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BuyTech | Electronics</title>
@@ -42,32 +48,10 @@ switch($action) {
 	<body>
 		<div class="header">
 			<div class="container">
-				<div class="navbar">
-					<div class="logo">
-						<img src="images/logo.png" class="branding-logo">
-					</div>
-					<nav>
-						<ul id="menu-items">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="contact.php">Contact</a></li>
-                            <?php
-                                if (!isset($_SESSION['flag'])) {
-                                    echo '<li><a href="login-form.php">Login</a></li>';
-                                }
-                                else{
-                                    echo '<li><a href="account.php">Account</a></li>';
-                                    echo '<li><a href="logout.php">Logout</a></li>';
-                                }
-                            ?>
-						</ul>
-					</nav>
-					<a href="cart_view.php">
-					<img src="images/cart.png" width="30px" height="30px">
-					</a>
-					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-				</div>
+				<div id="header"></div><br />
+				<script>
+				$("#header").load("header.php");
+				</script>
 				<div class="row">
 					<div class="col-2">
 						<h1>Welcome to BuyTech!</h1>

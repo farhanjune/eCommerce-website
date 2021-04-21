@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <meta charset="UTF-8">
         <title>About</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,32 +15,10 @@ session_start();
     <body>
         <div class="header">
             <div class="container">
-                <div class="navbar">
-                    <div class="logo">
-                        <img src="images/logo.png" class="branding-logo">
-                    </div>
-                    <nav>
-                        <ul id="menu-items">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="about.php">About</a></li>
-                            <li><a href="contact.php">Contact</a></li>
-                            <?php
-                            if (!isset($_SESSION['flag'])) {
-                                echo '<li><a href="login-form.php">Login</a></li>';
-                            }
-                            else{
-                                echo '<li><a href="account.php">Account</a></li>';
-                                echo '<li><a href="logout.php">Logout</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </nav>
-                    <a href="cart.html">
-                        <img src="images/cart.png" width="30px" height="30px">
-                    </a>
-                    <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-                </div>
+                <div id="header"></div><br />
+				<script>
+				$("#header").load("header.php");
+				</script>
                 <div class="row">
                     <div class="col-2">
                         <img class="about image" src="images/about.png">

@@ -1,14 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=database';
-	$username = 'root';
-	$password = '';
-
-	try {
-		$dbo = new PDO($dsn, $username, $password);
-	} catch (PDOException $e) {
-		die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
-		$error_message = $e->getMessage();
-	}
+	require('database.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,7 +90,7 @@ $dsn = 'mysql:host=localhost;dbname=database';
 							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
 							WHERE c.productID = p.productID
 							GROUP BY productID";
-					foreach($dbo->query($sql) as $key => $item ) :
+					foreach($db->query($sql) as $key => $item ) :
 						$cost  = number_format($item['listPrice'], 2);					
 						$total = $cost * $item['quantity'];
 						$totalcart += $total;

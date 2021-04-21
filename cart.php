@@ -1,16 +1,8 @@
 <?php
-	$dsn = 'mysql:host=localhost;dbname=database';
-	$username = 'root';
-	$password = '';
-	if (empty($_SESSION['cart'])) {
-		$lifetime = 60 * 60 * 24 * 14;
-		session_set_cookie_params($lifetime, '/');
-		session_start();
-	}
-	$dbo = new PDO($dsn, $username, $password);
+	require('database.php');
 	
 
-function add_item($key, $quantity, $dbo) {
+function add_item($key, $quantity, $db) {
 	
    
 
@@ -21,19 +13,19 @@ function add_item($key, $quantity, $dbo) {
     // If item already exists in cart, update quantity
 
    for ($i = 1; $i <= $quantity; $i++) {
-	   update_item($key, $dbo);
+	   update_item($key, $db);
    }
 	
 	
 }
-function update_item($key, $dbo) {
+function update_item($key, $db) {
 	$username = $_SESSION['username'];
     $insert = "INSERT INTO cart (productID, userId) VALUES ('$key', '$username')";
-	if ($dbo->query($insert) == TRUE) {
+	if ($db->query($insert) == TRUE) {
 		  echo "New record created successfully";
 
 	} else {
-		echo "Error: " . $insert . "<br>" . $dbo->error;
+		echo "Error: " . $insert . "<br>" . $db->error;
 	}
     $item = array(
         'productID' => $key,
@@ -42,7 +34,7 @@ function update_item($key, $dbo) {
 
     $_SESSION['cart'][] = $item;
 }
-function get_subtotal($dbo) {
+function get_subtotal($db) {
 
     $subtotal = 0;
 

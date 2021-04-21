@@ -1,15 +1,6 @@
 <?php
 
-	$dsn = 'mysql:host=localhost;dbname=database';
-	$username = 'root';
-	$password = '';
-
-	try {
-		$dbo = new PDO($dsn, $username, $password);
-	} catch (PDOException $e) {
-		die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
-		$error_message = $e->getMessage();
-	}
+	require('database.php');
 
 	if(!isset($_SESSION['cart'])) 
     { 
@@ -33,7 +24,7 @@ switch($action) {
     case 'add':
         $product_key = filter_input(INPUT_POST, 'productkey');
 		$item_qty = filter_input(INPUT_POST, 'itemqty');
-		add_item($product_key, $item_qty, $dbo);
+		add_item($product_key, $item_qty, $db);
 		include('cart_view.php');
 		break;
 		
@@ -41,16 +32,16 @@ switch($action) {
         $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         foreach($new_qty_list as $key => $qty) {
             if ($_SESSION['cart'][$key]['quantity'] < $qty) {
-                update_item($key, $qty, $dbo);
+                update_item($key, $qty, $db);
             } else if ($_SESSION['cart'][$key]['quantity'] > $qty) {
 				unset($_SESSION['cart'][$key]);
 				$delsql = "DELETE FROM cart WHERE productID = ('$key')";
-				if ($dbo->query($delsql) === TRUE) {
+				if ($db->query($delsql) === TRUE) {
 				  echo "Record deleted successfully";
 				} else {
-				  echo "Error deleting record: " . $dbo->error;
+				  echo "Error deleting record: " . $db->error;
 				}
-				add_item($key, $qty, $dbo);
+				add_item($key, $qty, $db);
 			}
         }
         include('cart_view.php');
@@ -61,10 +52,10 @@ switch($action) {
         break;
 	case 'empty_cart':
 		$emptysql = "DELETE FROM cart";
-		if ($dbo->query($emptysql) === TRUE) {
+		if ($db->query($emptysql) === TRUE) {
 				  echo "Cleared";
 				} else {
-				  echo "Error clearing: " . $dbo->error;
+				  echo "Error clearing: " . $db->error;
 				}
 		unset($_SESSION['cart']);
 		break;
@@ -75,6 +66,7 @@ $username = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BuyTech | Electronics</title>
@@ -87,27 +79,15 @@ $username = $_SESSION['username'];
 	<body>
 		<div class="header">
 			<div class="container">
-				<div class="navbar">
-					<div class="logo">
-						<img src="images/logo.png" class="branding-logo">
-					</div>
-					<nav>
-						<ul id="menu-items">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Login</a></li>
-						</ul>
-					</nav>
-					<img src="images/cart.png" width="30px" height="30px">
-					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-				</div>
+				<div id="header"></div><br />
+				<script>
+				$("#header").load("header.php");
+				</script>
 				<div>
-					<nav class="categories">
-						<h1>Cart<h1>
-					</nav>
-				</div>
+							<nav class="categories">
+								<h1>Cart<h1>
+							</nav>
+						</div>
 			</div>
 		</div>
 		<main>
@@ -137,11 +117,12 @@ $username = $_SESSION['username'];
                 </tr>
 				<?php 
 					$totalcart = 0;
+					$userID = $_SESSION['username'];
 					$sql = "SELECT p.*, COUNT(c.productID) AS quantity 
-							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
+							FROM products p LEFT JOIN cart c ON (c.userId = ('$userID')) 
 							WHERE c.productID = p.productID
 							GROUP BY productID";
-					foreach($dbo->query($sql) as $key => $item ) :
+					foreach($db->query($sql) as $key => $item ) :
 						$cost  = number_format($item['listPrice'], 2);					
 						$total = $cost * $item['quantity'];
 						$totalcart += $total;

@@ -16,7 +16,8 @@ unset($_SESSION['success']);
     <body>
         <div>
             <h1>You've been logged out!</h1>
-            <a href="login-form.php">Log back in</a>
+            <a href="login-form.php">Log back in</a><br>
+			<a href="index.php">Go Back to Home page</a>
         </div>
     </body>
 </html>

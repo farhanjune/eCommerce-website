@@ -2,21 +2,21 @@ body{
     background: radial-gradient(#FF9900, #fff);
     margin-bottom: 20px;
 }
+nav {
+	text-align:right;
+	width: 900px;
 
+}
 .header{
     background: none;
 }
 
-.container{
-    align-items: center;
-    margin-bottom: 40px;
-}
 
 .contact.col-1{
     flex-basis: 100%;
     min-width: 300px;
-    align-content: center;
-    text-align: center;
+    align-content: right;
+    text-align: right;
 }
 
 .contact.col-1 h1{
@@ -78,4 +78,9 @@ span {
 
 #submit:hover, #clear:hover{
     background: lightgray;
+}
+
+ul {
+	margin-left: 100px;
+	padding-left: 200px;
 }
