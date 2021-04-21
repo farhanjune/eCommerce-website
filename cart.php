@@ -1,6 +1,10 @@
 <?php
 	require('database.php');
 	
+	if (!isset($_SESSION)) {
+		session_start();
+
+	}
 
 function add_item($key, $quantity, $db) {
 	
@@ -51,7 +55,7 @@ function get_subtotal($db) {
 }
 function empty_cart($db) {
 	$username = $_SESSION['username'];
-	$emptysql = "DELETE * FROM cart WHERE userId = ('$username')";
+	$emptysql = "DELETE FROM cart WHERE userId=('$username')";
 		if ($db->query($emptysql) == TRUE) {
 				  echo "Cleared";
 				} else {

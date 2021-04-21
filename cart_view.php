@@ -1,13 +1,6 @@
 <?php
-
 	require('database.php');
-
-	if(!isset($_SESSION['cart'])) 
-    { 
-		$lifetime = 60 * 60 * 24 * 14;
-		session_set_cookie_params($lifetime, '/');
-        session_start(); 
-    } 
+	
 
 
 require_once('cart.php');
@@ -22,17 +15,10 @@ if ($action === NULL) {
 
 switch($action) {
 	case 'empty_cart':
+		require('database.php');
 		empty_cart($db);
 		include('cart_view.php');
-		
 		break;
-    case 'add':
-        $product_key = filter_input(INPUT_POST, 'productkey');
-		$item_qty = filter_input(INPUT_POST, 'itemqty');
-		add_item($product_key, $item_qty, $db);
-		include('cart_view.php');
-		break;
-		
 	case 'update':
         $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         foreach($new_qty_list as $key => $qty) {
@@ -51,20 +37,8 @@ switch($action) {
         }
         include('cart_view.php');
         break;
-
-    case 'show_cart':
-        include('cart_view.php');
-        break;
-	case 'empty_cart':
-		$emptysql = "DELETE FROM cart";
-		if ($db->query($emptysql) === TRUE) {
-				  echo "Cleared";
-				} else {
-				  echo "Error clearing: " . $db->error;
-				}
-		unset($_SESSION['cart']);
-		break;
 }
+
 echo $_SESSION['username'];
 $username = $_SESSION['username'];
 ?>
@@ -107,10 +81,6 @@ $username = $_SESSION['username'];
         <?php else: ?>
 
             <form action="." method="post">
-
-            <input type="hidden" name="action"
-
-                    value="update">
 
             <table>
                 <tr id="cart_header">
@@ -158,11 +128,12 @@ $username = $_SESSION['username'];
                your cart. Enter a quantity of 0 to remove
                an item.</p>
 			   <p><a href=".?action=show_add_item">Add Item</a></p>
+			   
 			</form>
-		<form action="." method="post">
-			<input type="hidden" name="action" value="empty_cart">
-			<input type="Submit" value="Empty Cart">
-            	</form>
+			<form action="." method="post">
+				<input type="hidden" name="action" value="empty_cart"></input>
+				<input type="Submit" value="Empty"/>
+			</form>
 			<p><a href="checkout.php">Checkout</a></p>
         <?php endif; ?>
 		</main>
