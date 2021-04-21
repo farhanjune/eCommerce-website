@@ -114,7 +114,7 @@ switch($action) {
 					<p>$279.99</p>
 					<form action="." method="post"); >
 						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="1" value="1">
+						<input type="hidden" name="productkey" id="2" value="2">
 						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
 					</form>
@@ -134,7 +134,7 @@ switch($action) {
 					<p>$249.00</p>
 					<form action="." method="post"); >
 						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="2" value="2">
+						<input type="hidden" name="productkey" id="1" value="1">
 						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
 					</form>
