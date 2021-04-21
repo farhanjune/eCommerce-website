@@ -78,7 +78,7 @@ $username = $_SESSION['username'];
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BuyTech | Electronics</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="cartviewstyle.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -110,6 +110,7 @@ $username = $_SESSION['username'];
 				</div>
 			</div>
 		</div>
+		<main>
 		<h1>Your Cart</h1>
 
         <?php if (empty($_SESSION['cart']) ||
@@ -129,6 +130,7 @@ $username = $_SESSION['username'];
             <table>
                 <tr id="cart_header">
                     <th class="left">Item</th>
+					<th class="right"></th>
                     <th class="right">Item Cost</th>
                     <th class="right">Quantity</th>
                     <th class="right">Item Total</th>
@@ -147,7 +149,8 @@ $username = $_SESSION['username'];
 				?>
 					<tr>
 						<td><?php echo $item['productName']; ?> </td>
-
+						
+						<td><?php echo '<img src="' . $item['productImage'] . '" width="90px" height="90px">';?></td>
 						<td class="right">
 							$<?php echo $cost; ?> </td>
 						<td class="right">
@@ -160,14 +163,10 @@ $username = $_SESSION['username'];
 					
 				<?php endforeach; ?>
 				<tr id="cart_footer">
-                    <td colspan="3"><b>Subtotal</b></td>
+                    <td colspan="4"><b>Subtotal</b></td>
                     <td>$<?php echo $totalcart; ?></td>
                 </tr>
-                <tr>
-                    <td colspan="4" class="right">
-                        <input type="submit"
-                               value="Update Cart"></td>
-                </tr>
+                
             </table>
             <p>Click "Update Cart" to update quantities in
                your cart. Enter a quantity of 0 to remove
@@ -180,8 +179,9 @@ $username = $_SESSION['username'];
 					<input type="submit" name="action"
                                value="empty_cart"></td>
             </form>
+			<p><a href="checkout.php">Checkout</a></p>
         <?php endif; ?>
-
+		</main>
         
 
 	</body>

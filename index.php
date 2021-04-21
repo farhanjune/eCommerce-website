@@ -1,11 +1,6 @@
 <?php
-	$dsn = 'mysql:host=localhost;dbname=database';
-	$username = 'root';
-	$password = '';
-	$dbo = new PDO($dsn, $username, $password);
-	// check if logged in here.
-	session_start();
-	if (isset($_SESSION['cart'])) {
+session_start();
+if (isset($_SESSION['cart'])) {
 		if (isset($_SESSION['username'])) {
 			$userID = $_SESSION['username'];
 		}
@@ -14,8 +9,8 @@
 		$cart = array();
 		$_SESSION['username'] = 'guest';
 	}
-	echo $_SESSION['username'];
-	require_once('cart.php');
+require_once('cart.php');
+require_once('cart.php');
 	$action = filter_input(INPUT_POST, 'action');
 	if ($action === NULL) {
 		$action = filter_input(INPUT_GET, 'action');
@@ -117,21 +112,10 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$279.99</p>
-					<form action="." method="post")>
+					<form action="." method="post"); >
 						<input type="hidden" name="action" value="add"></input>
-						<label>ProductKey</label>
-						<select name="productkey" value ="5">
-							<option value=5></option>
-						</select><br>
-						<label>Quantity:</label>
-						<select name="itemqty">
-							<?php for($i = 1; $i <= 10; $i++) : ?>
-								<option value="<?php echo $i; ?>">
-									<?php echo $i; ?>
-								</option>
-							<?php endfor; ?>
-						</select><br>
-						<label>&nbsp;</label>
+						<input type="hidden" name="productkey" id="2" value="2">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
 					</form>
 				</div>
@@ -148,21 +132,10 @@ switch($action) {
 						<i class="fa fa-star-half-o fa-fw"></i>
 					</div>
 					<p>$249.00</p>
-					<form action="." method="post")>
+					<form action="." method="post"); >
 						<input type="hidden" name="action" value="add"></input>
-						<label>ProductKey</label>
-						<select name="productkey" value ="4">
-							<option value=4></option>
-						</select><br>
-						<label>Quantity:</label>
-						<select name="itemqty">
-							<?php for($i = 1; $i <= 10; $i++) : ?>
-								<option value="<?php echo $i; ?>">
-									<?php echo $i; ?>
-								</option>
-							<?php endfor; ?>
-						</select><br>
-						<label>&nbsp;</label>
+						<input type="hidden" name="productkey" id="1" value="1">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
 					</form>
 				</div>
@@ -378,7 +351,7 @@ switch($action) {
 				<div class="row">
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>I've made several orders with BuyTech and have never been more satisfied. I hope BuyTech keeps up the great work!</p>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -387,12 +360,12 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/will.jpeg">
-						<h3>Will Smith</h3>
+						<img src="images/nopic.png">
+						<h3>Frank González</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>I have been very happy using BuyTech this past year. Their customer support and overall experience has been great even due to the pandemic. I will continue shopping on BuyTech and rate them 5 stars!</p>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -401,12 +374,12 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/kimk.jpeg">
-						<h3>Kim Kardashian</h3>
+						<img src="images/nopic.png">
+						<h3>Sol P</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Could not have found a better place to shop for tech products. The pricing and ease in shopping for what I want is awesome!</p>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -415,8 +388,22 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/brad.jpeg">
-						<h3>Brad Pitt</h3>
+						<img src="images/nopic.png">
+						<h3>Nahiyaan Sheikh</h3>
+					</div>
+					<div class="col-3">
+						<i class="fa fa-quote-left fa-fw"></i>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						
+						<div class="rating">
+							<i class="fa fa-star fa-fw"></i>
+							<i class="fa fa-star fa-fw"></i>
+							<i class="fa fa-star fa-fw"></i>
+							<i class="fa fa-star fa-fw"></i>
+							<i class="fa fa-star fa-fw"></i>
+						</div>
+						<img src="images/nopic.png">
+						<h3>Farhan Juneja</h3>
 					</div>
 				</div>
 			</div>
@@ -444,28 +431,29 @@ switch($action) {
 		</div>
 		<div class="footer">
 			<div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Links</h3>
-                    <ul>
-                        <li>Discounts</li>
-                        <li>Blog</li>
-                        <li>Policy</li>
-                    </ul>
-                </div>
-                <div class="footer-col-2">
-                    <img src="images/logo.png">
-                    <p>Our mission is to make electronics accessible to everyone.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Pinterest</li>
-                    </ul>
-                </div>
-            </div>
+				<div class="row">
+					<div class="footer-col-1">
+						<h3>Useful Links</h3>
+						<ul>
+							<li>Coupons</li>
+							<li>Blog Post</li>
+							<li>Return Policy</li>
+						</ul>
+					</div>
+					<div class="footer-col-2">
+						<img src="images/logo.png">
+						<p>Our mission is to make electronics accessible to everyone.</p>
+					</div>
+					<div class="footer-col-3">
+						<h3>Follow Us</h3>
+						<ul>
+							<li>Facebook</li>
+							<li>Instagram</li>
+							<li>Twitter</li>
+							<li>YouTube</li>
+						</ul>
+					</div>
+				</div>
 				<hr>
 				<p class="copyright">Copyright 2021 - BuyTech</p>
 			</div>
