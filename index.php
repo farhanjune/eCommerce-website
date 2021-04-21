@@ -134,11 +134,11 @@ switch($action) {
                         <i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$899.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="3" value="3">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="3" value="3">
 					</form>
 				</div>
 				<div class="col-4">
@@ -152,11 +152,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$79.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="4" value="4">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="4" value="4">
 					</form>
 				</div>
 			</div>
@@ -173,11 +173,11 @@ switch($action) {
                         <i class="fa fa-star-half-o fa-fw"></i>
 					</div>
 					<p>$669.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="5" value="5">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -191,11 +191,11 @@ switch($action) {
                         <i class="fa fa-star fa-fw"></i>
 					</div>
 					<p>$59.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="6" value="6">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -209,11 +209,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$49.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="7" value="7">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -227,11 +227,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$49.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="8" value="8">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 			</div>
@@ -247,11 +247,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$399.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="9" value="9">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -265,11 +265,11 @@ switch($action) {
                         <i class="fa fa-star fa-fw"></i>
 					</div>
 					<p>$99.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="10" value="10">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -283,11 +283,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$949.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="11" value="11">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 				<div class="col-4">
@@ -301,11 +301,11 @@ switch($action) {
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$899.00</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="12" value="12">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="6" value="6">
 					</form>
 				</div>
 			</div>
