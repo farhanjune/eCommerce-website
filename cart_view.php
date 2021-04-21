@@ -130,6 +130,7 @@ $username = $_SESSION['username'];
             <table>
                 <tr id="cart_header">
                     <th class="left">Item</th>
+					<th class="right"></th>
                     <th class="right">Item Cost</th>
                     <th class="right">Quantity</th>
                     <th class="right">Item Total</th>
@@ -148,7 +149,8 @@ $username = $_SESSION['username'];
 				?>
 					<tr>
 						<td><?php echo $item['productName']; ?> </td>
-
+						
+						<td><?php echo '<img src="' . $item['productImage'] . '" width="90px" height="90px">';?></td>
 						<td class="right">
 							$<?php echo $cost; ?> </td>
 						<td class="right">
@@ -161,14 +163,10 @@ $username = $_SESSION['username'];
 					
 				<?php endforeach; ?>
 				<tr id="cart_footer">
-                    <td colspan="3"><b>Subtotal</b></td>
+                    <td colspan="4"><b>Subtotal</b></td>
                     <td>$<?php echo $totalcart; ?></td>
                 </tr>
-                <tr>
-                    <td colspan="4" class="right">
-                        <input type="submit"
-                               value="Update Cart"></td>
-                </tr>
+                
             </table>
             <p>Click "Update Cart" to update quantities in
                your cart. Enter a quantity of 0 to remove

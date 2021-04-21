@@ -11,8 +11,8 @@ CREATE TABLE `products` (
   `productImage` varchar(200) NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`) VALUES ('1', '2', 'Airpods Pros', '249.49', 'product-2.jpeg');
-INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`) VALUES ('2', '3', 'Apple Watch Series 5', '500.50', 'product-1.jpeg');
+INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`) VALUES ('1', '2', 'Airpods Pros', '249.49', 'images/product-2.jpeg');
+INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`) VALUES ('2', '3', 'Apple Watch Series 5', '500.50', 'images/product-1.jpeg');
 CREATE TABLE `categories` (
   `categoryID` int NULL DEFAULT NULL,
   `categoryName` varchar(255) NULL DEFAULT NULL

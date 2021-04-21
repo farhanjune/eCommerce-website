@@ -352,8 +352,11 @@ ul {
 }
 
 table, th, td {
-	padding: 2em;
-  border: 2px solid gray;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+  border: 1px solid gray;
    border-collapse: collapse;
 }
 main {

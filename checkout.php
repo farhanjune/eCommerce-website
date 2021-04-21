@@ -111,7 +111,7 @@ $dsn = 'mysql:host=localhost;dbname=database';
 						<td class="right">
 							$<?php echo $cost; ?> </td>
 						<td class="right">
-							<input type="text" name="newqty[<?php echo $key; ?>]" value="<?php echo $item['quantity']; ?>">
+							<?php echo $item['quantity']; ?>
 						</td>
 
 						<td class="right">
@@ -122,11 +122,6 @@ $dsn = 'mysql:host=localhost;dbname=database';
 				<tr id="cart_footer">
                     <td colspan="3"><b>Subtotal</b></td>
                     <td>$<?php echo $totalcart; ?></td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="right">
-                        <input type="submit"
-                               value="Update Cart"></td>
                 </tr>
             </table>
   </div>
