@@ -84,231 +84,34 @@ switch($action) {
 		<div class="small-container">
 			<h2 class="title">Featured Products</h2>
 			<div class="row">
-				<div class="col-4">
-				<a href="apple-watch.html">
-					<img src="images/product-1.jpeg">
-					<h4>Apple Watch Series 5</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$279.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="2" value="2">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<a href="airpods-pro.html">
-						<img src="images/product-2.jpeg">
-					</a>
-					<h4>Airpods Pro</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-half-o fa-fw"></i>
-					</div>
-					<p>$249.00</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="1" value="1">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/product-3.jpeg">
-					<h4>Lenovo YOGA</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star-o fa-fw"></i>
-                        <i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$899.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="3" value="3">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/product-4.jpeg">
-					<h4>Google Nest Audio</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$79.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="4" value="4">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-			</div>
-			<h2 class="title">Latest Products</h2>
-			<div class="row">
-				<div class="col-4">
-					<img src="images/product-5.jpeg">
-					<h4>Samsung QLED Monitor</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star-half-o fa-fw"></i>
-					</div>
-					<p>$669.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="5" value="5">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/ps4.png">
-					<h4>DualShock 4 Controller</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-					</div>
-					<p>$59.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="6" value="6">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/firestick.jpeg">
-					<h4>Fire TV Stick 4k</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star-half-o fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$49.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="7" value="7">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/echodot.jpeg">
-					<h4>Amazon Echo Dot (4th Gen)</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$49.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="8" value="8">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-4">
-					<img src="images/gopro.jpeg">
-					<h4>GoPro - HERO9</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$399.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="9" value="9">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/ringbell.jpeg">
-					<h4>Ring Video Doorbell</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-					</div>
-					<p>$99.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="10" value="10">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/macbook.jpeg">
-					<h4>Macbook Air 13.3" - M1 chip</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$949.99</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="11" value="11">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-				<div class="col-4">
-					<img src="images/ipad.jpeg">
-					<h4>iPad Pro 11" (256GB)</h4>
-					<div class="rating">
-						<i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star fa-fw"></i>
-                        <i class="fa fa-star-half-o fa-fw"></i>
-						<i class="fa fa-star-o fa-fw"></i>
-					</div>
-					<p>$899.00</p>
-					<form action="." method="post"); >
-						<input type="hidden" name="action" value="add"></input>
-						<input type="hidden" name="productkey" id="12" value="12">
-						<input type="hidden" name="itemqty" id="1" value="1">
-						<input type="Submit" value="Add to Cart"/>
-					</form>
-				</div>
-			</div>
+				<?php
+					$userID = $_SESSION['username'];
+					$sql = "SELECT p.*
+							FROM products p
+							GROUP BY productID";
+					foreach($db->query($sql) as $key => $item ) :
+					?>
+						<div class="col-4">
+						<a href="apple-watch.html">
+							<img src="<?php echo $item['productImage']?>">
+							<h4><?php echo $item['productName']?></h4>
+							<div class="rating">
+								<i class="fa fa-star fa-fw"></i>
+								<i class="fa fa-star fa-fw"></i>
+								<i class="fa fa-star fa-fw"></i>
+								<i class="fa fa-star fa-fw"></i>
+								<i class="fa fa-star-o fa-fw"></i>
+							</div>
+							<p><?php echo $item['listPrice']?></p>
+							<form action="." method="post"); >
+								<input type="hidden" name="action" value="add"></input>
+								<input type="hidden" name="productkey" id="<?php echo $item['productID']?>" value="<?php echo $item['productID']?>">
+								<input type="hidden" name="itemqty" id="1" value="1">
+								<input type="Submit" value="Add to Cart"/>
+							</form>
+						</div>
+				<?php endforeach; ?>
+			
 		</div>
 		<div class="offer">
 			<div class="small-container">
