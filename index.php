@@ -1,5 +1,31 @@
 <?php
 session_start();
+if (isset($_SESSION['cart'])) {
+		if (isset($_SESSION['username'])) {
+			$userID = $_SESSION['username'];
+		}
+		$_SESSION['username'] = 'guest';
+	} else {
+		$cart = array();
+		$_SESSION['username'] = 'guest';
+	}
+require_once('cart.php');
+require_once('cart.php');
+	$action = filter_input(INPUT_POST, 'action');
+	if ($action === NULL) {
+		$action = filter_input(INPUT_GET, 'action');
+		if ($action === NULL) {
+			$action = 'show_add_item';
+		}
+	}
+switch($action) {
+    case 'add':
+        $product_key = filter_input(INPUT_POST, 'productkey');
+		$item_qty = filter_input(INPUT_POST, 'itemqty');
+		add_item($product_key, $item_qty, $dbo);
+		break;
+	
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +63,7 @@ session_start();
                             ?>
 						</ul>
 					</nav>
-					<a href="cart.html">
+					<a href="cart_view.php">
 					<img src="images/cart.png" width="30px" height="30px">
 					</a>
 					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -86,11 +112,11 @@ session_start();
 						<i class="fa fa-star-o fa-fw"></i>
 					</div>
 					<p>$279.99</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="1" value="1">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="1" value="1">
 					</form>
 				</div>
 				<div class="col-4">
@@ -106,11 +132,11 @@ session_start();
 						<i class="fa fa-star-half-o fa-fw"></i>
 					</div>
 					<p>$249.00</p>
-					<form action="cart.html" method="post" action="database.php" ); >
-						<form action="cart.html">
+					<form action="." method="post"); >
+						<input type="hidden" name="action" value="add"></input>
+						<input type="hidden" name="productkey" id="2" value="2">
+						<input type="hidden" name="itemqty" id="1" value="1">
 						<input type="Submit" value="Add to Cart"/>
-						</form>
-						<input type="hidden" name="id" id="2" value="2">
 					</form>
 				</div>
 				<div class="col-4">
