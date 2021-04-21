@@ -27,6 +27,15 @@ CREATE TABLE `categories` (
   `categoryID` int NULL DEFAULT NULL,
   `categoryName` varchar(255) NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('1', 'Home & Security');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('2', 'Audio');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('3', 'Smartwatches');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('4', 'Laptops & Tablets');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('5', 'Displays');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('6', 'Gaming');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('7', 'Streaming');
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES ('8', 'Cameras');
+
 
 CREATE TABLE `cart` (
   `productID` int NULL DEFAULT 0,
