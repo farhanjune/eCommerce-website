@@ -1,3 +1,15 @@
+<?php
+$dsn = 'mysql:host=localhost;dbname=database';
+	$username = 'root';
+	$password = '';
+
+	try {
+		$dbo = new PDO($dsn, $username, $password);
+	} catch (PDOException $e) {
+		die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
+		$error_message = $e->getMessage();
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,15 +86,49 @@
   </div>
   <!--- Cart items here --->
   <div class="cart">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-      <!---<hr>--->
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-    </div>
+    <table>
+                <tr id="cart_header">
+                    <th class="left">Item</th>
+                    <th class="right">Item Cost</th>
+                    <th class="right">Quantity</th>
+                    <th class="right">Item Total</th>
+                </tr>
+				<?php 
+					$totalcart = 0;
+					$sql = "SELECT p.*, COUNT(c.productID) AS quantity 
+							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
+							WHERE c.productID = p.productID
+							GROUP BY productID";
+					foreach($dbo->query($sql) as $key => $item ) :
+						$cost  = number_format($item['listPrice'], 2);					
+						$total = $cost * $item['quantity'];
+						$totalcart += $total;
+						
+				?>
+					<tr>
+						<td><?php echo $item['productName']; ?> </td>
+
+						<td class="right">
+							$<?php echo $cost; ?> </td>
+						<td class="right">
+							<input type="text" name="newqty[<?php echo $key; ?>]" value="<?php echo $item['quantity']; ?>">
+						</td>
+
+						<td class="right">
+							$<?php echo $total; ?></td>
+					</tr>
+					
+				<?php endforeach; ?>
+				<tr id="cart_footer">
+                    <td colspan="3"><b>Subtotal</b></td>
+                    <td>$<?php echo $totalcart; ?></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="right">
+                        <input type="submit"
+                               value="Update Cart"></td>
+                </tr>
+            </table>
   </div>
 
 
