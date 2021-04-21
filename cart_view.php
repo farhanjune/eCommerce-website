@@ -21,6 +21,11 @@ if ($action === NULL) {
 }
 
 switch($action) {
+	case 'empty_cart':
+		empty_cart($db);
+		include('cart_view.php');
+		
+		break;
     case 'add':
         $product_key = filter_input(INPUT_POST, 'productkey');
 		$item_qty = filter_input(INPUT_POST, 'itemqty');
@@ -154,12 +159,10 @@ $username = $_SESSION['username'];
                an item.</p>
 			   <p><a href=".?action=show_add_item">Add Item</a></p>
 			</form>
-			<form action="." method="post">
-				<input type="hidden" name="action"
-                    value="empty_cart">
-					<input type="submit" name="action"
-                               value="empty_cart"></td>
-            </form>
+		<form action="." method="post">
+			<input type="hidden" name="action" value="empty_cart">
+			<input type="Submit" value="Empty Cart">
+            	</form>
 			<p><a href="checkout.php">Checkout</a></p>
         <?php endif; ?>
 		</main>
