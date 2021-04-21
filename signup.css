@@ -4,15 +4,17 @@ body {
   background: url(images/login-background.jpeg) no-repeat center top;
   background-size: cover;
   font-family: sans-serif;
-  height: 130vh;
+  /*height: 150vh;*/
+  height: 200vh;
 }
 
 .signup-box {
   width: 320px;
-  height: 1130px;
+  /*height: 1130px;*/
+  height: 180%;
   background: #fffefe;
   color: #FF9900;
-  top: 50%;
+  top: 70%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -35%);
@@ -54,7 +56,7 @@ body {
   background: transparent;
   outline: none;
   height: 40px;
-  color: #fff;
+  color: grey;
   font-size: 16px;
 }
 
@@ -63,7 +65,7 @@ body {
   outline: none;
   height: 40px;
   background: #8c00ff;
-  color: #fff;
+  color: #000;
   font-size: 18px;
   border-radius: 20px;
 }
