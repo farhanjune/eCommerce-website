@@ -37,7 +37,9 @@
 		
 		<div id="paymentinfo">
             <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
+            <!---
+			<label for="fname">Accepted Cards</label>
+			--->
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -61,10 +63,11 @@
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352"><br>
               </div>
+		<!---
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-		
+		--->
 		</div>
 		
         <input type="submit" value="Submit" class="btn">
