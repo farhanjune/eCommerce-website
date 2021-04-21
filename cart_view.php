@@ -1,4 +1,5 @@
 <?php
+session_start();
 	require('database.php');
 	
 
@@ -49,12 +50,11 @@ $username = $_SESSION['username'];
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BuyTech | Electronics</title>
-		<link rel="stylesheet" href="cartviewstyle.css">
+		<link rel="stylesheet" href="style.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
-	
 	<body>
 		<div class="header">
 			<div class="container">
@@ -62,15 +62,10 @@ $username = $_SESSION['username'];
 				<script>
 				$("#header").load("header.php");
 				</script>
-				<div>
-							<nav class="categories">
-								<h1>Cart<h1>
-							</nav>
-						</div>
 			</div>
 		</div>
 		<main>
-		<h1>Your Cart</h1>
+		<h1 style="text-align:center;padding:30px;">Your Cart</h1>
 
         <?php if (empty($_SESSION['cart']) ||
 
@@ -81,9 +76,9 @@ $username = $_SESSION['username'];
         <?php else: ?>
 
             <form action="." method="post">
-
-            <table>
-                <tr id="cart_header">
+			<div class="carttable">
+            <table style="border: 1px solid black;borer-collapse:collapse;width:70%;margin-left:250px;">
+                <tr id="cart_header" style="background-color:black;color:white;">
                     <th class="left">Item</th>
 					<th class="right"></th>
                     <th class="right">Item Cost</th>
@@ -118,12 +113,13 @@ $username = $_SESSION['username'];
 					</tr>
 					
 				<?php endforeach; ?>
-				<tr id="cart_footer">
-                    <td colspan="4"><b>Subtotal</b></td>
-                    <td>$<?php echo $totalcart; ?></td>
+				<tr id="cart_footer" style="padding:30px;">
+                    <td colspan="4"style="padding:30px;"><b>Subtotal</b></td>
+                    <td style="padding:30px;">$<?php echo $totalcart; ?></td>
                 </tr>
                 
             </table>
+			</div>
             <p>Click "Update Cart" to update quantities in
                your cart. Enter a quantity of 0 to remove
                an item.</p>
@@ -137,7 +133,19 @@ $username = $_SESSION['username'];
 			<p><a href="checkout.php">Checkout</a></p>
         <?php endif; ?>
 		</main>
-        
+        <script>
+            var menu_items = document.getElementById('menu-items');
+
+            menu_items.style.maxHeight = "0px";
+
+            function menutoggle() {
+                if(menu_items.style.maxHeight == "0px"){
+                    menu_items.style.maxHeight = "200px";
+                }else{
+                    menu_items.style.maxHeight = "0px";
+                }
+            }
+        </script>
 
 	</body>
 </html>
