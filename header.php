@@ -18,17 +18,31 @@ require_once('cart.php');
 					</div>
 					<nav>
 						<ul id="menu-items">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="contact.php">Contact</a></li>
+							<li><div class="menuhover"><a href="index.php">Home</a></div></li>
+							<li>
+								<div class="dropdown">
+								<button onclick="myFunction()" class="dropbtn">Categories</button>
+								<div id="myDropdown" class="dropdown-content">
+									<a href="category_view.php?category=1" id="category_view">Home & Security</a>
+									<a href="category_view.php?category=2" id="category_view">Audio</a>
+									<a href="category_view.php?category=3" id="category_view">Smartwatches</a>
+									<a href="category_view.php?category=4" id="category_view">Laptops & Tablets</a>
+									<a href="category_view.php?category=5" id="category_view">Displays</a>
+									<a href="category_view.php?category=6" id="category_view">Gaming</a>
+									<a href="category_view.php?category=7" id="category_view">Streaming</a>
+									<a href="category_view.php?category=8" id="category_view">Cameras</a>
+								</div>
+								</div>
+							</li>
+							<li><div class="menuhover"><a href="about.php">About</a></div></li>
+							<li><div class="menuhover"><a href="contact.php">Contact</a></div></li>
 							<?php
                                 if (!isset($_SESSION['flag'])) {
-                                    echo '<li><a href="login-form.php">Login</a></li>';
+                                    echo '<li><div class="menuhover"><a href="login-form.php">Login</a></div></li>';
                                 }
                                 else{
-                                    echo '<li><a href="account.php">Account</a></li>';
-                                    echo '<li><a href="logout.php">Logout</a></li>';
+                                    echo '<li><div class="menuhover"><a href="account.php">Account</a></div></li>';
+                                    echo '<li><div class="menuhover"><a href="logout.php">Logout</a></div></li>';
                                 }
                             ?>
 						</ul>
@@ -38,5 +52,25 @@ require_once('cart.php');
                     </a>
 					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
 				</div>
-				
+				<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+		  }
+		}
+	  }
+	}
+</script>
 </html>

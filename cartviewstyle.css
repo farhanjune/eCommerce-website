@@ -25,13 +25,20 @@ nav ul {
 }
 
 nav ul li {
+	padding: 16px;
 	display: inline-block;
 	margin-right: 20px;
+}
+nav ul li:hover, nav ul li:focus {
+	background-color: #2980B9;
 }
 
 a {
 	text-decoration: none;
 	color: #555;
+}
+a:hover {
+	color: white;
 }
 
 p {
@@ -349,6 +356,51 @@ ul {
 	.branding-logo {
 		width: 125px;
 	}
+}
+
+.dropbtn {
+  color: #555;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+	color:white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left;
+  margin: 16px;
+    margin-left: -16px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+button {
+	background-color: transparent;
 }
 
 table, th, td {
