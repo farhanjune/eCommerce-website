@@ -4,7 +4,7 @@ CREATE DATABASE `database` DEFAULT CHARACTER SET utf8mb4;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `productID` int NULL DEFAULT 0 PRIMARY KEY,
+  `productID` int NULL DEFAULT 0,
   `categoryID` int NULL DEFAULT NULL,
   `productName` varchar(255) NULL DEFAULT NULL,
   `listPrice` decimal(10,2) NULL DEFAULT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `cart` (
-  `productID` int NULL DEFAULT 0 PRIMARY KEY,
+  `productID` int NULL DEFAULT 0,
   `quantity` int NULL DEFAULT NULL,
   `userId` varchar(200) NULL DEFAULT 'guest'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
