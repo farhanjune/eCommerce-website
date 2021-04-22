@@ -6,7 +6,6 @@
 	$data=array($category);
 	$q->execute($data);
 	$categoryName = $q->fetchColumn();
-	echo $categoryName;
 ?>
 <!DOCTYPE html>
 <html>
