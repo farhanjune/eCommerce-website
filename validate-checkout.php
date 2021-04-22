@@ -1,40 +1,56 @@
 <?php
-
 session_start();
 require('database.php');
+require 'send-email.php';
 include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
-$_SESSION['success'] = array();
-/*
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-$city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
-$state = state_validate($_POST('state');
-$zip = filter_input(INPUT_POST, 'zip', FILTER_VALIDATE_INT);
-
-$ccname = card_name_validate();
-$ccnumber = card_number_validate();
-$expmonth = 
-$expyear = 
-$cvv = 
-*/
 
 $card_name = filter_input(INPUT_POST, 'cardname', FILTER_SANITIZE_STRING);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['cardnumber']);
 $card_security = card_security_validate($_POST['cvv']);
 $exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
+$month = $_POST['month'];
+$year = $_POST['year'];
 $today = new DateTime('now');
 
+$queryUserByUsername = 'SELECT * FROM users WHERE userName = :userName';
+$statement1 = $db -> prepare($queryUserByUsername);
+$statement1 -> bindValue(':userName', $_SESSION['username']);
+$statement1 -> execute();
+$user = $statement1 -> fetch();
+$statement1 -> closeCursor();
 
-$queryUserByEmail = 'SELECT * FROM users WHERE userName = :userName';
-$statement2 = $db -> prepare($queryUserByEmail);
+$queryCartItems = 'SELECT * FROM products 
+                    WHERE productID IN (SELECT * FROM cart WHERE
+                                        userName = :userName)';
+$statement2 = $db -> prepare($queryCartItems);
 $statement2 -> bindValue(':userName', $_SESSION['username']);
 $statement2 -> execute();
-$userByEmail = $statement2 -> fetch();
+$items = $statement2 -> fetchAll();
 $statement2 -> closeCursor();
 
+$queryQuantities = 'SELECT * FROM cart WHERE
+                                        userName = :userName';
+$statement3 = $db -> prepare($queryQuantities);
+$statement3 -> bindValue(':userName', $_SESSION['username']);
+$statement3 -> execute();
+$quantities = $statement3 -> fetchAll();
+$statement3 -> closeCursor();
+
+$order_items = array();
+$i = 0;
+foreach ($items as $item){
+    $order_items[$i] = array();
+    $order_items[$i]['name'] = $item['productName'];
+    foreach ($quantities as $quantity){
+        if ($item['productID'] == $quantity['productID']){
+            $order_items[$i]['quantity'] = $quantity['quantity'];
+        }
+    }
+    $order_items[$i]['price'] = $item['listPrice']*$order_items[$i]['quantity'];
+    $i++;
+}
 
 /* CARD NUMBER */
 if ($card_number == 'null'){
@@ -58,32 +74,31 @@ if($exp_date < $today){
 }
 
 if (empty($_SESSION['error'])) {
-    $queryNewUser = 'INSERT INTO users
-                        (userName, userPassword, fullName, email, phone, 
-                        cardType, cardNumber, cardSecurity, lastFour, cardExp, street,
-                        city, userState, zip)
-                        VALUES (:username, :password, :name, :email, :phone, 
-                        :card_type, :card_number, :card_security, :last_four, :exp_date, :street,
-                        :city, :state, :zip)';
-    $statement3 = $db->prepare($queryNewUser);
-    $statement3 -> bindValue(':username', $username);
-    $statement3 -> bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
-    $statement3 -> bindValue(':name', $name);
-    $statement3 -> bindValue(':email', $email);
-    $statement3 -> bindValue(':phone', $phone);
-    $statement3 -> bindValue(':card_type', $card_type);
-    $statement3 -> bindValue(':card_number', password_hash($card_number, PASSWORD_DEFAULT));
-    $statement3 -> bindValue(':card_security', password_hash($card_security, PASSWORD_DEFAULT));
-    $statement3 -> bindValue(':last_four', substr($_POST['card_number'], strlen($_POST['card_number'])-4));
-    $statement3 -> bindValue(':exp_date', $exp_date -> format('Y-m-d H:i:s'));
-    $statement3 -> bindValue(':street', $street);
-    $statement3 -> bindValue(':city', $city);
-    $statement3 -> bindValue(':state', $state);
-    $statement3 -> bindValue(':zip', $zip);
-    $statement3 -> execute();
-    $statement3 -> closeCursor();
-    $_SESSION['success']['message'] = 'Your account has been set up!';
-    $_SESSION['success']['link'] = 'login';
+    $total = 0;
+    $list = '';
+    for ($i = 0; $i < sizeof($order_items); $i++){
+        $list .= '<br>'.$order_items[$i]['name'].
+            ', '.$order_items[$i]['quantity'].', $'.
+        $order_items[$i]['price'];
+        $total += $order_items[$i]['price'];
+    }
+    
+
+    $logo = file_get_contents('logo.txt');
+    $message =
+        '<p>Hello '.$user['fullName'].',</p>
+        <br><p>Thank you for shopping with us! Below is a copy of
+        your order.</p> 
+        <p>Order Information</p> 
+        <p>Name on card: ' . $user['cardName'].
+        '<br>Card type: ' . ucwords($user['cardType']).
+        '<br>Card number: ************' . $user['lastFour'].
+        '<br>Expiration date: '.$month.'/'.$year.
+        '<br>Order items: '.$list.
+        '<br>Total: $'.$total.
+        '<br><p>- BuyTech Team</p><br>
+        <img src="'.$logo.'">';
+    send_email($user['email'], $user['fullName'], 'Order Confirmation', $message);
     header("location: confirmation.php");
 }
 else{

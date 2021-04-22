@@ -1,5 +1,14 @@
 <?php
-	require('database.php');
+require('database.php');
+session_start();
+$queryUserByUsername = 'SELECT * FROM users WHERE userName = :userName';
+$statement1 = $db -> prepare($queryUserByUsername);
+$statement1 -> bindValue(':userName', $_SESSION['username']);
+$statement1 -> execute();
+$user = $statement1 -> fetch();
+$statement1 -> closeCursor();
+$month = date('m', strtotime($user['cardExp']));
+$year = date('Y', strtotime($user['cardExp']));
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,22 +29,22 @@
             <h3>Billing Address</h3>
 			
             <label for="name"><i class=""></i>Full Name</label>
-            <input type="text" id="fname" name="fullname" placeholder="John Doe"><br>
+            <input type="text" id="fname" name="fullname" value="<?php echo $user['fullName']?>"><br>
 			
             <label for="email"><i class=""></i>Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com"><br>
+            <input type="text" id="email" name="email" value="<?php echo $user['email']?>"><br>
 			
             <label for="adr"><i class=""></i>Address</label>
-            <input type="text" id="adr" name="address" placeholder="1000 Lakeside Dr"><br>
+            <input type="text" id="adr" name="address" value="<?php echo $user['street']?>"><br>
 			
             <label for="city"><i class=""></i>City</label>
-            <input type="text" id="city" name="city" placeholder="Athens"><br>
+            <input type="text" id="city" name="city" value="<?php echo $user['city']?>"><br>
 
 			<label for="state">State</label>
-			<input type="text" id="state" name="state" placeholder="GA"><br>
+			<input type="text" id="state" name="state" value="<?php echo $user['userState']?>"><br>
 
 			<label for="zip">Zip</label>
-			<input type="text" id="zip" name="zip" placeholder="10001"><br>
+			<input type="text" id="zip" name="zip" value="<?php echo $user['zip']?>"><br>
 			
 		</div>
 		
@@ -52,10 +61,20 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div><br>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe"><br>
-			
+            <input type="text" id="cname" name="cardname" value="<?php echo $user['cardName']?>"><br>
+
+            <label for="card_type">Card type</label>
+            <select id="card_type" name="card_type">
+                <option value="visa"
+                    <?php if($user['cardType'] == 'visa'){echo 'selected';} ?>>Visa</option>
+                <option value="mastercard"
+                    <?php if($user['cardType'] == 'mastercard'){echo 'selected';} ?>>MasterCard</option>
+                <option value="discover"
+                    <?php if($user['cardType'] == 'discover'){echo 'selected';} ?>>Discover</option>
+            </select><br>
+
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Enter card number"><br>
 			<!---
             <label for="expmonth">Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="September"><br>
@@ -67,35 +86,35 @@
 			  --->
 			  <label for="month" id="monthlabel">Expiration month</label>
                 <select id="month" name="month">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12" >12</option>
+                    <option value="01" <?php if($month == '01'){echo 'selected';} ?>>01</option>
+                    <option value="02" <?php if($month == '02'){echo 'selected';} ?>>02</option>
+                    <option value="03" <?php if($month == '03'){echo 'selected';} ?>>03</option>
+                    <option value="04" <?php if($month == '04'){echo 'selected';} ?>>04</option>
+                    <option value="05" <?php if($month == '05'){echo 'selected';} ?>>05</option>
+                    <option value="06" <?php if($month == '06'){echo 'selected';} ?>>06</option>
+                    <option value="07" <?php if($month == '07'){echo 'selected';} ?>>07</option>
+                    <option value="08" <?php if($month == '08'){echo 'selected';} ?>>08</option>
+                    <option value="09" <?php if($month == '09'){echo 'selected';} ?>>09</option>
+                    <option value="10" <?php if($month == '10'){echo 'selected';} ?>>10</option>
+                    <option value="11" <?php if($month == '11'){echo 'selected';} ?>>11</option>
+                    <option value="12" <?php if($month == '12'){echo 'selected';} ?>>12</option>
                 </select>
                 <label for="year" id="yearlabel">Expiration year</label>
                 <select id="year" name="year">
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
+                    <option value="2021" <?php if($year == '2021'){echo 'selected';} ?>>2021</option>
+                    <option value="2022" <?php if($year == '2022'){echo 'selected';} ?>>2022</option>
+                    <option value="2023" <?php if($year == '2023'){echo 'selected';} ?>>2023</option>
+                    <option value="2024" <?php if($year == '2024'){echo 'selected';} ?>>2024</option>
+                    <option value="2025" <?php if($year == '2025'){echo 'selected';} ?>>2025</option>
+                    <option value="2026" <?php if($year == '2026'){echo 'selected';} ?>>2026</option>
+                    <option value="2027" <?php if($year == '2027'){echo 'selected';} ?>>2027</option>
+                    <option value="2028" <?php if($year == '2028'){echo 'selected';} ?>>2028</option>
+                    <option value="2029" <?php if($year == '2029'){echo 'selected';} ?>>2029</option>
+                    <option value="2030" <?php if($year == '2030'){echo 'selected';} ?>>2030</option>
                 </select>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352"><br>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter cvv"><br>
               </div>
 		<!---
         <label>
