@@ -5,13 +5,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="contact.js"></script>
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <meta charset="UTF-8">
     <title>Contact Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
-    <script src="contact.js"></script>
+    
 </head>
 <body>
     <div class="header">
