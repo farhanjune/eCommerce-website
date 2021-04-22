@@ -58,8 +58,9 @@ session_start();
             <input type="reset" id="clear" value="Clear">
         </form>
     </div>
-    <div class="footer">
-    <div class="container">
+	
+	<div class="footer">
+		<div class="container">
             <div class="row">
                 <div class="footer-col-1">
                     <h3>Links</h3>
@@ -82,10 +83,9 @@ session_start();
                     </ul>
                 </div>
             </div>
-            <hr>
-            <p class="copyright">Copyright 2021 - BuyTech</p>
-        </div>
-    </div>
+				<p class="copyright">Copyright 2021 - BuyTech</p>
+		</div>
+	</div>
     <script>
         var menu_items = document.getElementById('menu-items');
 
