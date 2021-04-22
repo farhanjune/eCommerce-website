@@ -1,22 +1,7 @@
 <?php
-
-	$dsn = 'mysql:host=localhost;dbname=database';
-	$username = 'root';
-	$password = '';
-
-	try {
-		$dbo = new PDO($dsn, $username, $password);
-	} catch (PDOException $e) {
-		die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
-		$error_message = $e->getMessage();
-	}
-
-	if(!isset($_SESSION['cart'])) 
-    { 
-		$lifetime = 60 * 60 * 24 * 14;
-		session_set_cookie_params($lifetime, '/');
-        session_start(); 
-    } 
+session_start();
+	require('database.php');
+	
 
 
 require_once('cart.php');
@@ -30,88 +15,57 @@ if ($action === NULL) {
 }
 
 switch($action) {
-    case 'add':
-        $product_key = filter_input(INPUT_POST, 'productkey');
-		$item_qty = filter_input(INPUT_POST, 'itemqty');
-		add_item($product_key, $item_qty, $dbo);
+	case 'empty_cart':
+		require('database.php');
+		empty_cart($db);
 		include('cart_view.php');
 		break;
-		
 	case 'update':
         $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         foreach($new_qty_list as $key => $qty) {
             if ($_SESSION['cart'][$key]['quantity'] < $qty) {
-                update_item($key, $qty, $dbo);
+                update_item($key, $qty, $db);
             } else if ($_SESSION['cart'][$key]['quantity'] > $qty) {
 				unset($_SESSION['cart'][$key]);
 				$delsql = "DELETE FROM cart WHERE productID = ('$key')";
-				if ($dbo->query($delsql) === TRUE) {
+				if ($db->query($delsql) === TRUE) {
 				  echo "Record deleted successfully";
 				} else {
-				  echo "Error deleting record: " . $dbo->error;
+				  echo "Error deleting record: " . $db->error;
 				}
-				add_item($key, $qty, $dbo);
+				add_item($key, $qty, $db);
 			}
         }
         include('cart_view.php');
         break;
-
-    case 'show_cart':
-        include('cart_view.php');
-        break;
-	case 'empty_cart':
-		$emptysql = "DELETE FROM cart";
-		if ($dbo->query($emptysql) === TRUE) {
-				  echo "Cleared";
-				} else {
-				  echo "Error clearing: " . $dbo->error;
-				}
-		unset($_SESSION['cart']);
-		break;
 }
+
 echo $_SESSION['username'];
 $username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BuyTech | Electronics</title>
-		<link rel="stylesheet" href="cartviewstyle.css">
+		<link rel="stylesheet" href="style.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
-	
 	<body>
 		<div class="header">
 			<div class="container">
-				<div class="navbar">
-					<div class="logo">
-						<img src="images/logo.png" class="branding-logo">
-					</div>
-					<nav>
-						<ul id="menu-items">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Login</a></li>
-						</ul>
-					</nav>
-					<img src="images/cart.png" width="30px" height="30px">
-					<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-				</div>
-				<div>
-					<nav class="categories">
-						<h1>Cart<h1>
-					</nav>
-				</div>
+				<div id="header"></div><br />
+				<script>
+				$("#header").load("header.php");
+				</script>
 			</div>
 		</div>
 		<main>
-		<h1>Your Cart</h1>
+		<h1 style="text-align:center;padding:30px;">Your Cart</h1>
 
         <?php if (empty($_SESSION['cart']) ||
 
@@ -122,13 +76,9 @@ $username = $_SESSION['username'];
         <?php else: ?>
 
             <form action="." method="post">
-
-            <input type="hidden" name="action"
-
-                    value="update">
-
-            <table>
-                <tr id="cart_header">
+			<div class="carttable">
+            <table style="border: 1px solid black;borer-collapse:collapse;width:70%;margin-left:250px;">
+                <tr id="cart_header" style="background-color:black;color:white;">
                     <th class="left">Item</th>
 					<th class="right"></th>
                     <th class="right">Item Cost</th>
@@ -137,11 +87,12 @@ $username = $_SESSION['username'];
                 </tr>
 				<?php 
 					$totalcart = 0;
+					$userID = $_SESSION['username'];
 					$sql = "SELECT p.*, COUNT(c.productID) AS quantity 
-							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
+							FROM products p LEFT JOIN cart c ON (c.userId = ('$userID')) 
 							WHERE c.productID = p.productID
 							GROUP BY productID";
-					foreach($dbo->query($sql) as $key => $item ) :
+					foreach($db->query($sql) as $key => $item ) :
 						$cost  = number_format($item['listPrice'], 2);					
 						$total = $cost * $item['quantity'];
 						$totalcart += $total;
@@ -162,27 +113,39 @@ $username = $_SESSION['username'];
 					</tr>
 					
 				<?php endforeach; ?>
-				<tr id="cart_footer">
-                    <td colspan="4"><b>Subtotal</b></td>
-                    <td>$<?php echo $totalcart; ?></td>
+				<tr id="cart_footer" style="padding:30px;">
+                    <td colspan="4"style="padding:30px;"><b>Subtotal</b></td>
+                    <td style="padding:30px;">$<?php echo $totalcart; ?></td>
                 </tr>
                 
             </table>
+			</div>
             <p>Click "Update Cart" to update quantities in
                your cart. Enter a quantity of 0 to remove
                an item.</p>
 			   <p><a href=".?action=show_add_item">Add Item</a></p>
+			   
 			</form>
 			<form action="." method="post">
-				<input type="hidden" name="action"
-                    value="empty_cart">
-					<input type="submit" name="action"
-                               value="empty_cart"></td>
-            </form>
+				<input type="hidden" name="action" value="empty_cart"></input>
+				<input type="Submit" value="Empty"/>
+			</form>
 			<p><a href="checkout.php">Checkout</a></p>
         <?php endif; ?>
 		</main>
-        
+        <script>
+            var menu_items = document.getElementById('menu-items');
+
+            menu_items.style.maxHeight = "0px";
+
+            function menutoggle() {
+                if(menu_items.style.maxHeight == "0px"){
+                    menu_items.style.maxHeight = "200px";
+                }else{
+                    menu_items.style.maxHeight = "0px";
+                }
+            }
+        </script>
 
 	</body>
 </html>

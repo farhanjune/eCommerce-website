@@ -76,3 +76,21 @@ body{
   background: #FF9900;
   color: #000;
 }
+#carttable{
+    border: 1px solid black;
+    background: white;
+    height: 50%;
+    float: left;
+    top: 50%;
+    left: 80%;
+    position: absolute;
+    transform: translate(-50%, -35%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    float: right;
+}
+#cart_header{
+    color: #FF9900;
+    margin-right: 10px;
+    
+}

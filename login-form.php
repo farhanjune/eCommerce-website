@@ -15,7 +15,10 @@ if (isset($_SESSION['flag'])){
   <body>
 
     <div class="login-box">
-      <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
+      <!---<img src="images/circle_logo.png" class="avatar" alt="Avatar Image">--->
+	  <a href="index.php">
+			<img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
+			</a>
       <h1>Login Here</h1>
       <form action="validate-login.php" method="post">
           <?php
