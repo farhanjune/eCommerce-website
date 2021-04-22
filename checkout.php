@@ -137,13 +137,16 @@ $year = date('Y', strtotime($user['cardExp']));
                 </tr>
 				<?php 
 					$totalcart = 0;
+					$quantity = 0;
+					$username = $_SESSION['username'];
 					$sql = "SELECT p.*, COUNT(c.productID) AS quantity 
-							FROM products p LEFT JOIN cart c ON (c.userId = ('guest')) 
+							FROM products p LEFT JOIN cart c ON (c.userId = ('$username')) 
 							WHERE c.productID = p.productID
 							GROUP BY productID";
 					foreach($db->query($sql) as $key => $item ) :
 						$cost  = number_format($item['listPrice'], 2);					
 						$total = $cost * $item['quantity'];
+						$quantity += $item['quantity'];
 						$totalcart += $total;
 						
 				?>
