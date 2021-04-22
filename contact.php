@@ -47,7 +47,7 @@ session_start();
         </form>
     </div>
     <div class="footer">
-        <div class="container">
+    <div class="container">
             <div class="row">
                 <div class="footer-col-1">
                     <h3>Links</h3>

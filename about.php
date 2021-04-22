@@ -85,16 +85,11 @@ session_start();
                 </div>
                 <div class="col-2">
                     <h2>Farhan Juneja</h2><br>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <h3>Farhan is a second-year undergraduate pursuing computer science at the University of Georgia. He is involved in many
+                    organizations and loves working with big data and analytics.    
                     </h3><br><br>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Aside from being a full time student, he loves boxing and trading.
                     </p>
                 </div>
             </div>
@@ -123,16 +118,13 @@ session_start();
                 </div>
                 <div class="col-2">
                     <h2>Sol P</h2><br>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <h3>Sol is a 4th year Computer Science student at the University of Georgia.
+						He grew up in Norcross, Georgia and worked a few years after graduating
+						highschool before attending the University.
                     </h3><br><br>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Besides programming, he ballroom dances, hikes, and recently picked up
+						running on trails in the beginning of 2021!
                     </p>
                 </div>
             </div>
@@ -156,30 +148,29 @@ session_start();
             </div>
         </div>
         <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col-1">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li>Coupons</li>
-                            <li>Blog Post</li>
-                            <li>Return Policy</li>
-                        </ul>
-                    </div>
-                    <div class="footer-col-2">
-                        <img src="images/logo.png">
-                        <p>Our mission is to make electronics accessible to everyone.</p>
-                    </div>
-                    <div class="footer-col-3">
-                        <h3>Follow Us</h3>
-                        <ul>
-                            <li>Facebook</li>
-                            <li>Instagram</li>
-                            <li>Twitter</li>
-                            <li>YouTube</li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>Discounts</li>
+                        <li>Blog</li>
+                        <li>Policy</li>
+                    </ul>
                 </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our mission is to make electronics accessible to everyone.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Pinterest</li>
+                    </ul>
+                </div>
+            </div>
                 <hr>
                 <p class="copyright">Copyright 2021 - BuyTech</p>
             </div>
