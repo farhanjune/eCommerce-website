@@ -4,7 +4,7 @@ require('database.php');
 require 'send-email.php';
 include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
-echo $_SESSION['username'];
+
 $card_name = filter_input(INPUT_POST, 'cardname', FILTER_SANITIZE_STRING);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['cardnumber']);
@@ -58,6 +58,14 @@ foreach ($items as $item){
     }
     $order_items[$i]['price'] = $item['listPrice']*$order_items[$i]['quantity'];
     $i++;
+}
+
+/* CARD NAME */
+if(empty($_POST['card_name'])){
+    $_SESSION['error']['card_name_error'] = 'Please enter a name on card';
+}
+elseif (!$card_name){
+    $_SESSION['error']['card_name_error'] = 'Invalid entry format';
 }
 
 /* CARD NUMBER */

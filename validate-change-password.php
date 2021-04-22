@@ -46,7 +46,8 @@ if (empty($_POST['confirm_password'])){
 elseif (!$confirm_password){
     $_SESSION['error']['confirm_password_error'] = 'Invalid entry format';
 }
-elseif ($new_password !== $confirm_password){
+
+if ($new_password !== $confirm_password){
     $_SESSION['error']['confirm_password_error'] = 'New passwords do not match';
 }
 

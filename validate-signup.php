@@ -13,6 +13,7 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $phone = phone_validate($_POST['phone']);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['card_number']);
+$card_name = filter_input(INPUT_POST, 'card_name', FILTER_SANITIZE_STRING);
 $card_security = card_security_validate($_POST['card_security']);
 $exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
 $today = new DateTime('now');
@@ -101,6 +102,14 @@ elseif (!$card_number){
     $_SESSION['error']['card_number_error'] = 'Invalid entry format';
 }
 
+/* CARD NAME */
+if(empty($_POST['card_name'])){
+    $_SESSION['error']['card_name_error'] = 'Please enter a name on card';
+}
+elseif (!$card_name){
+    $_SESSION['error']['card_name_error'] = 'Invalid entry format';
+}
+
 /* CARD SECURITY */
 if ($card_security == 'null'){
     $_SESSION['error']['card_security_error'] = 'Please enter a security code';
@@ -149,10 +158,10 @@ elseif (!$zip){
 if (empty($_SESSION['error'])) {
     $queryNewUser = 'INSERT INTO users
                         (userName, userPassword, fullName, email, phone, 
-                        cardType, cardNumber, cardSecurity, lastFour, cardExp, street,
+                        cardType, cardNumber, cardName, cardSecurity, lastFour, cardExp, street,
                         city, userState, zip)
                         VALUES (:username, :password, :name, :email, :phone, 
-                        :card_type, :card_number, :card_security, :last_four, :exp_date, :street,
+                        :card_type, :card_number, :card_name, :card_security, :last_four, :exp_date, :street,
                         :city, :state, :zip)';
     $statement3 = $db->prepare($queryNewUser);
     $statement3 -> bindValue(':username', $username);
@@ -162,6 +171,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':phone', $phone);
     $statement3 -> bindValue(':card_type', $card_type);
     $statement3 -> bindValue(':card_number', password_hash($card_number, PASSWORD_DEFAULT));
+    $statement3 -> bindValue(':card_name', $card_name);
     $statement3 -> bindValue(':card_security', password_hash($card_security, PASSWORD_DEFAULT));
     $statement3 -> bindValue(':last_four', substr($_POST['card_number'], strlen($_POST['card_number'])-4));
     $statement3 -> bindValue(':exp_date', $exp_date -> format('Y-m-d H:i:s'));

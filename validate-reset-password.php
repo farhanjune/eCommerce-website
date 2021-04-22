@@ -65,7 +65,5 @@ if (empty($_SESSION['error'])){
     header("location: success.php");
 }
 else{
-    $_SESSION['wtf'] = 'Existing code: '.$existing_code.
-        '<br>Email: '.$email;
     header("location: reset-password.php");
 }

@@ -82,6 +82,14 @@ if (isset($_SESSION['flag'])){
                     echo "<span>$error</span><br>";
                 }
                 ?>
+                <label for="card_name" id="card_typelabel">Name on card</label>
+                <input id="card_name" name="card_name" type="text"><br>
+                <?php
+                if(isset($_SESSION['error']['card_name_error'])){
+                    $error = $_SESSION['error']['card_name_error'];
+                    echo "<span>$error</span><br>";
+                }
+                ?>
                 <label for="card_security">Security code</label>
                 <input id="card_security" name="card_security" type="text"><br>
                 <?php

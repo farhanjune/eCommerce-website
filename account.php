@@ -17,6 +17,9 @@ else{
     $email = $user['email'];
     $phone = $user['phone'];
     $card_type = $user['cardType'];
+    $card_name = $user['cardName'];
+    $month = date('m', strtotime($user['cardExp']));
+    $year = date('Y', strtotime($user['cardExp']));
     $street = $user['street'];
     $city = $user['city'];
     $state = $user['userState'];
@@ -123,6 +126,40 @@ else{
                 <?php
                 if(isset($_SESSION['error']['card_security_error'])){
                     $error = $_SESSION['error']['card_security_error'];
+                    echo "<span>$error</span>";
+                }
+                ?>
+                <label for="month">Expiration month</label>
+                <select id="month" name="month">
+                    <option value="01" <?php if($month == '01'){echo 'selected';} ?>>01</option>
+                    <option value="02" <?php if($month == '02'){echo 'selected';} ?>>02</option>
+                    <option value="03" <?php if($month == '03'){echo 'selected';} ?>>03</option>
+                    <option value="04" <?php if($month == '04'){echo 'selected';} ?>>04</option>
+                    <option value="05" <?php if($month == '05'){echo 'selected';} ?>>05</option>
+                    <option value="06" <?php if($month == '06'){echo 'selected';} ?>>06</option>
+                    <option value="07" <?php if($month == '07'){echo 'selected';} ?>>07</option>
+                    <option value="08" <?php if($month == '08'){echo 'selected';} ?>>08</option>
+                    <option value="09" <?php if($month == '09'){echo 'selected';} ?>>09</option>
+                    <option value="10" <?php if($month == '10'){echo 'selected';} ?>>10</option>
+                    <option value="11" <?php if($month == '11'){echo 'selected';} ?>>11</option>
+                    <option value="12" <?php if($month == '12'){echo 'selected';} ?>>12</option>
+                </select>
+                <label for="year">Expiration year</label>
+                <select id="year" name="year">
+                    <option value="2021" <?php if($year == '2021'){echo 'selected';} ?>>2021</option>
+                    <option value="2022" <?php if($year == '2022'){echo 'selected';} ?>>2022</option>
+                    <option value="2023" <?php if($year == '2023'){echo 'selected';} ?>>2023</option>
+                    <option value="2024" <?php if($year == '2024'){echo 'selected';} ?>>2024</option>
+                    <option value="2025" <?php if($year == '2025'){echo 'selected';} ?>>2025</option>
+                    <option value="2026" <?php if($year == '2026'){echo 'selected';} ?>>2026</option>
+                    <option value="2027" <?php if($year == '2027'){echo 'selected';} ?>>2027</option>
+                    <option value="2028" <?php if($year == '2028'){echo 'selected';} ?>>2028</option>
+                    <option value="2029" <?php if($year == '2029'){echo 'selected';} ?>>2029</option>
+                    <option value="2030" <?php if($year == '2030'){echo 'selected';} ?>>2030</option>
+                </select><br>
+                <?php
+                if(isset($_SESSION['error']['exp_date_error'])){
+                    $error = $_SESSION['error']['exp_date_error'];
                     echo "<span>$error</span>";
                 }
                 ?>

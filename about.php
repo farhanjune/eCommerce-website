@@ -45,28 +45,27 @@ session_start();
                 </div>
                 <div class="col-3">
                     <p class="timeline">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        The story begins in the springtime of our youth. Full of blurry dreams and aspirations,
+                        each of us knew that we wanted to make something of ourselves, the question was 'what?'.
+                        Throughout our high school years and into the early semesters of college, we studied
+                        a variety of subjects, hungry for the knowledge that would guide us to our eventual success.
                     </p>
                     <p class="timeline">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Fast forward to the final semester of our undergraduate career at the University of Georgia.
+                        We all met for the first time in the widely-coveted Web Programming course taught diligently
+                        by the esteemed Dr. Sachin Meena. It was there that the fires of web development forged what
+                        would become our collaborative genius.
                     </p>
                     <p class="timeline">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Though success did come, it didn't happen overnight. After graduation, we each set out to gain
+                        experience and test our worth in the real world, far from the comfort of academia. It was
+                        a rigorous introduction to the industry, but a very valuable lesson to us all.
                     </p>
                     <p class="timeline">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        After a few years spent working at various tech startups and big industry names which we
+                        need not mention here, we finally reunited to continue the collective project we had
+                        nurtured so long ago. It was thus that BuyTech was born, supported by our diverse expertise
+                        and driven by the mission to provide the best consumer technology the industry has to offer!
                     </p>
                 </div>
                 <div class="col-3">
@@ -99,16 +98,15 @@ session_start();
                 </div>
                 <div class="col-2">
                     <h2>Frank González</h2><br>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <h3>Frank is a fourth year majoring in Linguistics, Computer Science, and Cognitive Science.
+                        His current goal is to graduate from UGA and enter grad school to pursue a PhD in either
+                        Linguistics or an interdisciplinary PhD in Cognitive Science. Frank is fascinated by cognition,
+                        especially the faculty of human language and the validity of biolinguistics.
                     </h3><br><br>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Technical Skills: HTML/CSS, PHP, Java, Python, C/C++, MySQL, MATLAB<br>
+                        Language Skills: English (Bilingual), Spanish (Native), German (B2),
+                        French (A2), Japanese (Research)
                     </p>
                 </div>
             </div>
@@ -134,15 +132,11 @@ session_start();
                 </div>
                 <div class="col-2">
                     <h2>Nahiyaan Sheikh</h2><br>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <h3>Nahiyaan is a second year majoring in Computer Science. He is from Lawrenceville, Georgia and also has a passion for graphic design.
+                        He is currently trying to find internships and gain work experience before graduating.
                     </h3><br><br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <p>Has skills in Java, C, HTML coding. Also can use adobe photoshop and illustrator. Knows how to create graphics and logos for social
+                        media and websites.
                     </p>
                 </div>
             </div>

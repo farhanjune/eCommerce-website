@@ -26,11 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Added info to about.php and fixed css properties, amended links to cart_view on major pages">
-      <change afterPath="$PROJECT_DIR$/logo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-forgot-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-forgot-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate-reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-signup.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="445242c2-25cf-46a9-b1b0-76c1bbd4dd68" />
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -67,7 +68,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../old_eCommerce-website/validate-signup.php" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../pre-presentation/validate-checkout.php" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,6 +80,7 @@
       <updated>1618768466479</updated>
       <workItem from="1618768467774" duration="21298000" />
       <workItem from="1618839075105" duration="14294000" />
+      <workItem from="1619121100218" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit">
       <created>1618769334147</created>
@@ -189,10 +191,11 @@
     </state>
     <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.837@0.23.1440.837" timestamp="1618938527989" />
     <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.839@0.23.1440.839" timestamp="1618780964415" />
-    <state x="100" y="123" width="1240" height="626" key="DiffContextDialog" timestamp="1618939140371">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog" timestamp="1619121452053">
+      <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="100" y="123" width="1240" height="626" key="DiffContextDialog/0.23.1440.837@0.23.1440.837" timestamp="1618939140371" />
+    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.838@0.23.1440.838" timestamp="1619121452053" />
     <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.839@0.23.1440.839" timestamp="1618790707953" />
     <state x="541" y="367" key="NewPhpFileDialog" timestamp="1618785111391">
       <screen x="0" y="23" width="1440" height="839" />

@@ -11,6 +11,7 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $phone = phone_validate($_POST['phone']);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['card_number']);
+$card_name = filter_input(INPUT_POST, 'card_name', FILTER_SANITIZE_STRING);
 $card_security = card_security_validate($_POST['card_security']);
 $exp_date = new DateTime('01-'.$_POST['month'].'-'.$_POST['year']);
 $today = new DateTime('now');
@@ -45,7 +46,7 @@ elseif ($username !== $user['userName']){
     }
 }
 
-/* PASSWORD */
+/* NAME */
 if(empty($_POST['name'])){
     $_SESSION['error']['name_error'] = 'Please enter a name';
 }
@@ -85,6 +86,14 @@ if (!$card_number){
 }
 elseif ($card_number == 'null'){
     $card_number = null;
+}
+
+/* CARD NAME */
+if(empty($_POST['card_name'])){
+    $_SESSION['error']['card_name_error'] = 'Please enter a name on card';
+}
+elseif (!$card_name){
+    $_SESSION['error']['card_name_error'] = 'Invalid entry format';
 }
 
 /* CARD SECURITY */
@@ -139,6 +148,7 @@ if (empty($_SESSION['error'])) {
                             email = :email,
                             phone = :phone,
                             cardType = :card_type,
+                            cardName = :card_name,
                             cardExp = :exp_date,
                             street = :street,
                             city = :city,
@@ -152,6 +162,7 @@ if (empty($_SESSION['error'])) {
     $statement3 -> bindValue(':email', $email);
     $statement3 -> bindValue(':phone', $phone);
     $statement3 -> bindValue(':card_type', $card_type);
+    $statement3 -> bindValue(':card_name', $card_name);
     $statement3 -> bindValue(':exp_date', $exp_date -> format('Y-m-d H:i:s'));
     $statement3 -> bindValue(':street', $street);
     $statement3 -> bindValue(':city', $city);
