@@ -123,16 +123,13 @@ session_start();
                 </div>
                 <div class="col-2">
                     <h2>Sol P</h2><br>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                    <h3>Sol is a 4th year Computer Science student at the University of Georgia.
+						He grew up in Norcross, Georgia and worked a few years after graduating
+						highschool before attending the University.
                     </h3><br><br>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat.
+                        Besides programming, he ballroom dances, hikes, and recently picked up
+						running on trails in the beginning of 2021!
                     </p>
                 </div>
             </div>
