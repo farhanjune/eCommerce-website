@@ -40,6 +40,7 @@
 		</div>
 		
 		<div id="paymentinfo">
+		<form action="validate-checkout.php" method=post>
             <h3>Payment</h3>
             <!---
 			<label for="fname">Accepted Cards</label>
@@ -55,7 +56,7 @@
 			
             <label for="ccnum">Credit card number</label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br>
-			
+			<!---
             <label for="expmonth">Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="September"><br>
          
@@ -63,6 +64,35 @@
                 <label for="expyear">Exp Year</label>
                 <input type="text" id="expyear" name="expyear" placeholder="2018"><br>
               </div>
+			  --->
+			  <label for="month" id="monthlabel">Expiration month</label>
+                <select id="month" name="month">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12" >12</option>
+                </select>
+                <label for="year" id="yearlabel">Expiration year</label>
+                <select id="year" name="year">
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
               <div class="col-50">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352"><br>
@@ -75,6 +105,7 @@
 		</div>
 		
         <input type="submit" value="Submit" class="btn">
+		</form>
   </div>
   <!--- Cart items here --->
   <div class="cart">
