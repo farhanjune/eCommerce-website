@@ -434,7 +434,7 @@ ul {
 /* account box stuff */
 .account-box {
 
-    width: 1000px;
+    width: 900px;
     height: 180%;
     background: #fffefe;
     color: #FF9900;
@@ -446,8 +446,10 @@ ul {
       padding: 70px 30px;
    */
     margin: 0 auto;
-    padding-left: 120px;
-    padding-right: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
 	
 }
 .account-box h1 {
