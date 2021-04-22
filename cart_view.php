@@ -53,7 +53,7 @@ $username = $_SESSION['username'];
 			{
 				if ($obj = $result->fetch()) {
 				} else {
-					echo "There are no items in your cart.";
+					echo "<p style='text-align:center;padding-bottom:20px;'>There are no items in your cart.</p>";
 				}
 			}
 			else ?>
@@ -107,9 +107,10 @@ $username = $_SESSION['username'];
 			</form>
 			<form action="" method="post">
 				<input type="hidden" name="action" value="empty_cart"></input>
-				<input type="Submit" value="Empty"/>
+				<input class = "emptybutton" style="float:left;margin-left:400px;font-size:20px;margin-top:50px;padding:20px;background-color:orange;" type="Submit" value="Empty"/>
 			</form>
-			<p><a href="checkout.php">Checkout</a></p>
+			<br></br>
+			<p style ="float:right;padding-right:350px;font-size:40px;"><a href="checkout.php">Checkout</a></p>
 		</main>
         <script>
             var menu_items = document.getElementById('menu-items');
