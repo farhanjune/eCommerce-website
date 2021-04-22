@@ -17,31 +17,10 @@ if ($action === NULL) {
 switch($action) {
 	case 'empty_cart':
 		require('database.php');
-		include('cart.php');
 		empty_cart($db);
-		include('cart_view.php');
 		break;
-	case 'update':
-        $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-        foreach($new_qty_list as $key => $qty) {
-            if ($_SESSION['cart'][$key]['quantity'] < $qty) {
-                update_item($key, $qty, $db);
-            } else if ($_SESSION['cart'][$key]['quantity'] > $qty) {
-				unset($_SESSION['cart'][$key]);
-				$delsql = "DELETE FROM cart WHERE productID = ('$key')";
-				if ($db->query($delsql) === TRUE) {
-				  echo "Record deleted successfully";
-				} else {
-				  echo "Error deleting record: " . $db->error;
-				}
-				add_item($key, $qty, $db);
-			}
-        }
-        include('cart_view.php');
-        break;
 }
 
-echo $_SESSION['username'];
 $username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
@@ -68,13 +47,16 @@ $username = $_SESSION['username'];
 		<main>
 		<h1 style="text-align:center;padding:30px;">Your Cart</h1>
 
-        <?php if (empty($_SESSION['cart']) ||
-
-                  count($_SESSION['cart']) == 0) : ?>
-
-            <p>There are no items in your cart.</p>
-
-        <?php else: ?>
+        <?php 
+			$username = $_SESSION['username'];
+			if ($result = $db->query("SELECT * FROM cart WHERE userId = ('$username') LIMIT 1"))
+			{
+				if ($obj = $result->fetch()) {
+				} else {
+					echo "There are no items in your cart.";
+				}
+			}
+			else ?>
 
             <form action="." method="post">
 			<div class="carttable">
@@ -121,18 +103,13 @@ $username = $_SESSION['username'];
                 
             </table>
 			</div>
-            <p>Click "Update Cart" to update quantities in
-               your cart. Enter a quantity of 0 to remove
-               an item.</p>
-			   <p><a href=".?action=show_add_item">Add Item</a></p>
-			   
+            
 			</form>
-			<form action="." method="post">
+			<form action="" method="post">
 				<input type="hidden" name="action" value="empty_cart"></input>
 				<input type="Submit" value="Empty"/>
 			</form>
 			<p><a href="checkout.php">Checkout</a></p>
-        <?php endif; ?>
 		</main>
         <script>
             var menu_items = document.getElementById('menu-items');

@@ -54,8 +54,8 @@ function get_subtotal($db) {
 }
 function empty_cart($db) {
 	$username = $_SESSION['username'];
-	$emptysql = "DELETE FROM cart WHERE userId=('$username')";
-		if ($db->query($emptysql) == TRUE) {
+	$emptysql = $db->prepare("DELETE FROM cart WHERE userId=('$username')");
+		if ($emptysql->execute()) {
 				  echo "Cleared";
 				} else {
 				  echo "Error clearing: " . $db->error;
