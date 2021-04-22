@@ -11,6 +11,9 @@ body{
     
     
 }
+body {
+    font-family: 'Poppins', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
@@ -132,13 +135,6 @@ p {
     margin: 70px 0;
 }
 
-
-div.row{
-    /*
-align-content: center;
-*/
-    
-}
 div#contactrow{
     color: #FF9900;  
 }
@@ -217,8 +213,10 @@ span {
 }
 
 ul {
-	margin-left: 100px;
-	padding-left: 200px;
+    /*
+    margin-left: 100px;
+    padding-left: 200px;
+*/
 }
 
 .menu-icon {
