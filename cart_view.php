@@ -17,6 +17,7 @@ if ($action === NULL) {
 switch($action) {
 	case 'empty_cart':
 		require('database.php');
+		include('cart.php');
 		empty_cart($db);
 		include('cart_view.php');
 		break;
