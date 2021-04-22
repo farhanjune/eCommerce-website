@@ -69,14 +69,14 @@ session_start();
         </form>
     </div>
     <div class="footer">
-        <div class="container">
+    <div class="container">
             <div class="row">
                 <div class="footer-col-1">
-                    <h3>Useful Links</h3>
+                    <h3>Links</h3>
                     <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
+                        <li>Discounts</li>
+                        <li>Blog</li>
+                        <li>Policy</li>
                     </ul>
                 </div>
                 <div class="footer-col-2">
@@ -87,9 +87,8 @@ session_start();
                     <h3>Follow Us</h3>
                     <ul>
                         <li>Facebook</li>
-                        <li>Instagram</li>
                         <li>Twitter</li>
-                        <li>YouTube</li>
+                        <li>Pinterest</li>
                     </ul>
                 </div>
             </div>
