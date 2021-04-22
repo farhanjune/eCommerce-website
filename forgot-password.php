@@ -11,7 +11,10 @@
     </head>
     <body>
         <div class="login-box">
-            <img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
+            <!---<img src="images/circle_logo.png" class="avatar" alt="Avatar Image">--->
+			<a href="index.php">
+			<img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
+			</a>
             <h1>Forgot Password</h1>
             <form action="validate-forgot-password.php" method="post">
                 <label for="email">Email</label>

@@ -14,8 +14,9 @@
 	<div class="checkout-box">
 	<h2>Checkout</h2>
 		<div id="billinginfo">
+			<a href="index.php">
 			<img src="images/circle_logo.png" class="avatar" alt="Avatar Image">
-		
+			</a>
             <h3>Billing Address</h3>
 			
             <label for="name"><i class=""></i>Full Name</label>
