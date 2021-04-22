@@ -1,22 +1,110 @@
+
 body{
-    background: radial-gradient(#FF9900, #fff);
-    margin-bottom: 20px;
+    margin: 0;
+    padding: 0;
+    /*
+    background: url(images/login-background.jpeg) no-repeat center top;
+   */
+    
+    background-size: cover;
+    font-family: sans-serif;
+    
+    
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
 nav {
-	text-align:right;
-	width: 900px;
-
-}
-.header{
-    background: none;
+    flex: 1;
+    text-align: right;
 }
 
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
 
+nav ul li {
+    padding: 16px;
+    display: inline-block;
+    margin-right: 20px;
+}
+nav ul li:hover, nav ul li:focus {
+    background-color: #2980B9;
+}
+
+a {
+    color: #555;
+    text-decoration:none;
+}
+a:hover {
+    color: white;
+}
+
+p {
+    color: #555;
+}
+.container {
+    max-width: 1300px;
+    margin: auto;
+    
+    padding-right: 25px;
+    padding-left: 25px;
+
+}
+
+
+.btn {
+    display: inline-block;
+    background: #FF9900;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.header {
+    background: radial-gradient(#FF9900, #fff);
+}
+
+.header .row {
+    margin-top: 70px;
+}
+
+.btn:hover {
+    background: #8c00ff;
+}
+
+.categories {
+    margin: 70px 0;
+}
+
+
+div.row{
+    align-content: center;
+    
+}
+div#contactrow{
+    color: #FF9900;  
+}
+div#contactcontainer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 .contact.col-1{
     flex-basis: 100%;
     min-width: 300px;
-    align-content: right;
-    text-align: right;
+    align-content: center;
+    text-align: center;
 }
 
 .contact.col-1 h1{
@@ -34,7 +122,9 @@ form{
     padding-bottom: 50px;
     box-shadow: 0 0 10px #8c00ff;
     width: 65%;
+    
     background-image: linear-gradient(to right,#8c00ff,purple 100%);
+   
 }
 
 form h3{

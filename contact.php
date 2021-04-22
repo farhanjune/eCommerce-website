@@ -23,16 +23,27 @@ session_start();
 				$("#header").load("header.php");
 				</script>
             </div>
-            <div class="row">
+			<!---
+            <div class="row" id="contactrow">
                 <div class="contact col-1">
                     <h1>Contact Us!</h1><br>
                     <h2>We'd love to hear from you.</h2><br>
                 </div>
             </div>
+			--->
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="contactcontainer">
+		
         <form action="validate-contact.php" onsubmit="return submitContact()" method="post">
+		
+			<div class="row" id="contactrow">
+                <div class="contact col-1">
+                    <h1>Contact Us!</h1><br>
+                    <h2>We'd love to hear from you.</h2><br>
+                </div>
+            </div>
+			
             <h3>Please fill out this form</h3><br>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Enter your name"><span id="em1">*</span><br>
