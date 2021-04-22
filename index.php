@@ -136,9 +136,9 @@ switch($action) {
 		<div class="testimonial">
 			<div class="small-container">
 				<div class="row">
-					<div class="col-3">
+				<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>I've made several orders with BuyTech and have never been more satisfied. I hope BuyTech keeps up the great work!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -147,12 +147,12 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Frank González</h3>
+						<img src="images/will.jpeg">
+						<h3>Will Smith</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>I have been very happy using BuyTech this past year. Their customer support and overall experience has been great even due to the pandemic. I will continue shopping on BuyTech and rate them 5 stars!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -161,12 +161,12 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Sol P</h3>
+						<img src="images/kimk.jpeg">
+						<h3>Kim Kardashian</h3>
 					</div>
 					<div class="col-3">
 						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
+						<p>Could not have found a better place to shop for tech products. The pricing and ease in shopping for what I want is awesome!</p>
 						
 						<div class="rating">
 							<i class="fa fa-star fa-fw"></i>
@@ -175,22 +175,8 @@ switch($action) {
 							<i class="fa fa-star fa-fw"></i>
 							<i class="fa fa-star fa-fw"></i>
 						</div>
-						<img src="images/nopic.png">
-						<h3>Nahiyaan Sheikh</h3>
-					</div>
-					<div class="col-3">
-						<i class="fa fa-quote-left fa-fw"></i>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat nam omnis nostrum dolore nulla saepe unde. Consectetur ad voluptate odit ipsam voluptatum, voluptatem reiciendis soluta pariatur tempore illo adipisci.</p>
-						
-						<div class="rating">
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-							<i class="fa fa-star fa-fw"></i>
-						</div>
-						<img src="images/nopic.png">
-						<h3>Farhan Juneja</h3>
+						<img src="images/brad.jpeg">
+						<h3>Brad Pitt</h3>
 					</div>
 				</div>
 			</div>
