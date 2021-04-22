@@ -54,7 +54,7 @@ body {
   background: transparent;
   outline: none;
   height: 40px;
-  color: #fff;
+  color: #000;
   font-size: 16px;
 }
 
@@ -63,7 +63,7 @@ body {
   outline: none;
   height: 40px;
   background: #8c00ff;
-  color: #fff;
+  color: #000;
   font-size: 18px;
   border-radius: 20px;
 }
