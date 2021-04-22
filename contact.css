@@ -213,10 +213,7 @@ span {
 }
 
 ul {
-    /*
-    margin-left: 100px;
-    padding-left: 200px;
-*/
+    list-style-type: none;
 }
 
 .menu-icon {
