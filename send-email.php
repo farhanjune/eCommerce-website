@@ -12,8 +12,8 @@ function send_email($to, $name, $subject, $message, $attachment = null){
     $mail->isSMTP();
     $mail->Host = 'smtp.mailtrap.io';
     $mail->SMTPAuth = true;
-    $mail->Username = '903defb5cb1d2a';
-    $mail->Password = '8a04411e9f48ca';
+    $mail->Username = '4b536fd476840a';
+    $mail->Password = '50a5fdb9917052';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 2525;
 

@@ -3,7 +3,6 @@
 	
 	if (!isset($_SESSION)) {
 		session_start();
-
 	}
 
 function add_item($key, $quantity, $db) {

@@ -40,7 +40,7 @@
 		</div>
 		
 		<div id="paymentinfo">
-		<form action="validate-checkout.php" method=post>
+		<form action="validate-checkout.php" method="post">
             <h3>Payment</h3>
             <!---
 			<label for="fname">Accepted Cards</label>
