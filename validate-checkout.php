@@ -47,9 +47,13 @@ $username = $_SESSION['username'];
 foreach ($items as $item){
     $order_items[$i] = array();
     $order_items[$i]['name'] = $item['productName'];
-    foreach ($quantities as $quantity){
-        if ($item['productID'] == $quantity['productID']){
-            $order_items[$i]['quantity'] = $quantity['quantity'];
+	$sql = "SELECT p.productID, COUNT(c.productID) AS quantity 
+	FROM products p LEFT JOIN cart c ON (c.userId = ('$username')) 
+	WHERE c.productID = p.productID
+	GROUP BY productID";
+    foreach ($db->query($sql) as $key => $qty){
+        if ($item['productID'] == $qty['productID']){
+            $order_items[$i]['quantity'] = $qty['quantity'];
         }
     }
     $order_items[$i]['price'] = $item['listPrice']*$order_items[$i]['quantity'];
