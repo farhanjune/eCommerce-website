@@ -4,7 +4,7 @@ require('database.php');
 require 'send-email.php';
 include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
-
+echo $_SESSION['username'];
 $card_name = filter_input(INPUT_POST, 'cardname', FILTER_SANITIZE_STRING);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['cardnumber']);
@@ -21,9 +21,11 @@ $statement1 -> execute();
 $user = $statement1 -> fetch();
 $statement1 -> closeCursor();
 
+
 $queryCartItems = 'SELECT * FROM products 
-                    WHERE productID IN (SELECT * FROM cart WHERE
-                                        userName = :userName)';
+                    WHERE productID IN (SELECT productID FROM cart WHERE
+                                        userId = :userName)';
+
 $statement2 = $db -> prepare($queryCartItems);
 $statement2 -> bindValue(':userName', $_SESSION['username']);
 $statement2 -> execute();
@@ -31,7 +33,7 @@ $items = $statement2 -> fetchAll();
 $statement2 -> closeCursor();
 
 $queryQuantities = 'SELECT * FROM cart WHERE
-                                        userName = :userName';
+                                        userId = :userName';
 $statement3 = $db -> prepare($queryQuantities);
 $statement3 -> bindValue(':userName', $_SESSION['username']);
 $statement3 -> execute();
@@ -40,6 +42,8 @@ $statement3 -> closeCursor();
 
 $order_items = array();
 $i = 0;
+$totalcart = 0;
+$username = $_SESSION['username'];
 foreach ($items as $item){
     $order_items[$i] = array();
     $order_items[$i]['name'] = $item['productName'];
