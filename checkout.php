@@ -78,7 +78,7 @@
   </div>
   <!--- Cart items here --->
   <div class="cart">
-    <table>
+    <table id="carttable">
                 <tr id="cart_header">
                     <th class="left">Item</th>
                     <th class="right">Item Cost</th>
