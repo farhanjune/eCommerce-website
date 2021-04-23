@@ -12,7 +12,7 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
-    
+    <script src="contact.js"></script>
 </head>
 <body>
     <div class="header">
@@ -22,7 +22,9 @@ session_start();
 				<script>
 				$("#header").load("header.php");
 				</script>
+
             </div>
+
 			<!---
             <div class="row" id="contactrow">
                 <div class="contact col-1">

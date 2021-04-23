@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    `<head>
+    <head>
         <meta charset="utf-8">
         <title>Forgot Password</title>
         <link rel="stylesheet" href="login-form.css">
@@ -26,7 +26,10 @@
                 }
                 ?>
                 <input type="submit" value="Submit">
-                <a href="signup.php">Don't have an account?</a>
+                <?php if (!isset($_SESSION['flag'])){
+                    echo "<a href=\"signup.php\">Don't have an account?</a>";
+                }
+                ?>
             </form>
         </div>
     </body>

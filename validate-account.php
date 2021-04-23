@@ -192,7 +192,7 @@ if (empty($_SESSION['error'])) {
                                     SET cardSecurity = :card_security
                                     WHERE userName = ' . $_SESSION['username'];
         $statement5 = $db -> prepare($queryUpdateCardSecurity);
-        $statement5 -> bindValue(':card_security', $card_security);
+        $statement5 -> bindValue(':card_security', password_hash($card_security, PASSWORD_DEFAULT));
         $statement5 -> execute();
         $statement5 -> closeCursor();
     }

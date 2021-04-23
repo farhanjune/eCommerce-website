@@ -20,6 +20,7 @@ $existing_code = $user['userPassword'];
 $username = $user['userName'];
 $statement1 -> closeCursor();
 
+$_SESSION['wtf'] = $user['userPassword'];
 /* CODE */
 if (empty($_POST['code'])){
     $_SESSION['error']['code_error'] = 'Please enter your code';
@@ -27,7 +28,7 @@ if (empty($_POST['code'])){
 elseif (!$code){
     $_SESSION['error']['code_error'] = 'Invalid entry format';
 }
-elseif (is_null($existing_code)){
+elseif (intval($code) != intval($existing_code)){
     $_SESSION['error']['code_error'] = 'Incorrect code';
 }
 

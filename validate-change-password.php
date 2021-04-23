@@ -22,13 +22,13 @@ $statement1 -> closeCursor();
 
 /* CURRENT PASSWORD */
 if (empty($_POST['current_password'])){
-    $_SESSION['error']['$current_password_error'] = 'Please enter your current password';
+    $_SESSION['error']['current_password_error'] = 'Please enter your current password';
 }
 elseif (!$current_password){
-    $_SESSION['error']['$current_password_error'] = 'Invalid entry format';
+    $_SESSION['error']['current_password_error'] = 'Invalid entry format';
 }
 elseif (!$password_match){
-    $_SESSION['error']['$current_password_error'] = 'Incorrect password';
+    $_SESSION['error']['current_password_error'] = 'Incorrect password';
 }
 
 /* NEW PASSWORD */

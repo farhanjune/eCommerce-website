@@ -26,11 +26,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Added info to about.php and fixed css properties, amended links to cart_view on major pages">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/change-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forgot-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgot-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/success.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send-email.php" beforeDir="false" afterPath="$PROJECT_DIR$/send-email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_and_contact.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/validate-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-change-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate-checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate-forgot-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-forgot-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate-reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-reset-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-signup.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +84,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../pre-presentation/validate-checkout.php" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../pre-presentation/contact.php" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,7 +109,7 @@
       <updated>1618768466479</updated>
       <workItem from="1618768467774" duration="21298000" />
       <workItem from="1618839075105" duration="14294000" />
-      <workItem from="1619121100218" duration="314000" />
+      <workItem from="1619121100218" duration="11359000" />
     </task>
     <task id="LOCAL-00001" summary="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit">
       <created>1618769334147</created>
@@ -186,16 +215,17 @@
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="320" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.837@0.23.1440.837" timestamp="1618839486782" />
-    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618938527989">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619130652603">
+      <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.837@0.23.1440.837" timestamp="1618938527989" />
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.838@0.23.1440.838" timestamp="1619130652603" />
     <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.839@0.23.1440.839" timestamp="1618780964415" />
-    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog" timestamp="1619121452053">
+    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog" timestamp="1619135337228">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="100" y="123" width="1240" height="626" key="DiffContextDialog/0.23.1440.837@0.23.1440.837" timestamp="1618939140371" />
-    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.838@0.23.1440.838" timestamp="1619121452053" />
+    <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.838@0.23.1440.838" timestamp="1619135337228" />
     <state x="100" y="123" width="1240" height="627" key="DiffContextDialog/0.23.1440.839@0.23.1440.839" timestamp="1618790707953" />
     <state x="541" y="367" key="NewPhpFileDialog" timestamp="1618785111391">
       <screen x="0" y="23" width="1440" height="839" />
@@ -205,9 +235,10 @@
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="594" y="164" key="RollbackChangesDialog/0.23.1440.839@0.23.1440.839" timestamp="1618784093987" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1618785069418">
-      <screen x="0" y="23" width="1440" height="839" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1619130946958">
+      <screen x="0" y="23" width="1440" height="838" />
     </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.838@0.23.1440.838" timestamp="1619130946958" />
     <state width="500" height="445" key="SwitcherDM/0.23.1440.839@0.23.1440.839" timestamp="1618785069418" />
     <state x="372" y="133" key="VCS.ChangeListViewerDialog" timestamp="1618784149289">
       <screen x="0" y="23" width="1440" height="839" />
@@ -222,10 +253,11 @@
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="100" y="123" width="1240" height="627" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1618785320108" />
-    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618946692193">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619126545944">
+      <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.837@0.23.1440.837" timestamp="1618946692193" />
+    <state x="521" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.838@0.23.1440.838" timestamp="1619126545944" />
     <state x="521" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.839@0.23.1440.839" timestamp="1618788894175" />
   </component>
 </project>

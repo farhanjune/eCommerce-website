@@ -7,7 +7,7 @@ session_start();
         <head>
             <meta charset="utf-8">
             <title>Success</title>
-            <link rel="stylesheet" href="logout-form.css">
+            <link rel="stylesheet" href="success.css">
         </head>
         <body>
             <div>

@@ -5,6 +5,7 @@ include_once 'send-email.php';
 $_SESSION['error'] = array();
 
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+$_SESSION['email'] = $email;
 $queryUser = 'SELECT *
                 FROM users
                 where email = :email';
@@ -16,13 +17,13 @@ $user = $statement->fetch();
 $name = $user['fullName'];
 $statement->closeCursor();
 
-if (is_null($email)){
+if (empty($email)){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
 elseif (!$email){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
-elseif (is_null($user)){
+elseif (!$user){
     $_SESSION['error']['email_error'] = 'No account associated with that email address';
 }
 
@@ -37,7 +38,6 @@ if (empty($_SESSION['error'])) {
         '<p>- BuyTech Team</p><br>
         <img src="'.$logo.'">';
     send_email($email, $name, 'Reset Password', $message);
-    $_SESSION['email'] = $email;
     $queryCode = 'UPDATE users
                     SET userPassword = :code
                     WHERE email = :email';

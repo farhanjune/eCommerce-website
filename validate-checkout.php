@@ -4,7 +4,8 @@ require('database.php');
 require 'send-email.php';
 include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
-echo $_SESSION['username'];
+
+$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $card_name = filter_input(INPUT_POST, 'cardname', FILTER_SANITIZE_STRING);
 $card_type = $_POST['card_type'];
 $card_number = card_number_validate($_POST['cardnumber']);
@@ -21,6 +22,13 @@ $statement1 -> execute();
 $user = $statement1 -> fetch();
 $statement1 -> closeCursor();
 
+if (isset($_SESSION['flag'])){
+    $confirmation_name = $user['fullName'];
+}
+else{
+    $confirmation_name = $card_name;
+}
+
 
 $queryCartItems = 'SELECT * FROM products 
                     WHERE productID IN (SELECT productID FROM cart WHERE
@@ -31,14 +39,6 @@ $statement2 -> bindValue(':userName', $_SESSION['username']);
 $statement2 -> execute();
 $items = $statement2 -> fetchAll();
 $statement2 -> closeCursor();
-
-$queryQuantities = 'SELECT * FROM cart WHERE
-                                        userId = :userName';
-$statement3 = $db -> prepare($queryQuantities);
-$statement3 -> bindValue(':userName', $_SESSION['username']);
-$statement3 -> execute();
-$quantities = $statement3 -> fetchAll();
-$statement3 -> closeCursor();
 
 $order_items = array();
 $i = 0;
@@ -60,8 +60,24 @@ foreach ($items as $item){
     $i++;
 }
 
+/* EMAIL */
+if (!$email){
+    $_SESSION['error']['email_error'] = 'Please enter an email address';
+}
+elseif (empty($_POST['email'])){
+    $_SESSION['error']['email_error'] = 'Invalid entry format';
+}
+
+/* CARD NAME */
+if(empty($_POST['cardname'])){
+    $_SESSION['error']['card_name_error'] = 'Please enter a name on card';
+}
+elseif (!$card_name){
+    $_SESSION['error']['card_name_error'] = 'Invalid entry format';
+}
+
 /* CARD NUMBER */
-if ($card_number == 'null'){
+if (empty($_POST['cardnumber'])){
     $_SESSION['error']['card_number_error'] = 'Please enter a card number';
 }
 elseif (!$card_number){
@@ -69,7 +85,7 @@ elseif (!$card_number){
 }
 
 /* CARD SECURITY */
-if ($card_security == 'null'){
+if (empty($_POST['cvv'])){
     $_SESSION['error']['card_security_error'] = 'Please enter a security code';
 }
 elseif (!$card_security){
@@ -90,27 +106,25 @@ if (empty($_SESSION['error'])) {
         $order_items[$i]['price'];
         $total += $order_items[$i]['price'];
     }
-    
+
 
     $logo = file_get_contents('logo.txt');
     $message =
-        '<p>Hello '.$user['fullName'].',</p>
+        '<p>Hello '.$confirmation_name.',</p>
         <br><p>Thank you for shopping with us! Below is a copy of
         your order.</p> 
         <p>Order Information</p> 
-        <p>Name on card: ' . $user['cardName'].
-        '<br>Card type: ' . ucwords($user['cardType']).
-        '<br>Card number: ************' . $user['lastFour'].
+        <p>Name on card: ' .$card_name.
+        '<br>Card type: ' .ucwords($card_type).
+        '<br>Card number: ************'.substr($_POST['cardnumber'], strlen($_POST['cardnumber'])-4).
         '<br>Expiration date: '.$month.'/'.$year.
         '<br>Order items: '.$list.
         '<br>Total: $'.$total.
         '<br><p>- BuyTech Team</p><br>
         <img src="'.$logo.'">';
-    send_email($user['email'], $user['fullName'], 'Order Confirmation', $message);
+    send_email($email, $confirmation_name, 'Order Confirmation', $message);
     header("location: confirmation.php");
 }
 else{
     header("location: checkout.php");
 }
-
-?>
