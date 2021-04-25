@@ -28,8 +28,8 @@ INSERT INTO `users` (userName, userPassword, fullName, email, phone, cardType, c
 
 CREATE TABLE contacts (
                           `contactId` INT NULL DEFAULT NULL AUTO_INCREMENT,
-                          `contactName` VARCHAR(255) UNIQUE NULL DEFAULT NULL,
-                          `contactEmail` VARCHAR(255) UNIQUE NULL DEFAULT NULL,
+                          `contactName` VARCHAR(255) NULL DEFAULT NULL,
+                          `contactEmail` VARCHAR(255) NULL DEFAULT NULL,
                           `contactPhone` BIGINT(10) NULL DEFAULT NULL,
                           `contactComment` BLOB NULL DEFAULT NULL,
                           PRIMARY KEY(`contactId`)
