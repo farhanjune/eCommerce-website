@@ -5,6 +5,11 @@ require 'send-email.php';
 include_once 'numbers-validate.php';
 $_SESSION['error'] = array();
 
+$name = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
+$street = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+$city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
+$state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
+$zip = filter_input(INPUT_POST, 'zip', FILTER_VALIDATE_INT);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $card_name = filter_input(INPUT_POST, 'cardname', FILTER_SANITIZE_STRING);
 $card_type = $_POST['card_type'];
@@ -21,14 +26,6 @@ $statement1 -> bindValue(':userName', $_SESSION['username']);
 $statement1 -> execute();
 $user = $statement1 -> fetch();
 $statement1 -> closeCursor();
-
-if (isset($_SESSION['flag'])){
-    $confirmation_name = $user['fullName'];
-}
-else{
-    $confirmation_name = $card_name;
-}
-
 
 $queryCartItems = 'SELECT * FROM products 
                     WHERE productID IN (SELECT productID FROM cart WHERE
@@ -60,11 +57,51 @@ foreach ($items as $item){
     $i++;
 }
 
+/* NAME */
+if(empty($_POST['fullname'])){
+    $_SESSION['error']['name_error'] = 'Please enter a name';
+}
+elseif (!$name){
+    $_SESSION['error']['name_error'] = 'Invalid entry format';
+}
+
+/* STREET */
+if (empty($_POST['address'])){
+    $_SESSION['error']['street_error'] = 'Please enter a street address';
+}
+elseif (!$street){
+    $_SESSION['error']['street_error'] = 'Invalid entry format';
+}
+
+/* CITY */
+if (empty($_POST['city'])){
+    $_SESSION['error']['city_error'] = 'Please enter a city';
+}
+elseif (!$city){
+    $_SESSION['error']['city_error'] = 'Invalid entry format';
+}
+
+/* STATE */
+if (empty($_POST['state'])){
+    $_SESSION['error']['state_error'] = 'Please enter a state';
+}
+elseif (!$state){
+    $_SESSION['error']['state_error'] = 'Invalid entry format';
+}
+
+/* ZIP */
+if (empty($_POST['zip'])){
+    $_SESSION['error']['zip_error'] = 'Please enter a valid zip/postal code';
+}
+elseif (!$zip){
+    $_SESSION['error']['zip_error'] = 'Invalid entry format';
+}
+
 /* EMAIL */
-if (!$email){
+if (empty($_POST['email'])){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
-elseif (empty($_POST['email'])){
+elseif (!$email){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
 
@@ -110,10 +147,11 @@ if (empty($_SESSION['error'])) {
 
     $logo = file_get_contents('logo.txt');
     $message =
-        '<p>Hello '.$confirmation_name.',</p>
+        '<p>Hello '.$name.',</p>
         <br><p>Thank you for shopping with us! Below is a copy of
         your order.</p> 
-        <p>Order Information</p> 
+        <p>Order Information</p>
+        <p>Shipping Address: <br>'.$street.'<br>'.$city.'<br>'.$state.', '.$zip.'</p>
         <p>Name on card: ' .$card_name.
         '<br>Card type: ' .ucwords($card_type).
         '<br>Card number: ************'.substr($_POST['cardnumber'], strlen($_POST['cardnumber'])-4).
@@ -122,7 +160,7 @@ if (empty($_SESSION['error'])) {
         '<br>Total: $'.$total.
         '<br><p>- BuyTech Team</p><br>
         <img src="'.$logo.'">';
-    send_email($email, $confirmation_name, 'Order Confirmation', $message);
+    send_email($email, $name, 'Order Confirmation', $message);
     header("location: confirmation.php");
 }
 else{
