@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="contact.js"></script>
+	
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <meta charset="UTF-8">
     <title>Contact Us</title>
