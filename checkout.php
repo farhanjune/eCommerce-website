@@ -1,14 +1,16 @@
 <?php
 require('database.php');
 session_start();
-$queryUserByUsername = 'SELECT * FROM users WHERE userName = :userName';
-$statement1 = $db -> prepare($queryUserByUsername);
-$statement1 -> bindValue(':userName', $_SESSION['username']);
-$statement1 -> execute();
-$user = $statement1 -> fetch();
-$statement1 -> closeCursor();
-$month = date('m', strtotime($user['cardExp']));
-$year = date('Y', strtotime($user['cardExp']));
+if (isset($_SESSION['flag'])){
+    $queryUserByUsername = 'SELECT * FROM users WHERE userName = :userName';
+    $statement1 = $db -> prepare($queryUserByUsername);
+    $statement1 -> bindValue(':userName', $_SESSION['username']);
+    $statement1 -> execute();
+    $user = $statement1 -> fetch();
+    $statement1 -> closeCursor();
+    $month = date('m', strtotime($user['cardExp']));
+    $year = date('Y', strtotime($user['cardExp']));
+}
 ?>
 <!DOCTYPE html>
 <html>

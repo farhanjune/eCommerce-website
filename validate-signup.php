@@ -76,10 +76,10 @@ elseif (!$name){
 }
 
 /* EMAIL */
-if (is_null($email)){
+if (empty($_POST['email'])){
     $_SESSION['error']['email_error'] = 'Please enter an email address';
 }
-elseif (empty($_POST['email'])){
+elseif (!$email){
     $_SESSION['error']['email_error'] = 'Invalid entry format';
 }
 elseif ($user_by_email){
