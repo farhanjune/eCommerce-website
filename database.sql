@@ -51,7 +51,7 @@ CREATE TABLE `products` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`, `productImage2`, `productImage3`, `description`) VALUES ('1', '2', 'Airpods Pros', '249.49', 'images/product-2-1.jpg', 'images/product-2-2.jpg', 'images/product-2-4.jpg', 'AirPods Pro are the only in-ear headphones with active noise cancellation that continually adapts to your ear and the fit of the ear tips. An outward-facing microphone detects external sound, the AirPods Pro then counter it with equal anti-noise, cancelling. Noise cancellation is continuously adjusted at 200 times per second for truly immersive sound.');
 
-INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`, `productImage2`, `productImage3`, `description`)  VALUES ('2', '3', 'Apple Watch Series 5', '500.50', 'images/product-1.jpeg', 'images/product-2.jpeg', 'images/watch1.jpeg', 'Apple Watch SE has the same larger display size Retina display as Series 6, so you can see more at a glance. Advanced sensors to track all your fitness and workout goals. And powerful features to keep you healthy and safe. The Sleep app lets you set a bedtime routine and track your sleep. And you also get calls, messages, and music right on your wrist. It is a lot of watch for a lot less than you expected.');
+INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`, `productImage2`, `productImage3`, `description`)  VALUES ('2', '3', 'Apple Watch Series 5', '500.50', 'images/product-1.jpeg', 'images/product-2.jpeg', 'images/watch2.jpeg', 'Apple Watch SE has the same larger display size Retina display as Series 6, so you can see more at a glance. Advanced sensors to track all your fitness and workout goals. And powerful features to keep you healthy and safe. The Sleep app lets you set a bedtime routine and track your sleep. And you also get calls, messages, and music right on your wrist. It is a lot of watch for a lot less than you expected.');
 
 INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`, `productImage2`, `productImage3`, `description`)  VALUES ('3', '4', 'Lenovo Yoga', '899.99', 'images/product-3.jpeg', 'images/Lenovo2.jpg', 'images/LenovoYoga1.jpg', 'Premium 9th Gen Intel Core processors
 Enhanced graphics cards from NVIDIA let you excel at creating, playing & entertaining
@@ -99,13 +99,9 @@ VALUES ('11', '4', 'Macbook Air 13.3" - M1 chip', '949.99', 'images/macbook.jpeg
 
 INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`, `productImage`, `productImage2`, `productImage3`, `description`)  
 VALUES ('12', '4', 'iPad Pro 11"(256 GB)', '899.00', 'images/ipad.jpeg', 'images/ipad1.jpg', 'images/ipad2.jpg', 'iPad Pro features the powerful Apple M1 chip with next-level performance and all-day battery life.³ The Liquid Retina display on the 11-inch iPad Pro is not only gorgeous, but super portable.¹ And a front camera with Center Stage keeps you in frame automatically during video calls. iPad Pro has pro cameras and a LiDAR Scanner for stunning photos, videos, and immersive AR. Thunderbolt for connecting to high-performance accessories.
-
 Apple M1 chip for next-level performance
-
 Stunning 11-inch Liquid Retina display¹ with ProMotion, True Tone, and P3 wide color
-
 TrueDepth camera system featuring Ultra Wide front camera with Center Stage
-
 12MP Wide camera, 10MP Ultra Wide camera, and LiDAR Scanner for immersive AR');
 CREATE TABLE `categories` (
                               `categoryID` int NULL DEFAULT NULL,
