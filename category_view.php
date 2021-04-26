@@ -39,7 +39,7 @@
 					foreach($db->query($sql) as $key => $item ) :
 					?>
 						<div class="col-4">
-						<a href="apple-watch.html">
+						<a href="productview.php?productID=<?php echo $item['productID']?>" id="productview">
 							<img src="<?php echo $item['productImage']?>">
 							<h4><?php echo $item['productName']?></h4>
 							<div class="rating">
