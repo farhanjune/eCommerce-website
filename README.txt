@@ -20,6 +20,10 @@ Frank Gonzalez:
 - SQL for users and contacts tables
 
 Sol Park:
+- CSS, HTML, initial PHP for checkout page
+- initial production of validate-checkout.php
+- CSS fixes for signup, login-form, cart pages
+- CSS tweaks on various other pages
 
 Nahiyaan Sheikh:
 - CSS, HTML, JavaScript, PHP for product view
