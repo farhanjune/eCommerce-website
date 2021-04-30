@@ -46,6 +46,7 @@ Nahiyaan Sheikh:
 **** Citations ****
 
 - Products and website design inspired from Amazon and Best Buy
+- With permission, we used Bootstrap's 'Font Awesome' to import icons
 - about.php timeline inspired by Lauren Chilcote (https://codepen.io/letsbleachthis/pen/YJgNpv)
 
 
