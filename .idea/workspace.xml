@@ -25,14 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Fixed checkout.php, reset-password.php, and signup">
+    <list default="true" id="15372d34-e39a-493c-a16a-e7a5e0717b52" name="Default Changelist" comment="Presentation :)">
+      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/category_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/send-email.php" beforeDir="false" afterPath="$PROJECT_DIR$/send-email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate-checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate-checkout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,8 @@
       <workItem from="1619121100218" duration="11767000" />
       <workItem from="1619383588498" duration="400000" />
       <workItem from="1619404223535" duration="727000" />
-      <workItem from="1619449888297" duration="4172000" />
+      <workItem from="1619449888297" duration="4292000" />
+      <workItem from="1619795207294" duration="2175000" />
     </task>
     <task id="LOCAL-00001" summary="Updated validate-signup.php, validate-forgot-password.php, validate-account.php, and validate-login.php.&#10;Minor changes in other files listed in commit">
       <created>1618769334147</created>
@@ -151,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619404692160</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Presentation :)">
+      <created>1619457063067</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619457063067</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +207,8 @@
     <MESSAGE value="Added info to about.php and fixed css properties, amended links to cart_view on major pages" />
     <MESSAGE value="Fixed SQL for contacts table to accept duplicate email and name entries" />
     <MESSAGE value="Fixed checkout.php, reset-password.php, and signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkout.php, reset-password.php, and signup" />
+    <MESSAGE value="Presentation :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Presentation :)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618839486782">
@@ -238,12 +245,13 @@
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="372" y="133" key="VCS.ChangeListViewerDialog/0.23.1440.839@0.23.1440.839" timestamp="1618784149289" />
-    <state x="320" y="176" key="Vcs.Push.Dialog.v2" timestamp="1619404697101">
-      <screen x="0" y="23" width="1440" height="839" />
+    <state x="320" y="176" key="Vcs.Push.Dialog.v2" timestamp="1619457066848">
+      <screen x="0" y="23" width="1440" height="841" />
     </state>
     <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1618884083507" />
     <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.838@0.23.1440.838" timestamp="1619383896397" />
     <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.839@0.23.1440.839" timestamp="1619404697101" />
+    <state x="320" y="176" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1619457066848" />
     <state x="100" y="123" width="1240" height="627" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1618785320108">
       <screen x="0" y="23" width="1440" height="839" />
     </state>

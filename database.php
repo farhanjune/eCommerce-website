@@ -1,7 +1,7 @@
 <?php
 	$dsn = 'mysql:host=localhost;dbname=ecommerce_website';
-	$username = 'root';
-	$password = 'root'; // Frank: 'root', Nahiyaan: ''
+	$username = 'username'; // your db username
+	$password = 'password'; // your db password
 
 	try {
 		$db = new PDO($dsn, $username, $password);
