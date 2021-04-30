@@ -22,6 +22,16 @@ Frank Gonzalez:
 Sol Park:
 
 Nahiyaan Sheikh:
+- CSS, HTML, JavaScript, PHP for product view
+- worked on products and cart items in the database SQL
+- CSS, HTML, JavaScript, PHP for cart view
+- CSS, HTML, JavaScript, PHP for header file
+- CSS, HTML, JavaScript, PHP for category view
+- PHP for cart.php
+- helped fix validate checkout and checkout.php
+- Added dynamic header to index.php 
+- Added dynamic product pages to index.php
+
 
 **** Citations ****
 
