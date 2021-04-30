@@ -4,6 +4,12 @@ Group 14
 **** Contributions ****
 
 Farhan Juneja:
+- CSS, HTML, and JavaScript of main home page
+- Products and logo design
+- CSS & HTML for Products page
+- CSS & HTML for Login page
+- CSS & HTML for Contact page
+- Implemented consistent styling for all pages
 
 Frank Gonzalez:
 - CSS, HTML, JavaScript, and PHP for contact page
@@ -39,7 +45,9 @@ Nahiyaan Sheikh:
 
 **** Citations ****
 
+- Products and website design inspired from Amazon and Best Buy
 - about.php timeline inspired by Lauren Chilcote (https://codepen.io/letsbleachthis/pen/YJgNpv)
+
 
 **** Instructions ****
 
