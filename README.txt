@@ -47,15 +47,16 @@ Nahiyaan Sheikh:
 
 - Products and website design inspired from Amazon and Best Buy
 - With permission, we used Bootstrap's 'Font Awesome' to import icons
-- about.php timeline inspired by Lauren Chilcote (https://codepen.io/letsbleachthis/pen/YJgNpv)
+- about.php timeline based off of Lauren Chilcote (https://codepen.io/letsbleachthis/pen/YJgNpv)
 
 
 **** Instructions ****
 
-1. Place classes and eCommerce-website folders into htdocs
+1. Place 'classes' and 'eCommerce-website' folders into htdocs
    directory in XAMPP installation
-2. Import database.sql into phpMyAdmin to initialize database
-3. Configure database.php to include your local phpMyAdmin username and password
+2. Import 'database.sql' into phpMyAdmin to initialize database
+3. Configure 'database.php' to include your local phpMyAdmin username and password
 4. Create account with Mailtrap (https://mailtrap.io/)
-5. Configure send-mail.php to include your Mailtrap username and password
+5. Configure 'send-mail.php' to include your Mailtrap username and password which can be found
+    under your SMTP Settings in the Inbox area
 6. Go to your preferred browser and enter http://localhost/eCommerce-website/ in the address bar
